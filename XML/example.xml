@@ -4,7 +4,7 @@
 <!DOCTYPE XML SYSTEM "template.dtd">
 <XML>
    <xmlHeader>
-      <fileDesc>
+      <fileDesc> 
          <titleStmt>
             <title>File Title</title>
          </titleStmt>
@@ -28,7 +28,7 @@
       <profileDesc>
          <particDesc>
             <listPerson>
-               <org type="race" xml:id="orgID_1">
+               <org type="race" xml:id="orgID_1"><!-- races and characters mentionned in the text with their id-->
                   <person xml:id="persID_1"/>
                   <person xml:id="persID_2"/>
                </org>
@@ -36,7 +36,7 @@
             </listPerson>
          </particDesc>
          <settingDesc>
-            <listPlace>
+            <listPlace> <!-- places mentionned in the text with their id-->
                <place xml:id="placeID_1" type="region"/>
                <place xml:id="placeID_2" type="river"/>
                <place xml:id="placeID_3" type="tree"/>
