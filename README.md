@@ -10,7 +10,7 @@ Unlike The Lord of the Rings and The Hobbit, completed novels that made him famo
 >- The [first excerpt](Documents/Extrait1_ContesPerdus.txt), taken from the _Book of Lost Tales_, consists of Tolkien's initial notes on this narrative.
 >- The [second](Documents/Extrait2_Silmarillion.txt) and [final](Documents/Extrait3_Silmarillion.txt) excerpts, taken from the _Silmarillion_, reflect a more finished state of the narrative.
 
-## ️ Why XML?
+## ️🖥️ Why XML?
 
 Encoding these texts in XML allows them to be presented in a structured manner, thus comparing the two narratives side by side.
 
