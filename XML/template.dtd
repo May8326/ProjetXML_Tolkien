@@ -28,20 +28,20 @@
 <!ELEMENT biblScope (#PCDATA)>
 <!ATTLIST biblScope unit CDATA #REQUIRED from CDATA #REQUIRED to CDATA #REQUIRED >
 
-<!-- Date and time elements in the header and in the text body -->
+<!-- Date and time elements in the header and the body -->
 <!ELEMENT date (#PCDATA) >
 <!ATTLIST date when CDATA #IMPLIED type CDATA #IMPLIED when-custom CDATA #IMPLIED>
 
-<!-- Character and location identification -->
+<!-- List of the characters and places mentionned in the extracts  -->
 <!ELEMENT profileDesc (particDesc, settingDesc)>
 <!ELEMENT particDesc (listPerson)>
 <!ELEMENT listPerson (org*, person*)>
-<!-- Characters, name and race -->
+<!-- Characters and organisations (races) -->
 <!ELEMENT org (person*) >
 <!ATTLIST org type CDATA #REQUIRED xml:id ID #REQUIRED>
 <!ELEMENT person EMPTY>
 <!ATTLIST person xml:id ID #REQUIRED>
-<!-- Locations -->
+<!-- Places -->
 <!ELEMENT settingDesc (listPlace)>
 <!ELEMENT listPlace (place+)>
 <!ELEMENT place EMPTY>
@@ -51,18 +51,16 @@
 <!ELEMENT text (body)>
 <!ELEMENT body (div+)>
 
-<!-- Division in the text, here used for chapters -->
+<!-- Division in the text (book chapter) -->
 <!ELEMENT div (head?, p+)>
 <!ATTLIST div type CDATA #IMPLIED n CDATA #IMPLIED>
-
-<!-- Chapter -->
 <!ELEMENT head (#PCDATA)>
 
-<!-- Indication of skipped passages with the number of skipped lines -->
+<!-- Indication of the passages that where skipped -->
 <!ELEMENT gap EMPTY>
 <!ATTLIST gap reason CDATA #IMPLIED quantity CDATA #IMPLIED>
 
-<!-- Names of characters, races, locations, and cited mythological objects -->
+<!-- Names of characters, races, locations, and mythological objects cited in the extracts -->
 <!ELEMENT persName (#PCDATA)>
 <!ATTLIST persName ref IDREF #IMPLIED>
 <!ELEMENT geogName (#PCDATA)>
