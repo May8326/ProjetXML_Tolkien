@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE TEI SYSTEM "template.dtd">
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
-   <teiHeader>
+
+<!DOCTYPE XML SYSTEM "template.dtd">
+<XML>
+   <xmlHeader>
       <fileDesc>
          <titleStmt>
             <title>File Title</title>
          </titleStmt>
          <publicationStmt>
-            <p>License</p>
+            <p type="licence">License</p>
             <publisher>Maëlys Gioan</publisher>
          </publicationStmt>
          <sourceDesc>
@@ -42,25 +43,25 @@
             </listPlace>
          </settingDesc>
       </profileDesc>
-   </teiHeader>
-   
+   </xmlHeader>
    <text>
       <body>
          <div type="chapter" n="1">
             <head>Chapter Title of the Excerpt.</head>
             <p> 
+               <pb n="30"/>
                A paragraph of text
                <gap reason="sampling" quantity="3l"/>
                <orgName ref="orgID_1">group Name 1</orgName>
                <orgName ref="orgID_2">group Name 2</orgName>
                <persName ref="persID_1">character Name</persName>
                <persName ref="persID_2">second Character</persName>
+               <pb n="31"/>
                <geogName ref="placeID_1">region Name</geogName>
                <geogName ref="placeID_2">river Name</geogName>
                <geogName ref="placeID_3">place Name</geogName>
                <objectName ref="placeID_3">object Name</objectName>
-               <date when="NNNNN" type="year">a date</date>
-               <date when="NNNNN" type="year">a date</date>
+               <date when="2024" type="year">a date</date>
                <date when-custom="nomEpoque" type="era">the name of an era</date>
                <!-- The <q> tag can contain the same elements as the <p> tag -->
                <q who="persID_1" toWhom="persID_2">a dialogue</q>
@@ -71,4 +72,4 @@
          </div>
       </body>
    </text>
-</TEI>
+</XML>

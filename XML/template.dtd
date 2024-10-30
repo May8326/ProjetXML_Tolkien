@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!ELEMENT TEI (teiHeader, text)>
-<!ATTLIST TEI xmlns CDATA #FIXED "http://www.tei-c.org/ns/1.0">
+<!ELEMENT XML (xmlHeader, text)>
 
 <!-- TEI Header -->
-<!ELEMENT teiHeader (fileDesc, profileDesc)>
+<!ELEMENT xmlHeader (fileDesc, profileDesc)>
 <!ELEMENT fileDesc (titleStmt, publicationStmt, sourceDesc)>
 <!ELEMENT titleStmt (title)>
 <!ELEMENT title (#PCDATA)>
@@ -12,7 +11,7 @@
 <!ELEMENT publisher (#PCDATA)>
 
 <!-- Paragraph in the body or header -->
-<!ELEMENT p (#PCDATA | persName | geogName | orgName | objectName | q | date | gap )*>
+<!ELEMENT p (#PCDATA | persName | geogName | orgName | objectName | q | date | gap | pb)*>
 <!ATTLIST p type CDATA #IMPLIED>
 
 <!-- Bibliography -->
@@ -51,10 +50,12 @@
 <!ELEMENT text (body)>
 <!ELEMENT body (div+)>
 
-<!-- Division in the text (book chapter) -->
-<!ELEMENT div (head?, p+)>
+<!-- Division in the text (book chapter, page) -->
+<!ELEMENT div (head?, p+, pb*)>
 <!ATTLIST div type CDATA #IMPLIED n CDATA #IMPLIED>
 <!ELEMENT head (#PCDATA)>
+<!ELEMENT pb EMPTY >
+<!ATTLIST pb n CDATA #REQUIRED >
 
 <!-- Indication of the passages that where skipped -->
 <!ELEMENT gap EMPTY>
@@ -71,5 +72,5 @@
 <!ATTLIST objectName ref IDREF #REQUIRED>
 
 <!-- Dialogues with indication of the speaker (who) and the addressee (toWhom) -->
-<!ELEMENT q (#PCDATA | persName | geogName | orgName | objectName | p | date | gap)*>
+<!ELEMENT q (#PCDATA | persName | geogName | orgName | objectName | p | date | gap | pb)*>
 <!ATTLIST q who IDREF #REQUIRED toWhom IDREF #IMPLIED >
