@@ -1,0 +1,71 @@
+<!DOCTYPE TEI SYSTEM "template.dtd">
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>File Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>License</p>
+            <publisher>Maëlys Gioan</publisher>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl type="book" xml:lang="fr">
+               <title>Book Title</title>
+               <author>Book Author</author>
+               <editor resp="translator">Translator</editor>
+               <editor resp="translator">Other Translator</editor>
+               <publisher>Publisher</publisher>
+               <pubPlace>Place of Publication</pubPlace>
+               <date when="1993" type="publication">a date</date>
+               <biblScope unit="page" from="30" to="31">page numbers</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <particDesc>
+            <listPerson>
+               <org type="race" xml:id="orgID_1">
+                  <person xml:id="persID_1"/>
+                  <person xml:id="persID_2"/>
+               </org>
+               <org type="race" xml:id="orgID_2"/>
+            </listPerson>
+         </particDesc>
+         <settingDesc>
+            <listPlace>
+               <place xml:id="placeID_1" type="region"/>
+               <place xml:id="placeID_2" type="river"/>
+               <place xml:id="placeID_3" type="tree"/>
+            </listPlace>
+         </settingDesc>
+      </profileDesc>
+   </teiHeader>
+   
+   <text>
+      <body>
+         <div type="chapter" n="1">
+            <head>Chapter Title of the Excerpt.</head>
+            <p> 
+               A paragraph of text
+               <gap reason="sampling" quantity="3l"/>
+               <orgName ref="orgID_1">group Name 1</orgName>
+               <orgName ref="orgID_2">group Name 2</orgName>
+               <persName ref="persID_1">character Name</persName>
+               <persName ref="persID_2">second Character</persName>
+               <geogName ref="placeID_1">region Name</geogName>
+               <geogName ref="placeID_2">river Name</geogName>
+               <geogName ref="placeID_3">place Name</geogName>
+               <objectName ref="placeID_3">object Name</objectName>
+               <date when="NNNNN" type="year">a date</date>
+               <date when-custom="nomEpoque" type="era">the name of an era</date>
+               <!-- The <q> tag can contain the same elements as the <p> tag -->
+               <q who="persID_1" toWhom="persID_2">a dialogue</q>
+            </p>
+            <p>
+               Second paragraph of text.
+            </p>
+         </div>
+      </body>
+   </text>
+</TEI>

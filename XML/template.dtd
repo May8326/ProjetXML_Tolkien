@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT TEI (teiHeader, text)>
+<!ATTLIST TEI xmlns CDATA #FIXED "http://www.tei-c.org/ns/1.0">
+
+<!-- TEI Header -->
+<!ELEMENT teiHeader (fileDesc, profileDesc)>
+<!ELEMENT fileDesc (titleStmt, publicationStmt, sourceDesc)>
+<!ELEMENT titleStmt (title)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT publicationStmt (p, publisher)>
+<!ELEMENT publisher (#PCDATA)>
+
+<!-- Paragraph in the body or header -->
+<!ELEMENT p (#PCDATA | persName | geogName | orgName | objectName | q | date | gap )*>
+<!ATTLIST p type CDATA #IMPLIED>
+
+<!-- Bibliography -->
+<!ELEMENT sourceDesc (bibl)>
+<!ELEMENT bibl (title, author, editor+, publisher, pubPlace?, date, biblScope)>
+<!ATTLIST bibl type CDATA #REQUIRED xml:lang CDATA #REQUIRED>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT editor (#PCDATA)>
+<!ATTLIST editor resp CDATA #REQUIRED>
+
+<!-- Additional information on the publisher, place, and date of publication -->
+<!ELEMENT pubPlace (#PCDATA)>
+<!ELEMENT biblScope (#PCDATA)>
+<!ATTLIST biblScope unit CDATA #REQUIRED from CDATA #REQUIRED to CDATA #REQUIRED >
+
+<!-- Date and time elements in the header and in the text body -->
+<!ELEMENT date (#PCDATA) >
+<!ATTLIST date when CDATA #IMPLIED type CDATA #IMPLIED when-custom CDATA #IMPLIED>
+
+<!-- Character and location identification -->
+<!ELEMENT profileDesc (particDesc, settingDesc)>
+<!ELEMENT particDesc (listPerson)>
+<!ELEMENT listPerson (org*, person*)>
+<!-- Characters, name and race -->
+<!ELEMENT org (person*) >
+<!ATTLIST org type CDATA #REQUIRED xml:id ID #REQUIRED>
+<!ELEMENT person EMPTY>
+<!ATTLIST person xml:id ID #REQUIRED>
+<!-- Locations -->
+<!ELEMENT settingDesc (listPlace)>
+<!ELEMENT listPlace (place+)>
+<!ELEMENT place EMPTY>
+<!ATTLIST place xml:id ID #REQUIRED type CDATA #REQUIRED>
+
+<!-- TEXT BODY -->
+<!ELEMENT text (body)>
+<!ELEMENT body (div+)>
+
+<!-- Division in the text, here used for chapters -->
+<!ELEMENT div (head?, p+)>
+<!ATTLIST div type CDATA #IMPLIED n CDATA #IMPLIED>
+
+<!-- Chapter -->
+<!ELEMENT head (#PCDATA)>
+
+<!-- Indication of skipped passages with the number of skipped lines -->
+<!ELEMENT gap EMPTY>
+<!ATTLIST gap reason CDATA #IMPLIED quantity CDATA #IMPLIED>
+
+<!-- Names of characters, races, locations, and cited mythological objects -->
+<!ELEMENT persName (#PCDATA)>
+<!ATTLIST persName ref IDREF #IMPLIED>
+<!ELEMENT geogName (#PCDATA)>
+<!ATTLIST geogName ref IDREF #IMPLIED>
+<!ELEMENT orgName (#PCDATA)>
+<!ATTLIST orgName ref IDREF #IMPLIED>
+<!ELEMENT objectName (#PCDATA)>
+<!ATTLIST objectName ref IDREF #REQUIRED>
+
+<!-- Dialogues with indication of the speaker (who) and the addressee (toWhom) -->
+<!ELEMENT q (#PCDATA | persName | geogName | orgName | objectName | p | date | gap)*>
+<!ATTLIST q who IDREF #REQUIRED toWhom IDREF #IMPLIED >
