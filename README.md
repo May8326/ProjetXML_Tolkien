@@ -1,4 +1,5 @@
-# ProjetXML_Tolkien
+# Les Légendes de la Terre du Milieu : construction d'un récit 🇫🇷
+
 Ce repo est créé dans le cadre du cours de XML dispensé à l'école nationale des Chartes en master 2 TNAH
 
 Bibliographie :
@@ -6,11 +7,11 @@ Bibliographie :
 Objectifs :
 
 ---
-Version ENG
+# The Legends of Middle-Earth : 
 
 ---
 
-# Bibliographie
+# 📖 Bibliographie
 
 ## Sources
 
