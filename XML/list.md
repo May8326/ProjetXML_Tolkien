@@ -2,8 +2,8 @@
 
 | Element         | Attribute                | Attribute Value               |
 | --------------- | ------------------------ | ----------------------------- |
-| TEI             | @xmlns                   | "http://www.tei-c.org/ns/1.0" |
-| teiHeader       |                          |                               |
+| XML             |                          |                               |
+| xmlHeader       |                          |                               |
 | fileDesc        |                          |                               |
 | titleStmt       |                          |                               |
 | title           |                          |                               |
@@ -28,6 +28,7 @@
 | body            |                          |                               |
 | div             | @type @n                 | #REQUIRED #REQUIRED           |
 | head            |                          |                               |
+| pub 			  | @n                       | #REQUIRED                     |
 | gap             | @reason @quantity        | #IMPLIED #IMPLIED             |
 | p               | @type                    | #IMPLIED                      |
 | persName        | @ref                     | #IDREF                        |
