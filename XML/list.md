@@ -1,4 +1,4 @@
-# List of elements and attributes
+# List of elements and attributes used
 
 | Element         | Attribute                | Attribute Value               |
 | --------------- | ------------------------ | ----------------------------- |
