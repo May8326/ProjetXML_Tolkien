@@ -35,7 +35,7 @@ Contrairement au _Seigneur des Anneaux_ et au _Hobbit_, romans achevés qui ont 
 **Trois extraits** tirés de ces deux ouvrages ont été retenus pour témoigner de ce travail : ils relatent la création de _Laurelin_ et _Silpion_, deux arbres qui à la création de la Terre du Milieu éclairent le pays de Valinor comme le Soleil et la Lune.
 >- Le [premier extrait](Documents/Extrait1_ContesPerdus.txt), tiré du _Livre des Contes Perdus_, est constitué des premières notes de Tolkien sur ce récit sur la naissance des Deux Arbres du Valinor.
 >- Le [second extrait](Documents/Extrait2_Silmarillion.txt), tiré du _Silmarillion_, relate la naissance du premier arbre,
->- et le [dernier](Documents/Extrait3_Silmarillion.txt) extrait lui fait suite et raconte la naissance du second arbre. Les deux texte du _Silmarillion_ témoignent d'un état plus achevé du récit.
+>- et le [dernier extrait](Documents/Extrait3_Silmarillion.txt) lui fait suite et raconte la naissance du second arbre. Les deux texte du _Silmarillion_ témoignent d'un état plus achevé du récit.
 
 ## 🖥️ Pourquoi le XML ?
 
