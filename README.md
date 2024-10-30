@@ -10,10 +10,16 @@ Version ENG
 
 ---
 
-# Sources
+# Bibliographie
+
+## Sources
 
 - Tolkien (John Ronald Reuel), _Le livre des contes perdus. Première partie_, Christopher Tolkien (éd.), Adam Tolkien (trad.), Paris, Christian Bourgeois, 1995, [pages 100-101](Documents/Extrait_ContesPerdus.pdf).
 	- [Extrait 1](Documents/Extrait_ContesPerdus.txt)
 - Tolkien (John Ronald Reuel), _Le Silmarillion : histoire des Silmarils_, Christopher Tolkien (éd.), Pierre Alien (trad.), Paris, Christian Bourgeois, 1993, [pages 30-31](Documents/Extrait_Silmarillion.pdf).
 	- [Extrait 2](Documents/Extrait_Silmarillion1.txt)
 	- [Extrait 3](Documents/Extrait_Silmarillion2.txt)
+
+## Ouvrage de référence
+
+Tolkien (John Ronald Reuel), _Le livre des contes perdus. Première partie_, Christopher Tolkien (éd.), Adam Tolkien (trad.), Paris, Christian Bourgeois, 1995, [pages to add](Documents/Complements/Commentaire_ChristopherTolkien.md).
