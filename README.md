@@ -4,7 +4,7 @@
 
 The aim of this project is to present to French-speaking readers the richness of the literary work of [J.R.R. Tolkien](https://en.wikipedia.org/wiki/J._R._R._Tolkien). 
 
-Unlike The Lord of the Rings and The Hobbit, completed novels that made him famous, much of Tolkien's work remained in draft form. His son Christopher reconstructed part of it in the _Silmarillion_ (1977) and the _Book of Lost Tales_ (1983-1984): these two works testify to several stages of Tolkien's progress in constructing his universe.
+Unlike _The Lord of the Rings_ and _The Hobbit_, completed novels that made him famous, much of Tolkien's work remained in draft form. His son Christopher reconstructed part of it in the _Silmarillion_ (1977) and the _Book of Lost Tales_ (1983-1984): these two works testify to several stages of Tolkien's progress in constructing his universe.
 
 **Three excerpts** from these two works have been selected to illustrate this work: they recount the creation of _Laurelin_ and _Silpion_, two trees that, at the creation of Middle-earth, illuminate the land of Valinor like the Sun and the Moon.
 >- The [first excerpt](Documents/Extrait1_ContesPerdus.txt), taken from the _Book of Lost Tales_, consists of Tolkien's initial notes on this narrative.
@@ -28,7 +28,7 @@ The [model](XML/template.dtd) chosen to structure these documents is largely ins
 
 Le but de ce projet est de présenter aux lecteurs francophones la richesse de l'oeuvre littéraire de [J.R.R. Tolkien](https://en.wikipedia.org/wiki/J._R._R._Tolkien). 
 
-Contrairement au Seigneur des Anneaux et au Hobbit, romans achevés qui ont fait sa notoriété, une grande partie de l'oeuvre de Tolkien est restée à l'état d'ébauche. Son fils Christopher en a reconstitué une partie dans le _Silmarillion_ (1977) et les _Livre des Contes Perdus_ (1983-1984) : ces deux ouvrages témoignent de plusieurs états de l'avancée de Tolkien dans la construction de son univers.
+Contrairement au _Seigneur des Anneaux_ et au _Hobbit_, romans achevés qui ont fait sa notoriété, une grande partie de l'oeuvre de Tolkien est restée à l'état d'ébauche. Son fils Christopher en a reconstitué une partie dans le _Silmarillion_ (1977) et les _Livre des Contes Perdus_ (1983-1984) : ces deux ouvrages témoignent de plusieurs états de l'avancée de Tolkien dans la construction de son univers.
 
 **Trois extraits** tirés de ces deux ouvrages ont été retenus pour témoigner de ce travail : ils relatent la création de _Laurelin_ et _Silpion_, deux arbres qui à la création de la Terre du Milieu éclairent le pays de Valinor comme le Soleil et la Lune.
 >- Le [premier extrait](Documents/Extrait1_ContesPerdus.txt), tiré du _Livre des Contes Perdus_, est constitué des premières notes de Tolkien sur ce récit.
