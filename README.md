@@ -7,8 +7,10 @@ The aim of this project is to present to French-speaking readers the richness of
 Unlike _The Lord of the Rings_ and _The Hobbit_, completed novels that made him famous, much of Tolkien's work remained in draft form. His son Christopher reconstructed part of it in the _Silmarillion_ (1977) and the _Book of Lost Tales_ (1983-1984): these two works testify to several stages of Tolkien's progress in constructing his universe.
 
 **Three excerpts** from these two works have been selected to illustrate this work: they recount the creation of _Laurelin_ and _Silpion_, two trees that, at the creation of Middle-earth, illuminate the land of Valinor like the Sun and the Moon.
->- The [first excerpt](Documents/Extrait1_ContesPerdus.txt), taken from the _Book of Lost Tales_, consists of Tolkien's initial notes on this narrative.
->- The [second](Documents/Extrait2_Silmarillion.txt) and [final](Documents/Extrait3_Silmarillion.txt) excerpts, taken from the _Silmarillion_, reflect a more finished state of the narrative.
+>- The [first excerpt](Documents/Extrait1_ContesPerdus.txt), taken from the _Book of Lost Tales_, consists of Tolkien's first notes on the story of the birth of the Two Trees of Valinor.
+>- The [second excerpt](Documents/Extrait2_Silmarillion.txt), taken from the _Silmarillion_, recounts the birth of the first tree,
+>- and the [last excerpt](Documents/Extrait3_Silmarillion.txt) follows it and tells the story of the birth of the second tree. The two texts from the _Silmarillion_ reflect a more finished state of the narrative.
+
 
 ## ️🖥️ Why XML?
 
@@ -31,8 +33,9 @@ Le but de ce projet est de présenter aux lecteurs francophones la richesse de l
 Contrairement au _Seigneur des Anneaux_ et au _Hobbit_, romans achevés qui ont fait sa notoriété, une grande partie de l'oeuvre de Tolkien est restée à l'état d'ébauche. Son fils Christopher en a reconstitué une partie dans le _Silmarillion_ (1977) et les _Livre des Contes Perdus_ (1983-1984) : ces deux ouvrages témoignent de plusieurs états de l'avancée de Tolkien dans la construction de son univers.
 
 **Trois extraits** tirés de ces deux ouvrages ont été retenus pour témoigner de ce travail : ils relatent la création de _Laurelin_ et _Silpion_, deux arbres qui à la création de la Terre du Milieu éclairent le pays de Valinor comme le Soleil et la Lune.
->- Le [premier extrait](Documents/Extrait1_ContesPerdus.txt), tiré du _Livre des Contes Perdus_, est constitué des premières notes de Tolkien sur ce récit.
->- Les [second](Documents/Extrait2_Silmarillion.txt) et [dernier](Documents/Extrait3_Silmarillion.txt) extraits, tirés du _Silmarillion_, témoignent d'un état plus achevé de celui-ci.
+>- Le [premier extrait](Documents/Extrait1_ContesPerdus.txt), tiré du _Livre des Contes Perdus_, est constitué des premières notes de Tolkien sur ce récit sur la naissance des Deux Arbres du Valinor.
+>- Le [second extrait](Documents/Extrait2_Silmarillion.txt), tiré du _Silmarillion_, relate la naissance du premier arbre,
+>- et le [dernier](Documents/Extrait3_Silmarillion.txt) extrait lui fait suite et raconte la naissance du second arbre. Les deux texte du _Silmarillion_ témoignent d'un état plus achevé du récit.
 
 ## 🖥️ Pourquoi le XML ?
 
