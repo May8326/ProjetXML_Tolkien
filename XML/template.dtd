@@ -36,14 +36,15 @@
 <!ELEMENT particDesc (listPerson)>
 <!ELEMENT listPerson (org*, person*)>
 <!-- Characters and organisations (races) -->
-<!ELEMENT org (person*) >
+<!ELEMENT org (person*, note) >
 <!ATTLIST org type CDATA #REQUIRED xml:id ID #REQUIRED>
-<!ELEMENT person EMPTY>
+<!ELEMENT person (persName, note) >
+<!ELEMENT note (#PCDATA)>
 <!ATTLIST person xml:id ID #REQUIRED>
 <!-- Places -->
 <!ELEMENT settingDesc (listPlace)>
 <!ELEMENT listPlace (place+)>
-<!ELEMENT place EMPTY>
+<!ELEMENT place (geogName, note) >
 <!ATTLIST place xml:id ID #REQUIRED type CDATA #REQUIRED>
 
 <!-- TEXT BODY -->
