@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE XML SYSTEM "template.dtd">
+<XML>
+    <xmlHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>The Creation of the Two Trees of Valinor in the Book of Lost Tales</title>
+            </titleStmt>
+            <publicationStmt>
+                <p type="licence">This file contains texts protected by copyright. They are included
+                    solely for the purposes of study and analysis within the framework of an
+                    academic exercise. No redistribution or commercial use of these texts is
+                    permitted without the authorization of the rights holders.</p>
+                <publisher>Maëlys Gioan</publisher>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl type="book" xml:lang="fr">
+                    <title>Le livre des contes perdus. Première partie</title>
+                    <author>J. R. R. Tolkien</author>
+                    <editor resp="TROUVER">Christopher Tolkien</editor>
+                    <!-- trouver un bon rôle pour CT -->
+                    <editor resp="translator">Adam Tolkien</editor>
+                    <publisher>Christian Bourgeois</publisher>
+                    <pubPlace>Paris</pubPlace>
+                    <date when="1995" type="publication">1995</date>
+                    <biblScope unit="page" from="100" to="101"/>
+                </bibl>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <particDesc>
+
+                <!-- ____________________________________________ PERSONNES ___________________________________________________ -->
+
+                <listPerson>
+                    <org type="race" xml:id="Val_001">
+
+
+                        <person xml:id="Yav_001">
+                            <persName>Yavanna</persName>
+                            <note>Yavanna Kementári was a Valië, the Queen of Earth. Also known as
+                                Giver of Fruits, she was responsible for all growing things.</note>
+                        </person>
+
+                        <person xml:id="Nie_001">
+                            <persName>Nienna</persName>
+                            <note>Nienna was a Queen of the Valar, the sister of Mandos and Irmo,
+                                acquainted with grief and sorrow but also pity and courage.</note>
+                        </person>
+
+                        <note>The Valar (sg. Vala) were the Powers of Arda who shaped and ruled the
+                            world. They lived on the Western continent of Aman.</note>
+
+                    </org>
+                </listPerson>
+            </particDesc>
+            <settingDesc>
+
+                <!-- ____________________________________________ LIEUX ___________________________________________________ -->
+
+                <listPlace>
+                    <place xml:id="Cer_001" type="building">
+                        <geogName>Cercle du Destin</geogName>
+                        <note>Máhanaxar, also called Rithil-Anamo, was the Ring of Doom, probably a
+                            hall or court where the Valar held their councils.</note>
+                    </place>
+
+                    <place xml:id="Val_002" type="region">
+                        <geogName>Valinor</geogName>
+                        <note>Valinor or Valinórë was the realm of the Valar in central Aman.
+                            Valinor was the place to which the Valar moved after Almaren was
+                            destroyed by Melkor. Valinor properly refers to the inhabited lands of
+                            the continent of Aman, home to the Valar and the three kindreds of
+                            Elves: the Vanyar, some of the Noldor, and some of the Teleri. Valimar
+                            is its central city.</note>
+                    </place>
+
+                    <place xml:id="Tel_001" type="tree">
+                        <geogName>Telperion</geogName>
+                        <note>Telperion was the elder of the Two Trees of Valinor, called the White
+                            Tree, which shed silver light on the domain of the Valar. His leaves
+                            were of dark green, shining silver beneath, and his boughs were decked
+                            with brilliant flowers that shed a rain of silver dew, which was
+                            collected as a source of water and of light.</note>
+                    </place>
+
+                    <place xml:id="Lau_001" type="tree">
+                        <geogName>Laurelin</geogName>
+                        <note>Laurelin was the Golden Tree of Aman, the female mate of Telperion,
+                            and the younger of the Two Trees of Valinor. Laurelin had gold-trimmed
+                            leaves and her dew was collected by Varda in her Wells.</note>
+                    </place>
+
+                    <place xml:id="Ama_001" type="region">
+                        <geogName>Aman</geogName>
+                        <note>Aman, the Blessed Realm, was a continent that lay to the west of
+                            Middle-earth, across the great ocean Belegaer. It contained Valinor, the
+                            home of the Valar, and Eldamar, the kingdom of the Calaquendi.</note>
+                    </place>
+
+                </listPlace>
+
+                <!-- faire une liste des objets pour la référence... -->
+            </settingDesc>
+        </profileDesc>
+    </xmlHeader>
+    <text>
+        <body>
+            <div>
+                <p><persName ref="Yav_001">Yavanna</persName> [...] resta longtemps sur l'herbe
+                    verte pour chanter l'air sacré où elle décrivait toutes les choses qui poussent
+                    dans la terre. <persName ref="Nie_001">Nienna</persName> restait silencieuse et
+                    pensive, et ses larmes coulaient sur la mousse. Tous les <orgName ref="Val_001"
+                        >Valar</orgName> étaient rassemblés pour écouter le chant de <persName
+                        ref="Yav_001">Yavanna</persName>, ils étaient assis sans mot dire sur les
+                    trônes du conseil dans le <geogName ref="Cer_001">Mahanaxar</geogName>, le
+                        <geogName ref="Cer_001">Cercle du Destin</geogName>, près des portes d'or de
+                    la cité. <persName>Yavanna Kementari</persName> chantait devant eux et ils la
+                    regardaient.</p>
+                <p>A ce moment deux pousses fragiles apparurent sur la colline et un silence
+                    s'abattit sur le monde, nul autre bruit que le chant de <persName ref="Yav_001"
+                        >Yavanna</persName>, et grâce à ce chant les pousses grandirent, plus hautes
+                    et plus belles, et vinrent à s'épanouir. Ainsi naquirent au monde les deux
+                    Arbres de <geogName ref="Val_002">Valinor</geogName>, de toutes les oeuvres de
+                        <persName ref="Yav_001">Yavanna</persName> les plus célèbres et celles dont
+                    le sort est indissociable de tous les récits des <date
+                        when-custom="JoursAnciens" type="era">Jours Anciens</date>.</p>
+                <p>L'un avait des feuilles vert sombre, dont l'envers brillait comme l'argent, et il
+                    répandait de ses fleurs innombrables comme une inépuisable rosée de lumière
+                    argentée qui baignait le sol tacheté d'ombres frémissantcs. L'autre avait des
+                    feuilles vert tendre comme celles du hêtre nouveau, bordées d'une lisière d'or,
+                    ses fleurs se balançaient comme des grappes de flammes dorées, cornes lumineuses
+                    qui déversaient une pluie d'or sur la terre, et toute cette efflorescence
+                    inondait les alentours de chaleur et de lumière. L'un s'appelait <objectName
+                        ref="Tel_001">Telperion</objectName> dans le langage de <geogName
+                        ref="Val_002">Valinor</geogName>, et <geogName ref="Tel_001"
+                        >Silpion</geogName>, et <geogName ref="Tel_001">Ninquelote</geogName>, et
+                    d'autres noms, le second s'appelait <geogName ref="Lau_001">Laurelin</geogName>
+                    et <geogName ref="Lau_001">Malinalda</geogName> et <geogName ref="Lau_001"
+                        >Culurien</geogName> et fut chanté sous beaucoup d'autres noms.</p>
+                <p> Au bout de sept heures chaque arbre allait au plus fort de son éclat puis
+                    déclinait jusqu'à s'éteindre et renaitre à la vie une heure avant que l'autre ne
+                    cesse à son tour de brûler à <geogName ref="Val_002">Valinor</geogName>, il y
+                    avait ainsi deux fois par jour une heure paisible de lumière plus douce où
+                    l'éclat pâli des deux arbres mêlait les rayons d'or et d'argent. <geogName
+                        ref="Tel_001">Telperion</geogName>, l'aîné, fut le premier à grandir et à
+                    fleurir : la première heure qu'il répandit sa lumière, une blanche lueur
+                    d'aurore argentée, les <orgName ref="Val_001">Valar</orgName> ne la comptèrent
+                    point dans la suite des heures mais l'appelèrent l'<date
+                        when-custom="Heure Inaugurale" type="event">Heure Inaugurale</date> et
+                    comptèrent dès ce moment les années de leur règne sur <geogName ref="Val_002"
+                        >Valinor</geogName>. A la <date when-custom="6h_J1" type="event">sixième
+                        heure du premier jour</date>, et de tous les jours joyeux qui suivirent
+                    jusqu'au <date when-custom="Valinor_declin" type="era">Déclin de Valinor</date>,
+                        <geogName ref="Tel_001">Telperion</geogName> voyait pâlir ses fleurs, et à
+                    la douzième heure <geogName ref="Lau_001">Laurelin</geogName> sa lumière. Chaque
+                    journée des <orgName ref="Val_001">Valar</orgName> d'<geogName ref="Ama_001"
+                        >Aman</geogName> comptait douze heures et prenait fin avec la deuxième
+                    période où les lumières mêlées faiblissaient, <geogName ref="Lau_001"
+                        >Laurelin</geogName> sur son déclin et <geogName ref="Tel_001"
+                        >Telperion</geogName> sur son aurore. Et la lumière qu'ils répandaient se
+                    conservait longtemps avant d'être emportée dans les airs ou dissipée dans la
+                    terre ; la rosée de <geogName ref="Tel_001">Telperion</geogName> comme la pluie
+                    de <geogName ref="Lau_001">Laurelin</geogName> s'amassaient dans des réservoirs
+                    grands comme des lacs qui étaient les sources d'eau et de lumière du pays des
+                        <orgName ref="Val_001">Valar</orgName>. Ainsi commencèrent les <date
+                        when-custom="JoursHeureux" type="era">Jours Heureux</date> de Valinor, et le
+                    compte du Temps commença à cette époque.</p>
+            </div>
+        </body>
+    </text>
+</XML>
