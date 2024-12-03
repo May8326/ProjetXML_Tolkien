@@ -33,13 +33,14 @@
 
 <!-- List of the characters and places mentionned in the extracts  -->
 <!ELEMENT profileDesc (particDesc, settingDesc)>
-<!ELEMENT particDesc (listPerson)>
-<!ELEMENT listPerson (org*, person*)>
+<!ELEMENT particDesc (listOrg, listPerson)>
+<!ELEMENT listPerson (person*)>
+<!ELEMENT listOrg (org*) >
 <!-- Characters and organisations (races) -->
-<!ELEMENT org (person*, note) >
+<!ELEMENT org (orgName*, note) >
 <!ATTLIST org type CDATA #REQUIRED xml:id ID #REQUIRED>
 <!ELEMENT person (persName, note) >
-<!ELEMENT note (#PCDATA)>
+<!ELEMENT note (p*)>
 <!ATTLIST person xml:id ID #REQUIRED>
 <!-- Places -->
 <!ELEMENT settingDesc (listPlace)>
