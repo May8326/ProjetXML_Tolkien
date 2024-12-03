@@ -28,7 +28,7 @@
 | body            |                          |                               |
 | div             | @type @n                 | #REQUIRED #REQUIRED           |
 | head            |                          |                               |
-| pub 			  | @n                       | #REQUIRED                     |
+| pub 	  	  | @n                       | #REQUIRED                     |
 | gap             | @reason @quantity        | #IMPLIED #IMPLIED             |
 | p               | @type                    | #IMPLIED                      |
 | persName        | @ref                     | #IDREF                        |
