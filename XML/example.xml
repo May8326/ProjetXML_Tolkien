@@ -27,19 +27,41 @@
       </fileDesc>
       <profileDesc>
          <particDesc>
-            <listPerson>
-               <org type="race" xml:id="orgID_1"><!-- races and characters mentionned in the text with their id-->
-                  <person xml:id="persID_1"/>
-                  <person xml:id="persID_2"/>
+            <listOrg>
+               <org type="type" xml:id="orgID_1"><!-- races or people mentionned in the text with their id -->
+                  <orgName>Nom</orgName>
+                  <note>Note sur l'organisation</note>
                </org>
-               <org type="race" xml:id="orgID_2"/>
+               <org type="type" xml:id="orgID_2">
+                  <orgName>Nom</orgName>
+                  <note>Note sur l'organisation</note>
+               </org>
+            </listOrg>
+            <listPerson><!-- characters mentionned in the text with their id-->
+                  <person xml:id="persID_1">
+                     <persName>Nom</persName>
+                     <note>Note sur la personne</note>
+                  </person>
+                  <person xml:id="persID_2">
+                     <persName>Nom</persName>
+                     <note>Note sur la personne</note>
+                  </person>
             </listPerson>
          </particDesc>
          <settingDesc>
             <listPlace> <!-- places mentionned in the text with their id-->
-               <place xml:id="placeID_1" type="region"/>
-               <place xml:id="placeID_2" type="river"/>
-               <place xml:id="placeID_3" type="tree"/>
+               <place xml:id="placeID_1" type="region">
+                  <geogName>Nom</geogName>
+                  <note>Note sur le lieu</note>
+               </place>
+               <place xml:id="placeID_2" type="river">
+                  <geogName>Nom</geogName>
+                  <note>Note sur le lieu</note>
+               </place>
+               <place xml:id="placeID_3" type="tree">
+                  <geogName>Nom</geogName>
+                  <note>Note sur le lieu</note>
+               </place>
             </listPlace>
          </settingDesc>
       </profileDesc>
