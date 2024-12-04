@@ -136,10 +136,11 @@
     <text>
         <body>
             <div>
-                <p><persName ref="Yav_001">Yavanna</persName> [...] resta longtemps sur l'herbe
-                    verte pour chanter l'air sacré où elle décrivait toutes les choses qui poussent
-                    dans la terre. <persName ref="Nie_001">Nienna</persName> restait silencieuse et
-                    pensive, et ses larmes coulaient sur la mousse. Tous les <orgName ref="Val_001"
+                <p><persName ref="Yav_001">Yavanna</persName>
+                    <gap quantity="5w" reason="sampling"/> resta longtemps sur l'herbe verte pour
+                    chanter l'air sacré où elle décrivait toutes les choses qui poussent dans la
+                    terre. <persName ref="Nie_001">Nienna</persName> restait silencieuse et pensive,
+                    et ses larmes coulaient sur la mousse. Tous les <orgName ref="Val_001"
                         >Valar</orgName> étaient rassemblés pour écouter le chant de <persName
                         ref="Yav_001">Yavanna</persName>, ils étaient assis sans mot dire sur les
                     trônes du conseil dans le <geogName ref="Cer_001">Mahanaxar</geogName>, le
@@ -168,8 +169,8 @@
                     et <geogName ref="Lau_001">Malinalda</geogName> et <geogName ref="Lau_001"
                         >Culurien</geogName> et fut chanté sous beaucoup d'autres noms.</p>
                 <p> Au bout de sept heures chaque arbre allait au plus fort de son éclat puis
-                    déclinait jusqu'à s'éteindre et renaitre à la vie une heure avant que l'autre ne
-                    cesse à son tour de brûler à <geogName ref="Val_002">Valinor</geogName>, il y
+                    déclinait jusqu'à s'éteindre et renaître à la vie une heure avant que l'autre ne
+                    cesse à son tour de brûler. A <geogName ref="Val_002">Valinor</geogName>, il y
                     avait ainsi deux fois par jour une heure paisible de lumière plus douce où
                     l'éclat pâli des deux arbres mêlait les rayons d'or et d'argent. <geogName
                         ref="Tel_001">Telperion</geogName>, l'aîné, fut le premier à grandir et à
