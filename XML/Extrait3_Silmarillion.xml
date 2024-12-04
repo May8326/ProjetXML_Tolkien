@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE XML SYSTEM "template.dtd">
+<XML>
+    <xmlHeader>
+        <fileDesc>
+            <titleStmt>
+                <title/>
+            </titleStmt>
+            <publicationStmt>
+                <p/>
+                <publisher/>
+            </publicationStmt>
+            <sourceDesc>
+                <!-- Tolkien (John Ronald Reuel), Le Silmarillion : histoire des Silmarils, Christopher Tolkien (éd.), Pierre Alien (trad.), Paris, Christian Bourgeois, 1993, pages 30-31. -->
+                <bibl type="" xml:lang="">
+                    <title>Le Silmarillion : histoire des Silmarils</title>
+                    <author>John Ronald Reul Tolkien</author>
+                    <editor resp="TROUVER">Christopher Tolkien</editor>
+                    <!-- trouver un bon rôle pour CT -->
+                    <editor resp="translator">Pierre Alien</editor>
+                    <publisher>Christan Bourgeois</publisher>
+                    <pubPlace>Paris</pubPlace>
+                    <date>1993</date>
+                    <biblScope unit="page" from="30" to="31"/>
+                </bibl>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <particDesc>
+                <!-- ____________________________________________ ORGANISATION_________________________________________________ -->
+                
+                
+                <listOrg>
+                    <org type="race" xml:id="Val_001">
+                        <orgName>Valar</orgName>
+                        <note>
+                            <p>The Valar (sg. Vala) were the Powers of Arda who shaped and ruled the
+                                world. They lived on the Western continent of Aman.</p>
+                            <p>The Gods is a name wrongly given by Men to the Valar. When the first
+                                Edain newly arrived in Beleriand and disputed whether or not to
+                                remain, they referred to the Valar as gods in the West.They had not
+                                at this point been tutored by the Elves in such high matters.</p>
+                        </note>
+                    </org>
+                    
+                    <org type="race" xml:id="Ent_001">
+                        <orgName>Ent</orgName>
+                        <note>
+                            <p>The Ents were sentient, humanoid beings created at the request of
+                                Yavanna to protect the trees from other creatures, particularly
+                                Dwarves,and thus were called "Shepherds of the Trees".</p>
+                        </note>
+                    </org>
+                    
+                </listOrg>
+                
+                <!-- ____________________________________________ PERSONNES ___________________________________________________ -->
+                
+                <listPerson>
+                    
+                    <person xml:id="Yav_001">
+                        <persName>Yavanna</persName>
+                        <note>
+                            <p>Yavanna Kementári was a Valië, the Queen of Earth. Also known as
+                                Giver of Fruits, she was responsible for all growing things.</p>
+                            <p>Yavanna's surname was Palúrien ("bosom of earth"), a Qenya name, at
+                                an earlier stage of writing of The Silmarillion. Kementári first
+                                appeared as Kémi from root KEME (Gnomish Címir).</p>
+                        </note>
+                    </person>
+                    
+                    <person xml:id="Nie_001">
+                        <persName>Nienna</persName>
+                        <note>
+                            <p>Nienna was a Queen of the Valar, the sister of Mandos and Irmo,
+                                acquainted with grief and sorrow but also pity and courage.</p>
+                        </note>
+                    </person>
+                    
+                    <person xml:id="Aul_001">
+                        <persName>Aulë</persName>
+                        <note>
+                            <p>Aulë was a Vala and one of the Aratar, also known as the Smith and
+                                Smith of the Valar, concerned with rock, metal, nature of substances
+                                and works of craft.</p>
+                        </note>
+                    </person>
+                    
+                    <person xml:id="Van_001">
+                        <persName>Vana</persName>
+                        <note>
+                            <p>Vána, one of the Valier, was the younger sister of Yavanna and the
+                                spouse of Oromë. Among the seven Valier, Vána was the sixth
+                                named.</p>
+                        </note>
+                    </person>
+                    
+                </listPerson>
+            </particDesc>
+            <settingDesc>
+                
+                <!-- ____________________________________________ LIEUX ___________________________________________________ -->
+                
+                <listPlace>
+                    <place xml:id="Cer_001" type="building">
+                        <geogName>Cercle du Destin</geogName>
+                        <note>
+                            <p>Máhanaxar, also called Rithil-Anamo, was the Ring of Doom, probably a
+                                hall or court where the Valar held their councils.</p>
+                        </note>
+                    </place>
+                    
+                    <place xml:id="Val_002" type="region">
+                        <geogName>Valinor</geogName>
+                        <note>
+                            <p>Valinor or Valinórë was the realm of the Valar in central Aman.
+                                Valinor was the place to which the Valar moved after Almaren was
+                                destroyed by Melkor.</p>
+                            <p>Valinor properly refers to the inhabited lands of the continent of
+                                Aman, home to the Valar and the three kindreds of Elves: the Vanyar,
+                                some of the Noldor, and some of the Teleri. Valimar is its central
+                                city.</p>
+                        </note>
+                    </place>
+                    
+                    <place xml:id="Tel_001" type="tree">
+                        <geogName>Telperion</geogName>
+                        <note>
+                            <p>Telperion was the elder of the Two Trees of Valinor, called the White
+                                Tree, which shed silver light on the domain of the Valar. His leaves
+                                were of dark green, shining silver beneath, and his boughs were
+                                decked with brilliant flowers that shed a rain of silver dew, which
+                                was collected as a source of water and of light.</p>
+                        </note>
+                    </place>
+                    
+                    <place xml:id="Lau_001" type="tree">
+                        <geogName>Laurelin</geogName>
+                        <note>
+                            <p>Laurelin was the Golden Tree of Aman, the female mate of Telperion,
+                                and the younger of the Two Trees of Valinor. Laurelin had
+                                gold-trimmed leaves and her dew was collected by Varda in her
+                                Wells.</p>
+                        </note>
+                    </place>
+                    
+                    <place xml:id="Ama_001" type="region">
+                        <geogName>Aman</geogName>
+                        <note>
+                            <p>Aman, the Blessed Realm, was a continent that lay to the west of
+                                Middle-earth, across the great ocean Belegaer. It contained Valinor,
+                                the home of the Valar, and Eldamar, the kingdom of the
+                                Calaquendi.</p>
+                        </note>
+                    </place>
+                    
+                    <place xml:id="Kul_001" type="lake">
+                        <geogName>Kulullin</geogName>
+                        <note>
+                            <p>Kulullin and Silindrin were two cauldrons according to the early
+                                version of the legendarium in The Book of Lost Tales.</p>
+                        </note>
+                    </place>
+                    
+                </listPlace>
+                
+            </settingDesc>
+        </profileDesc>
+    </xmlHeader>
+    <text>
+        <body>
+            <div>
+                <p>Maintenant cela faisait douze heures depuis que Lindeloksë avait germé, et en
+                    cette heure un trait d'argent perça l'éclat de jaune, et voici, les Valar virent
+                    une pousse s'élever en cet endroit où furent déversés les flots de Silindrin.
+                    Son écorce était d'un blanc tendre qui brillait comme des perles et elle
+                    poussait aussi vite même que l'avait fait Laurelin, et à mesure qu'elle grandit
+                    la splendeur de Laurelin décrût et sa floraison brilla moins , jusqu'à ce que
+                    cet arbre-là ne rayonnât que doucement, comme dans le sommeil ; mais voici,
+                    l'autre crût maintenant jusqu'à atteindre une stature aussi élevée même que
+                    celle de Laurelin, et son tronc était mieux formé encore et plus élancé, et sa
+                    peau comme de la soie, mais ses branchages au-dessus étaient plus épais et plus
+                    enchevêtrés et ses tiges plus denses, et ils produisirent une masse de feuilles
+                    bleu-vert comme des pointes de lances.</p>
+
+                <p>Alors les Valar écarquillèrent les yeux, stupéfaits, mais Palurien dit :"cet
+                    arbre n'a encore cessé de pousser", et voici qu'au moment où elle dit ces mots
+                    l'arbre fleurit, et ses fleurs ne pendaient pas en grappes mais étaient comme
+                    des fleurs séparées qui poussaient sur des fines tiges qui se balançaient l'une
+                    vers l'autre, et qui étaient pareilles à de l'argent et des perles et des
+                    étoiles étincelantes et brûlaient d'une lumière blanche ; et il semblait que le
+                    coeur de l'arbre battait, et son rayonnement vacillait en cadence, croissant et
+                    décroissant. De la lumière comme de l'argent liquide se distillait de son tronc
+                    et gouttait sur le sol, et elle répandit une très large illuminiation de par la
+                    plaine, mais qui n'était pourtant pas aussi large que celle de l'arbre d'or, et
+                    à cause aussi de ses vastes feuilles et du battement de sa vie intérieure il
+                    projetait un continuel flottement d'ombres parmi les mares de son éclat, très
+                    nettes et noires ; à ce moment Lorien dit : "Voici ! Je vais donner un nom à cet
+                    arbre et le nommer Silpion", et cela a toujours été son nom depuis. Alors
+                    Palurien se leva et dit aux Dieux : "Recueillez maintenant toute la lumière qui
+                    goutte en forme liquide de ce bel arbre et entreposez-la dans Silindrin, et ne
+                    lui permettez de la quitter qu'avec frugalité. Voici, cet arbre, lorsque les
+                    douze heures de sa pleine lumière sont passées, décroîtra à nouveau, et à ce
+                    moment la lumière de Laurelin éclatera à nouveau ; mais pour qu'il ne puisse
+                    s'épuiser, arrosez-le encore et toujours à partir du chaudron de Kulullin à
+                    l'heure où Silpion s'affaiblit, mais à Silpion vous ferez de même, versant à
+                    nouveau la lumière recueillie de la profonde Silindrin à chaque décroissance de
+                    l'arbre d'or. La lumière est la sève de ces arbres et leur sève est lumière !
+                    "</p>
+
+                <p>Et avec ces mots elle signifiait que bien que ces arbres dussent être arrosés de
+                    lumière pour avoir de la sève et vivre pourtant de par leur croissance et leur
+                    être ils fabriquaient sans cesse de la lumière en grande abondance encore
+                    par-dessus et au-delà de ce que leurs racines aspiraient.</p>
+
+            </div>
+        </body>
+    </text>
+</XML>
