@@ -18,7 +18,7 @@ Encoding these texts in XML allows them to be presented in a structured manner, 
 
 By organizing the more conceptual elements of these excerpts, it is possible to link the names of characters, races, or places to specific identifiers and highlight the author's research and naming choices. 
 
-The [model](XML/template.dtd) chosen to structure these documents is largely inspired by the guidelines of the [TEI](https://www.tei-c.org)).
+The [model](XML/template.dtd) chosen to structure these documents is largely inspired by the guidelines of the [TEI](https://www.tei-c.org).
 
 
 
