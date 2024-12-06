@@ -64,13 +64,14 @@
 <!ATTLIST gap reason CDATA #IMPLIED quantity CDATA #IMPLIED>
 
 <!-- Names of characters, races, locations, and mythological objects cited in the extracts -->
-<!ELEMENT persName (#PCDATA)>
+<!ELEMENT persName (#PCDATA | addName)*>
+<!ELEMENT addName (#PCDATA) >
 <!ATTLIST persName ref IDREF #IMPLIED>
-<!ELEMENT geogName (#PCDATA)>
+<!ELEMENT geogName (#PCDATA | addName)*>
 <!ATTLIST geogName ref IDREF #IMPLIED>
-<!ELEMENT orgName (#PCDATA)>
+<!ELEMENT orgName (#PCDATA | addName)*>
 <!ATTLIST orgName ref IDREF #IMPLIED>
-<!ELEMENT objectName (#PCDATA)>
+<!ELEMENT objectName (#PCDATA | addName)*>
 <!ATTLIST objectName ref IDREF #REQUIRED>
 
 <!-- Dialogues with indication of the speaker (who) and the addressee (toWhom) -->
