@@ -28,8 +28,8 @@
         <profileDesc>
             <particDesc>
                 <!-- ____________________________________________ ORGANISATION_________________________________________________ -->
-                
-                
+
+
                 <listOrg>
                     <org type="race" xml:id="Val_001">
                         <orgName>Valar</orgName>
@@ -42,7 +42,7 @@
                                 at this point been tutored by the Elves in such high matters.</p>
                         </note>
                     </org>
-                    
+
                     <org type="race" xml:id="Ent_001">
                         <orgName>Ent</orgName>
                         <note>
@@ -51,24 +51,24 @@
                                 Dwarves,and thus were called "Shepherds of the Trees".</p>
                         </note>
                     </org>
-                    
+
                 </listOrg>
-                
+
                 <!-- ____________________________________________ PERSONNES ___________________________________________________ -->
-                
+
                 <listPerson>
-                    
+
                     <person xml:id="Yav_001">
                         <persName>Yavanna</persName>
                         <note>
                             <p>Yavanna Kementári was a Valië, the Queen of Earth. Also known as
-                                Giver of Fruits, she was responsible for all growing things.</p>
+                                Giver of Fruits, she was responsible for Pall growing things.</p>
                             <p>Yavanna's surname was Palúrien ("bosom of earth"), a Qenya name, at
                                 an earlier stage of writing of The Silmarillion. Kementári first
                                 appeared as Kémi from root KEME (Gnomish Címir).</p>
                         </note>
                     </person>
-                    
+
                     <person xml:id="Nie_001">
                         <persName>Nienna</persName>
                         <note>
@@ -76,7 +76,7 @@
                                 acquainted with grief and sorrow but also pity and courage.</p>
                         </note>
                     </person>
-                    
+
                     <person xml:id="Aul_001">
                         <persName>Aulë</persName>
                         <note>
@@ -85,7 +85,7 @@
                                 and works of craft.</p>
                         </note>
                     </person>
-                    
+
                     <person xml:id="Van_001">
                         <persName>Vana</persName>
                         <note>
@@ -94,13 +94,21 @@
                                 named.</p>
                         </note>
                     </person>
-                    
+
+                    <person xml:id="Irm_001">
+                        <persName>Irmo</persName>
+                        <note>
+                            <p>Irmo, commonly called Lórien after his place of dwelling, was a Vala
+                                who was known as "the master of visions and dreams."</p>
+                        </note>
+                    </person>
+
                 </listPerson>
             </particDesc>
             <settingDesc>
-                
+
                 <!-- ____________________________________________ LIEUX ___________________________________________________ -->
-                
+
                 <listPlace>
                     <place xml:id="Cer_001" type="building">
                         <geogName>Cercle du Destin</geogName>
@@ -109,7 +117,7 @@
                                 hall or court where the Valar held their councils.</p>
                         </note>
                     </place>
-                    
+
                     <place xml:id="Val_002" type="region">
                         <geogName>Valinor</geogName>
                         <note>
@@ -122,7 +130,7 @@
                                 city.</p>
                         </note>
                     </place>
-                    
+
                     <place xml:id="Tel_001" type="tree">
                         <geogName>Telperion</geogName>
                         <note>
@@ -133,7 +141,7 @@
                                 was collected as a source of water and of light.</p>
                         </note>
                     </place>
-                    
+
                     <place xml:id="Lau_001" type="tree">
                         <geogName>Laurelin</geogName>
                         <note>
@@ -143,7 +151,7 @@
                                 Wells.</p>
                         </note>
                     </place>
-                    
+
                     <place xml:id="Ama_001" type="region">
                         <geogName>Aman</geogName>
                         <note>
@@ -153,7 +161,7 @@
                                 Calaquendi.</p>
                         </note>
                     </place>
-                    
+
                     <place xml:id="Kul_001" type="lake">
                         <geogName>Kulullin</geogName>
                         <note>
@@ -161,52 +169,70 @@
                                 version of the legendarium in The Book of Lost Tales.</p>
                         </note>
                     </place>
-                    
+
+                    <place xml:id="Sil_001" type="lake">
+                        <geogName>Silindrin</geogName>
+                        <note>
+                            <p>Kulullin and Silindrin were two cauldrons according to the early
+                                version of the legendarium in The Book of Lost Tales.</p>
+                        </note>
+                    </place>
+
                 </listPlace>
-                
+
             </settingDesc>
         </profileDesc>
     </xmlHeader>
     <text>
         <body>
             <div>
-                <p>Maintenant cela faisait douze heures depuis que Lindeloksë avait germé, et en
-                    cette heure un trait d'argent perça l'éclat de jaune, et voici, les Valar virent
-                    une pousse s'élever en cet endroit où furent déversés les flots de Silindrin.
-                    Son écorce était d'un blanc tendre qui brillait comme des perles et elle
-                    poussait aussi vite même que l'avait fait Laurelin, et à mesure qu'elle grandit
-                    la splendeur de Laurelin décrût et sa floraison brilla moins , jusqu'à ce que
-                    cet arbre-là ne rayonnât que doucement, comme dans le sommeil ; mais voici,
-                    l'autre crût maintenant jusqu'à atteindre une stature aussi élevée même que
-                    celle de Laurelin, et son tronc était mieux formé encore et plus élancé, et sa
-                    peau comme de la soie, mais ses branchages au-dessus étaient plus épais et plus
-                    enchevêtrés et ses tiges plus denses, et ils produisirent une masse de feuilles
-                    bleu-vert comme des pointes de lances.</p>
+                <p>Maintenant cela faisait douze heures depuis que <geogName ref="Lau_001"
+                        >Lindeloksë</geogName> avait germé, et en cette heure un trait d'argent
+                    perça l'éclat de jaune, et voici, les <orgName ref="Val_001">Valar</orgName>
+                    virent une pousse s'élever en cet endroit où furent déversés les flots de
+                        <geogName ref="Sil_001">Silindrin</geogName>. Son écorce était d'un blanc
+                    tendre qui brillait comme des perles et elle poussait aussi vite même que
+                    l'avait fait <geogName ref="Lau_001">Laurelin</geogName>, et à mesure qu'elle
+                    grandit la splendeur de <geogName ref="Lau_001">Laurelin</geogName> décrût et sa
+                    floraison brilla moins , jusqu'à ce que cet arbre-là ne rayonnât que doucement,
+                    comme dans le sommeil ; mais voici, l'autre crût maintenant jusqu'à atteindre
+                    une stature aussi élevée même que celle de <geogName ref="Lau_001"
+                        >Laurelin</geogName>, et son tronc était mieux formé encore et plus élancé,
+                    et sa peau comme de la soie, mais ses branchages au-dessus étaient plus épais et
+                    plus enchevêtrés et ses tiges plus denses, et ils produisirent une masse de
+                    feuilles bleu-vert comme des pointes de lances.</p>
 
-                <p>Alors les Valar écarquillèrent les yeux, stupéfaits, mais Palurien dit :"cet
-                    arbre n'a encore cessé de pousser", et voici qu'au moment où elle dit ces mots
-                    l'arbre fleurit, et ses fleurs ne pendaient pas en grappes mais étaient comme
-                    des fleurs séparées qui poussaient sur des fines tiges qui se balançaient l'une
-                    vers l'autre, et qui étaient pareilles à de l'argent et des perles et des
-                    étoiles étincelantes et brûlaient d'une lumière blanche ; et il semblait que le
-                    coeur de l'arbre battait, et son rayonnement vacillait en cadence, croissant et
-                    décroissant. De la lumière comme de l'argent liquide se distillait de son tronc
-                    et gouttait sur le sol, et elle répandit une très large illuminiation de par la
-                    plaine, mais qui n'était pourtant pas aussi large que celle de l'arbre d'or, et
+                <p>Alors les <orgName ref="Val_001">Valar</orgName> écarquillèrent les yeux,
+                    stupéfaits, mais <persName ref="Yav_001">Palurien</persName> dit :<q
+                        who="Yav_001" toWhom="Val_001">"cet arbre n'a encore cessé de pousser"</q>,
+                    et voici qu'au moment où elle dit ces mots l'arbre fleurit, et ses fleurs ne
+                    pendaient pas en grappes mais étaient comme des fleurs séparées qui poussaient
+                    sur des fines tiges qui se balançaient l'une vers l'autre, et qui étaient
+                    pareilles à de l'argent et des perles et des étoiles étincelantes et brûlaient
+                    d'une lumière blanche ; et il semblait que le coeur de l'arbre battait, et son
+                    rayonnement vacillait en cadence, croissant et décroissant. De la lumière comme
+                    de l'argent liquide se distillait de son tronc et gouttait sur le sol, et elle
+                    répandit une très large illumination de par la plaine, mais qui n'était pourtant
+                    pas aussi large que celle de l'<geogName ref="Lau_001">arbre d'or</geogName>, et
                     à cause aussi de ses vastes feuilles et du battement de sa vie intérieure il
                     projetait un continuel flottement d'ombres parmi les mares de son éclat, très
-                    nettes et noires ; à ce moment Lorien dit : "Voici ! Je vais donner un nom à cet
-                    arbre et le nommer Silpion", et cela a toujours été son nom depuis. Alors
-                    Palurien se leva et dit aux Dieux : "Recueillez maintenant toute la lumière qui
-                    goutte en forme liquide de ce bel arbre et entreposez-la dans Silindrin, et ne
-                    lui permettez de la quitter qu'avec frugalité. Voici, cet arbre, lorsque les
-                    douze heures de sa pleine lumière sont passées, décroîtra à nouveau, et à ce
-                    moment la lumière de Laurelin éclatera à nouveau ; mais pour qu'il ne puisse
-                    s'épuiser, arrosez-le encore et toujours à partir du chaudron de Kulullin à
-                    l'heure où Silpion s'affaiblit, mais à Silpion vous ferez de même, versant à
-                    nouveau la lumière recueillie de la profonde Silindrin à chaque décroissance de
-                    l'arbre d'or. La lumière est la sève de ces arbres et leur sève est lumière !
-                    "</p>
+                    nettes et noires ; à ce moment <persName ref="Irm_001">Lorien</persName> dit :
+                        <q who="Irm_001" toWhom="Val_001">"Voici ! Je vais donner un nom à cet arbre
+                        et le nommer <geogName ref="Tel_001">Silpion</geogName>"</q>, et cela a
+                    toujours été son nom depuis. Alors <persName ref="Yav_001">Palurien</persName>
+                    se leva et dit aux <orgName ref="Val_001">Dieux</orgName> : <q who="Yav_001"
+                        toWhom="Val_001">"Recueillez maintenant toute la lumière qui goutte en forme
+                        liquide de ce bel arbre et entreposez-la dans <geogName ref="Sil_001"
+                            >Silindrin</geogName>, et ne lui permettez de la quitter qu'avec
+                        frugalité. Voici, cet arbre, lorsque les douze heures de sa pleine lumière
+                        sont passées, décroîtra à nouveau, et à ce moment la lumière de <geogName
+                            ref="Lau_001">Laurelin</geogName> éclatera à nouveau ; mais pour qu'il
+                        ne puisse s'épuiser, arrosez-le encore et toujours à partir du chaudron de
+                            <geogName ref="Kul_001">Kulullin</geogName> à l'heure où <geogName
+                            ref="Tel_001">Silpion</geogName> s'affaiblit, mais à <geogName ref="Tel_001">Silpion</geogName> vous ferez
+                        de même, versant à nouveau la lumière recueillie de la profonde <geogName ref="Sil_001">Silindrin</geogName> à
+                        chaque décroissance de l'<geogName ref="Lau_001">arbre d'or</geogName>. La lumière est la sève de ces arbres et
+                        leur sève est lumière ! "</q></p>
 
                 <p>Et avec ces mots elle signifiait que bien que ces arbres dussent être arrosés de
                     lumière pour avoir de la sève et vivre pourtant de par leur croissance et leur
