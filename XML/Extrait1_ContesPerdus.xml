@@ -18,8 +18,7 @@
                 <bibl type="book" xml:lang="fr">
                     <title>Le livre des contes perdus. Première partie</title>
                     <author>John Ronald Reul Tolkien</author>
-                    <editor resp="TROUVER">Christopher Tolkien</editor>
-                    <!-- trouver un bon rôle pour CT -->
+                    <editor resp="editor">Christopher Tolkien</editor>
                     <editor resp="translator">Adam Tolkien</editor>
                     <publisher>Christian Bourgeois</publisher>
                     <pubPlace>Paris</pubPlace>
