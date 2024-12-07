@@ -38,80 +38,82 @@
                 <listOrg>
                     <org type="race" xml:id="Val_001">
                         <orgName>Valar<addName>Gods</addName></orgName>
-                        
+
                         <note>
-                            <p>The Valar (sg. Vala) were the Powers of Arda who shaped and ruled the world. They
-                                lived on the Western continent of Aman.</p>
-                            <p>The Gods is a name wrongly given by Men to the Valar. When the first Edain newly
-                                arrived in Beleriand and disputed whether or not to remain, they referred to the
-                                Valar as gods in the West.They had not at this point been tutored by the Elves
-                                in such high matters.</p>
+                            <p>The Valar (sg. Vala) were the Powers of Arda who shaped and ruled the
+                                world. They lived on the Western continent of Aman.</p>
+                            <p>The Gods is a name wrongly given by Men to the Valar. When the first
+                                Edain newly arrived in Beleriand and disputed whether or not to
+                                remain, they referred to the Valar as gods in the West.They had not
+                                at this point been tutored by the Elves in such high matters.</p>
                         </note>
                     </org>
-                    
+
                     <org type="race" xml:id="Ent_001">
                         <orgName>Ent <addName>Shepherds of the Trees</addName></orgName>
                         <note>
-                            <p>The Ents were sentient, humanoid beings created at the request of Yavanna to
-                                protect the trees from other creatures, particularly Dwarves,and thus were
-                                called "Shepherds of the Trees".</p>
+                            <p>The Ents were sentient, humanoid beings created at the request of
+                                Yavanna to protect the trees from other creatures, particularly
+                                Dwarves,and thus were called "Shepherds of the Trees".</p>
                         </note>
                     </org>
-                    
+
                 </listOrg>
 
                 <!-- ____________________________________________ PERSONNES ___________________________________________________ -->
 
                 <listPerson>
-                    
+
                     <person xml:id="Yav_001">
                         <persName>Yavanna<addName>Palurien</addName>
                             <addName>Kémi</addName>
                             <addName>Dame de la Terre</addName></persName>
-                        
+
                         <note>
-                            <p>Yavanna Kementári was a Valië, the Queen of Earth. Also known as Giver of Fruits,
-                                she was responsible for Pall growing things.</p>
-                            <p>Yavanna's surname was Palúrien ("bosom of earth"), a Qenya name, at an earlier
-                                stage of writing of The Silmarillion. Kementári first appeared as Kémi from root
-                                KEME (Gnomish Címir).</p>
+                            <p>Yavanna Kementári was a Valië, the Queen of Earth. Also known as
+                                Giver of Fruits, she was responsible for Pall growing things.</p>
+                            <p>Yavanna's surname was Palúrien ("bosom of earth"), a Qenya name, at
+                                an earlier stage of writing of The Silmarillion. Kementári first
+                                appeared as Kémi from root KEME (Gnomish Címir).</p>
                         </note>
                     </person>
-                    
+
                     <person xml:id="Nie_001">
                         <persName>Nienna</persName>
                         <note>
-                            <p>Nienna was a Queen of the Valar, the sister of Mandos and Irmo, acquainted with
-                                grief and sorrow but also pity and courage.</p>
+                            <p>Nienna was a Queen of the Valar, the sister of Mandos and Irmo,
+                                acquainted with grief and sorrow but also pity and courage.</p>
                         </note>
                     </person>
-                    
+
                     <person xml:id="Aul_001">
                         <persName>Aulë</persName>
                         <note>
-                            <p>Aulë was a Vala and one of the Aratar, also known as the Smith and Smith of the
-                                Valar, concerned with rock, metal, nature of substances and works of craft.</p>
+                            <p>Aulë was a Vala and one of the Aratar, also known as the Smith and
+                                Smith of the Valar, concerned with rock, metal, nature of substances
+                                and works of craft.</p>
                         </note>
                     </person>
-                    
+
                     <person xml:id="Van_001">
                         <persName>Vana</persName>
                         <note>
-                            <p>Vána, one of the Valier, was the younger sister of Yavanna and the spouse of
-                                Oromë. Among the seven Valier, Vána was the sixth named.</p>
+                            <p>Vána, one of the Valier, was the younger sister of Yavanna and the
+                                spouse of Oromë. Among the seven Valier, Vána was the sixth
+                                named.</p>
                         </note>
                     </person>
-                    
+
                     <person xml:id="Irm_001">
                         <persName>Irmo <addName>Lorien</addName></persName>
                         <note>
-                            <p>Irmo, commonly called Lórien after his place of dwelling, was a Vala who was
-                                known as "the master of visions and dreams."</p>
+                            <p>Irmo, commonly called Lórien after his place of dwelling, was a Vala
+                                who was known as "the master of visions and dreams."</p>
                         </note>
                     </person>
-                    
+
                 </listPerson>
-                
+
             </particDesc>
             <settingDesc>
 
@@ -121,73 +123,77 @@
                     <place xml:id="Cer_001" type="building">
                         <geogName>Cercle du Destin <addName>Máhanaxar</addName></geogName>
                         <note>
-                            <p>Máhanaxar, also called Rithil-Anamo, was the Ring of Doom, probably a hall or
-                                court where the Valar held their councils.</p>
+                            <p>Máhanaxar, also called Rithil-Anamo, was the Ring of Doom, probably a
+                                hall or court where the Valar held their councils.</p>
                         </note>
                     </place>
-                    
+
                     <place xml:id="Val_002" type="region">
                         <geogName>Valinor</geogName>
                         <note>
-                            <p>Valinor or Valinórë was the realm of the Valar in central Aman. Valinor was the
-                                place to which the Valar moved after Almaren was destroyed by Melkor.</p>
-                            <p>Valinor properly refers to the inhabited lands of the continent of Aman, home to
-                                the Valar and the three kindreds of Elves: the Vanyar, some of the Noldor, and
-                                some of the Teleri. Valimar is its central city.</p>
+                            <p>Valinor or Valinórë was the realm of the Valar in central Aman.
+                                Valinor was the place to which the Valar moved after Almaren was
+                                destroyed by Melkor.</p>
+                            <p>Valinor properly refers to the inhabited lands of the continent of
+                                Aman, home to the Valar and the three kindreds of Elves: the Vanyar,
+                                some of the Noldor, and some of the Teleri. Valimar is its central
+                                city.</p>
                         </note>
                     </place>
-                    
+
                     <place xml:id="Tel_001" type="tree">
                         <geogName>Telperion <addName>Silpion</addName>
                             <addName>Ninquelote</addName></geogName>
                         <note>
-                            <p>Telperion was the elder of the Two Trees of Valinor, called the White Tree, which
-                                shed silver light on the domain of the Valar. His leaves were of dark green,
-                                shining silver beneath, and his boughs were decked with brilliant flowers that
-                                shed a rain of silver dew, which was collected as a source of water and of
-                                light.</p>
+                            <p>Telperion was the elder of the Two Trees of Valinor, called the White
+                                Tree, which shed silver light on the domain of the Valar. His leaves
+                                were of dark green, shining silver beneath, and his boughs were
+                                decked with brilliant flowers that shed a rain of silver dew, which
+                                was collected as a source of water and of light.</p>
                         </note>
                     </place>
-                    
+
                     <place xml:id="Lau_001" type="tree">
                         <geogName>Laurelin <addName>Lindelokse</addName>
                             <addName>Golden Tree</addName>
                             <addName>Malinalda</addName>
                             <addName>Culurien</addName></geogName>
                         <note>
-                            <p>Laurelin was the Golden Tree of Aman, the female mate of Telperion, and the
-                                younger of the Two Trees of Valinor. Laurelin had gold-trimmed leaves and her
-                                dew was collected by Varda in her Wells.</p>
+                            <p>Laurelin was the Golden Tree of Aman, the female mate of Telperion,
+                                and the younger of the Two Trees of Valinor. Laurelin had
+                                gold-trimmed leaves and her dew was collected by Varda in her
+                                Wells.</p>
                         </note>
                     </place>
-                    
+
                     <place xml:id="Ama_001" type="region">
                         <geogName>Aman</geogName>
                         <note>
-                            <p>Aman, the Blessed Realm, was a continent that lay to the west of Middle-earth,
-                                across the great ocean Belegaer. It contained Valinor, the home of the Valar,
-                                and Eldamar, the kingdom of the Calaquendi.</p>
+                            <p>Aman, the Blessed Realm, was a continent that lay to the west of
+                                Middle-earth, across the great ocean Belegaer. It contained Valinor,
+                                the home of the Valar, and Eldamar, the kingdom of the
+                                Calaquendi.</p>
                         </note>
                     </place>
-                    
+
                     <place xml:id="Kul_001" type="lake">
                         <geogName>Kulullin</geogName>
                         <note>
-                            <p>Kulullin and Silindrin were two cauldrons according to the early version of the
-                                legendarium in The Book of Lost Tales.</p>
+                            <p>Kulullin and Silindrin were two cauldrons according to the early
+                                version of the legendarium in The Book of Lost Tales.</p>
                         </note>
                     </place>
-                    
+
                     <place xml:id="Sil_001" type="lake">
                         <geogName>Silindrin</geogName>
                         <note>
-                            <p>Kulullin and Silindrin were two cauldrons according to the early version of the
-                                legendarium in The Book of Lost Tales.</p>
+                            <p>Kulullin and Silindrin were two cauldrons according to the early
+                                version of the legendarium in The Book of Lost Tales.</p>
                         </note>
                     </place>
-                    
+
                 </listPlace>
-                
+
             </settingDesc>
         </profileDesc>
     </xmlHeader>
@@ -195,7 +201,8 @@
         <body>
             <div>
                 <p>Alors vint <persName ref="Yav_001">Palurien</persName>, <persName ref="Yav_001"
-                        >Kémi</persName> elle-même, la <persName ref="Yav_001">Dame de la Terre</persName>, épouse d'<persName ref="Aul_001">Aulë</persName>, mère du
+                        >Kémi</persName> elle-même, la <persName ref="Yav_001">Dame de la
+                        Terre</persName>, épouse d'<persName ref="Aul_001">Aulë</persName>, mère du
                         <orgName ref="Ent_001">seigneur des forêts</orgName>, et elle tissa des
                     sorts autour de ces deux endroits, de profonds enchantements de vie et de
                     croissance et de production de feuilles, de bourgeonnement et de production de
@@ -223,15 +230,10 @@
                     et de la lumière tombait des pointes de celles-ci et éclaboussait le sol avec un
                     doux bruit.</p>
                 <p>Alors les <orgName ref="Val_001">Dieux</orgName> firent-ils la louange de
-                        <persName ref="Van_001">Vana</persName> et <persName ref="Yav_001"
-                        >Palurien</persName> et se réjouirent dans la lumière, leur disant : <q
-                        who="Val_001" toWhom="Yav_001">"Voici en vérité un très bel arbre, et il
-                        doit posséder un nom qui lui soit propre"</q> et <persName ref="Yav_001"
-                        >Kémi</persName> dit : <q who="Yav_001" toWhom="Val_001">"Qu'il soit nommé
+                        <persName ref="Van_001">Vana</persName> et <persName ref="Yav_001">Palurien</persName> et se réjouirent dans la lumière, leur disant : <q who="Val_001" toWhom="Yav_001">"Voici en vérité un très bel arbre, et il
+                        doit posséder un nom qui lui soit propre"</q> et <persName ref="Yav_001">Kémi</persName> dit : <q who="Yav_001" toWhom="Val_001">"Qu'il soit nommé
                             <geogName ref="Lau_001">Laurelin</geogName>, pour l'éclat de sa
-                        floraison et la musique de sa rosée"</q>, mais <persName ref="Van_001"
-                        >Vana</persName> l'aurait nommé <geogName ref="Lau_001"
-                        >Lindeloksë</geogName>, et les deux noms demeurent.</p>
+                        floraison et la musique de sa rosée"</q>, mais <persName ref="Van_001">Vana</persName> l'aurait nommé <geogName ref="Lau_001">Lindeloksë</geogName>, et les deux noms demeurent.</p>
             </div>
         </body>
     </text>
