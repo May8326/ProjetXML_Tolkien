@@ -29,16 +29,13 @@
         </fileDesc>
         <profileDesc>
             <particDesc>
-
-
-
                 <!-- ____________________________________________ ORGANISATION_________________________________________________ -->
-
-
+                
+                
                 <listOrg>
                     <org type="race" xml:id="Val_001">
                         <orgName>Valar<addName>Gods</addName></orgName>
-
+                        
                         <note>
                             <p>The Valar (sg. Vala) were the Powers of Arda who shaped and ruled the
                                 world. They lived on the Western continent of Aman.</p>
@@ -48,7 +45,7 @@
                                 at this point been tutored by the Elves in such high matters.</p>
                         </note>
                     </org>
-
+                    
                     <org type="race" xml:id="Ent_001">
                         <orgName>Ent <addName>Shepherds of the Trees</addName></orgName>
                         <note>
@@ -57,18 +54,17 @@
                                 Dwarves,and thus were called "Shepherds of the Trees".</p>
                         </note>
                     </org>
-
+                    
                 </listOrg>
-
                 <!-- ____________________________________________ PERSONNES ___________________________________________________ -->
-
+                
                 <listPerson>
-
+                    
                     <person xml:id="Yav_001">
                         <persName>Yavanna<addName>Palurien</addName>
                             <addName>Kémi</addName>
                             <addName>Dame de la Terre</addName></persName>
-
+                        
                         <note>
                             <p>Yavanna Kementári was a Valië, the Queen of Earth. Also known as
                                 Giver of Fruits, she was responsible for Pall growing things.</p>
@@ -77,7 +73,7 @@
                                 appeared as Kémi from root KEME (Gnomish Címir).</p>
                         </note>
                     </person>
-
+                    
                     <person xml:id="Nie_001">
                         <persName>Nienna</persName>
                         <note>
@@ -85,7 +81,7 @@
                                 acquainted with grief and sorrow but also pity and courage.</p>
                         </note>
                     </person>
-
+                    
                     <person xml:id="Aul_001">
                         <persName>Aulë</persName>
                         <note>
@@ -94,7 +90,7 @@
                                 and works of craft.</p>
                         </note>
                     </person>
-
+                    
                     <person xml:id="Van_001">
                         <persName>Vana</persName>
                         <note>
@@ -103,7 +99,7 @@
                                 named.</p>
                         </note>
                     </person>
-
+                    
                     <person xml:id="Irm_001">
                         <persName>Irmo <addName>Lorien</addName></persName>
                         <note>
@@ -111,14 +107,27 @@
                                 who was known as "the master of visions and dreams."</p>
                         </note>
                     </person>
-
+                    
+                    <person xml:id="Man_001">
+                        <persName>Mandos</persName>
+                        <note>
+                            <p>Mandos was the Doomsman of the Valar who pronounced judgement in
+                                matters of fate. He was the keeper of the slain in his Halls in the
+                                west of Valinor.</p>
+                            <p>His actual, less common name was Namo. He was the "elder brother" of
+                                the Vala Irmo. He is one of the Aratar. Together, Mandos and Irmo
+                                are called the Fëanturi ("Masters of Spirits).Their sister is
+                                Nienna. Vairë the Weaver is his wife.</p>
+                        </note>
+                    </person>
+                    
                 </listPerson>
-
+                
             </particDesc>
             <settingDesc>
-
+                
                 <!-- ____________________________________________ LIEUX ___________________________________________________ -->
-
+                
                 <listPlace>
                     <place xml:id="Cer_001" type="building">
                         <geogName>Cercle du Destin <addName>Máhanaxar</addName></geogName>
@@ -127,7 +136,7 @@
                                 hall or court where the Valar held their councils.</p>
                         </note>
                     </place>
-
+                    
                     <place xml:id="Val_002" type="region">
                         <geogName>Valinor</geogName>
                         <note>
@@ -140,7 +149,7 @@
                                 city.</p>
                         </note>
                     </place>
-
+                    
                     <place xml:id="Tel_001" type="tree">
                         <geogName>Telperion <addName>Silpion</addName>
                             <addName>Ninquelote</addName></geogName>
@@ -152,7 +161,7 @@
                                 was collected as a source of water and of light.</p>
                         </note>
                     </place>
-
+                    
                     <place xml:id="Lau_001" type="tree">
                         <geogName>Laurelin <addName>Lindelokse</addName>
                             <addName>Golden Tree</addName>
@@ -165,7 +174,7 @@
                                 Wells.</p>
                         </note>
                     </place>
-
+                    
                     <place xml:id="Ama_001" type="region">
                         <geogName>Aman</geogName>
                         <note>
@@ -175,7 +184,7 @@
                                 Calaquendi.</p>
                         </note>
                     </place>
-
+                    
                     <place xml:id="Kul_001" type="lake">
                         <geogName>Kulullin</geogName>
                         <note>
@@ -183,7 +192,7 @@
                                 version of the legendarium in The Book of Lost Tales.</p>
                         </note>
                     </place>
-
+                    
                     <place xml:id="Sil_001" type="lake">
                         <geogName>Silindrin</geogName>
                         <note>
@@ -191,9 +200,9 @@
                                 version of the legendarium in The Book of Lost Tales.</p>
                         </note>
                     </place>
-
+                    
                 </listPlace>
-
+                
             </settingDesc>
         </profileDesc>
     </xmlHeader>
