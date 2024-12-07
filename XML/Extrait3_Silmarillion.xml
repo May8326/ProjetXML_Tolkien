@@ -4,15 +4,18 @@
     <xmlHeader>
         <fileDesc>
             <titleStmt>
-                <title/>
+                <title>The Creation of the Two Trees of Valinor in the Silmarillion</title>
             </titleStmt>
             <publicationStmt>
-                <p/>
-                <publisher/>
+                <p type="license">This file contains texts protected by copyright. They are included
+                    solely for the purposes of study and analysis within the framework of an
+                    academic exercise. No redistribution or commercial use of these texts is
+                    permitted without the authorization of the rights holders.</p>
+                <publisher>Maëlys Gioan</publisher>
             </publicationStmt>
             <sourceDesc>
                 <!-- Tolkien (John Ronald Reuel), Le Silmarillion : histoire des Silmarils, Christopher Tolkien (éd.), Pierre Alien (trad.), Paris, Christian Bourgeois, 1993, pages 30-31. -->
-                <bibl type="" xml:lang="">
+                <bibl type="book" xml:lang="fr">
                     <title>Le Silmarillion : histoire des Silmarils</title>
                     <author>John Ronald Reul Tolkien</author>
                     <editor resp="TROUVER">Christopher Tolkien</editor>
