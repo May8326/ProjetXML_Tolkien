@@ -38,7 +38,7 @@
                         
                         <note>
                             <p>The Valar (sg. Vala) were the Powers of Arda who shaped and ruled the
-                                world. They lived on the Western continent of Aman.</p>
+                                world. They lived on the Western continent of <geogName ref="Ama_001">Aman</geogName>.</p>
                             <p>The Gods is a name wrongly given by Men to the Valar. When the first
                                 Edain newly arrived in Beleriand and disputed whether or not to
                                 remain, they referred to the Valar as gods in the West.They had not
@@ -50,8 +50,9 @@
                         <orgName>Ent <addName>Shepherds of the Trees</addName></orgName>
                         <note>
                             <p>The Ents were sentient, humanoid beings created at the request of
-                                Yavanna to protect the trees from other creatures, particularly
-                                Dwarves,and thus were called "Shepherds of the Trees".</p>
+                                <persName ref="Yav_001">Yavanna</persName> to protect the trees
+                                from other creatures, particularly Dwarves,and thus were called
+                                "Shepherds of the Trees".</p>
                         </note>
                     </org>
                     
@@ -66,8 +67,9 @@
                             <addName>Dame de la Terre</addName></persName>
                         
                         <note>
-                            <p>Yavanna Kementári was a Valië, the Queen of Earth. Also known as
-                                Giver of Fruits, she was responsible for Pall growing things.</p>
+                            <p>Yavanna Kementári was a <orgName ref="Val_001">Valië</orgName>, the
+                                Queen of Earth. Also known as Giver of Fruits, she was responsible
+                                for all growing things.</p>
                             <p>Yavanna's surname was Palúrien ("bosom of earth"), a Qenya name, at
                                 an earlier stage of writing of The Silmarillion. Kementári first
                                 appeared as Kémi from root KEME (Gnomish Címir).</p>
@@ -77,25 +79,29 @@
                     <person xml:id="Nie_001">
                         <persName>Nienna</persName>
                         <note>
-                            <p>Nienna was a Queen of the Valar, the sister of Mandos and Irmo,
-                                acquainted with grief and sorrow but also pity and courage.</p>
+                            <p>Nienna was a Queen of the <orgName ref="Val_001">Valar</orgName>, the
+                                sister of <persName ref="Man_001">Mandos</persName> and <persName
+                                    ref="Irm_001">Irmo</persName>, acquainted with grief and sorrow
+                                but also pity and courage.</p>
                         </note>
                     </person>
                     
                     <person xml:id="Aul_001">
                         <persName>Aulë</persName>
                         <note>
-                            <p>Aulë was a Vala and one of the Aratar, also known as the Smith and
-                                Smith of the Valar, concerned with rock, metal, nature of substances
-                                and works of craft.</p>
+                            <p>Aulë was a <orgName ref="Val_001">Vala</orgName> and one of the
+                                Aratar, also known as the Smith and Smith of the <orgName
+                                    ref="Val_001">Valar</orgName>, concerned with rock, metal,
+                                nature of substances and works of craft.</p>
                         </note>
                     </person>
                     
                     <person xml:id="Van_001">
                         <persName>Vana</persName>
                         <note>
-                            <p>Vána, one of the Valier, was the younger sister of Yavanna and the
-                                spouse of Oromë. Among the seven Valier, Vána was the sixth
+                            <p>Vána, one of the <orgName ref="Val_001">Valier</orgName>, was the
+                                younger sister of <persName ref="Yav_001">Yavanna</persName> and the
+                                spouse of Oromë. Among the seven <orgName ref="Val_001">Valier</orgName>, Vána was the sixth
                                 named.</p>
                         </note>
                     </person>
@@ -103,7 +109,7 @@
                     <person xml:id="Irm_001">
                         <persName>Irmo <addName>Lorien</addName></persName>
                         <note>
-                            <p>Irmo, commonly called Lórien after his place of dwelling, was a Vala
+                            <p>Irmo, commonly called Lórien after his place of dwelling, was a <persName ref="Val_001">Vala</persName>
                                 who was known as "the master of visions and dreams."</p>
                         </note>
                     </person>
@@ -111,13 +117,13 @@
                     <person xml:id="Man_001">
                         <persName>Mandos</persName>
                         <note>
-                            <p>Mandos was the Doomsman of the Valar who pronounced judgement in
+                            <p>Mandos was the Doomsman of the <persName ref="Val_001">Valar</persName> who pronounced judgement in
                                 matters of fate. He was the keeper of the slain in his Halls in the
-                                west of Valinor.</p>
+                                west of <geogName ref="Val_002">Valinor</geogName>.</p>
                             <p>His actual, less common name was Namo. He was the "elder brother" of
-                                the Vala Irmo. He is one of the Aratar. Together, Mandos and Irmo
+                                the Vala <persName ref="Irm_001">Irmo</persName>. He is one of the Aratar. Together, Mandos and <persName ref="Irm_001">Irmo</persName>
                                 are called the Fëanturi ("Masters of Spirits).Their sister is
-                                Nienna. Vairë the Weaver is his wife.</p>
+                                <persName ref="Nie_001">Nienna</persName>. Vairë the Weaver is his wife.</p>
                         </note>
                     </person>
                     
@@ -133,18 +139,18 @@
                         <geogName>Cercle du Destin <addName>Máhanaxar</addName></geogName>
                         <note>
                             <p>Máhanaxar, also called Rithil-Anamo, was the Ring of Doom, probably a
-                                hall or court where the Valar held their councils.</p>
+                                hall or court where the <persName ref="Val_001">Valar</persName> held their councils.</p>
                         </note>
                     </place>
                     
                     <place xml:id="Val_002" type="region">
                         <geogName>Valinor</geogName>
                         <note>
-                            <p>Valinor or Valinórë was the realm of the Valar in central Aman.
-                                Valinor was the place to which the Valar moved after Almaren was
+                            <p>Valinor or Valinórë was the realm of the <orgName ref="Val_001">Valar</orgName> in central <geogName ref="Ama_001">Aman</geogName>.
+                                Valinor was the place to which the <orgName ref="Val_001">Valar</orgName> moved after Almaren was
                                 destroyed by Melkor.</p>
                             <p>Valinor properly refers to the inhabited lands of the continent of
-                                Aman, home to the Valar and the three kindreds of Elves: the Vanyar,
+                                <geogName ref="Ama_001">Aman</geogName>, home to the <persName ref="Val_001">Valar</persName> and the three kindreds of Elves: the Vanyar,
                                 some of the Noldor, and some of the Teleri. Valimar is its central
                                 city.</p>
                         </note>
@@ -154,8 +160,8 @@
                         <geogName>Telperion <addName>Silpion</addName>
                             <addName>Ninquelote</addName></geogName>
                         <note>
-                            <p>Telperion was the elder of the Two Trees of Valinor, called the White
-                                Tree, which shed silver light on the domain of the Valar. His leaves
+                            <p>Telperion was the elder of the Two Trees of <geogName ref="Val_002">Valinor</geogName>, called the White
+                                Tree, which shed silver light on the domain of the <persName ref="Val_001">Valar</persName>. His leaves
                                 were of dark green, shining silver beneath, and his boughs were
                                 decked with brilliant flowers that shed a rain of silver dew, which
                                 was collected as a source of water and of light.</p>
@@ -168,7 +174,7 @@
                             <addName>Malinalda</addName>
                             <addName>Culurien</addName></geogName>
                         <note>
-                            <p>Laurelin was the Golden Tree of Aman, the female mate of Telperion,
+                            <p>Laurelin was the Golden Tree of <geogName ref="Ama_001">Aman</geogName>, the female mate of <geogName ref="Tel_001">Telperion</geogName>,
                                 and the younger of the Two Trees of Valinor. Laurelin had
                                 gold-trimmed leaves and her dew was collected by Varda in her
                                 Wells.</p>
@@ -179,8 +185,8 @@
                         <geogName>Aman</geogName>
                         <note>
                             <p>Aman, the Blessed Realm, was a continent that lay to the west of
-                                Middle-earth, across the great ocean Belegaer. It contained Valinor,
-                                the home of the Valar, and Eldamar, the kingdom of the
+                                Middle-earth, across the great ocean Belegaer. It contained <geogName ref="Val_001">Valinor</geogName>,
+                                the home of the <orgName ref="Val_001">Valar</orgName>, and Eldamar, the kingdom of the
                                 Calaquendi.</p>
                         </note>
                     </place>
