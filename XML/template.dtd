@@ -37,15 +37,17 @@
 <!ELEMENT listPerson (person*)>
 <!ELEMENT listOrg (org*) >
 <!-- Characters and organisations (races) -->
-<!ELEMENT org (orgName*, note) >
+<!ELEMENT org (orgName,link, note) >
+<!ELEMENT link (EMPTY)>
+<!ATTLIST link target CDATA #REQUIRED >
 <!ATTLIST org type CDATA #REQUIRED xml:id ID #REQUIRED>
-<!ELEMENT person (persName, note) >
+<!ELEMENT person (persName, link, note) >
 <!ELEMENT note (p*)>
 <!ATTLIST person xml:id ID #REQUIRED>
 <!-- Places -->
 <!ELEMENT settingDesc (listPlace)>
 <!ELEMENT listPlace (place+)>
-<!ELEMENT place (geogName, note) >
+<!ELEMENT place (geogName, link,note) >
 <!ATTLIST place xml:id ID #REQUIRED type CDATA #REQUIRED>
 
 <!-- TEXT BODY -->
