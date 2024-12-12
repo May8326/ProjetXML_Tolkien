@@ -38,7 +38,7 @@
 <!ELEMENT listOrg (org*) >
 <!-- Characters and organisations (races) -->
 <!ELEMENT org (orgName,link, note) >
-<!ELEMENT link (EMPTY)>
+<!ELEMENT link EMPTY>
 <!ATTLIST link target CDATA #REQUIRED >
 <!ATTLIST org type CDATA #REQUIRED xml:id ID #REQUIRED>
 <!ELEMENT person (persName, link, note) >
