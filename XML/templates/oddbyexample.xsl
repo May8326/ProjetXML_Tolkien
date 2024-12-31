@@ -10,7 +10,7 @@
   xmlns:n="www.example.com" xmlns:rng="http://relaxng.org/ns/structure/1.0"
   xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns="http://www.tei-c.org/ns/1.0"
   exclude-result-prefixes="rng tei n"
-  xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="2.0">
+  xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="1.0">
   <!--
 This software is dual-licensed:
 1. Distributed under a Creative Commons Attribution-ShareAlike 3.0
@@ -59,7 +59,7 @@ attributes that it uses, put that in the same variable.
 4) for every attribute which is of type "enumerated", construct a
 valList
 -->
-  <xsl:output indent="yes"/>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
   <!-- name of odd -->
   <xsl:param name="schema">oddbyexample</xsl:param>
   <!-- whether to do all the global attributes -->
