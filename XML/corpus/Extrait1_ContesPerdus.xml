@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XML>
-    <xmlHeader>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
         <fileDesc>
             <titleStmt>
                 <title>The Creation of the Two Trees of Valinor in the Book of Lost Tales</title>
+                <author>Maëlys Gioan</author>
             </titleStmt>
             <publicationStmt>
-                <p type="license">This file contains texts protected by copyright. They are included
-                    solely for the purposes of study and analysis within the framework of an
-                    academic exercise. No redistribution or commercial use of these texts is
-                    permitted without the authorization of the rights holders.</p>
-
                 <publisher>Maëlys Gioan</publisher>
+                <date>2025</date>
+                <availability>
+                    <licence>This file contains texts protected by copyright. They are included
+                        solely for the purposes of study and analysis within the framework of an
+                        academic exercise. No redistribution or commercial use of these texts is
+                        permitted without the authorization of the rights holders.</licence>
+                </availability>
             </publicationStmt>
             <sourceDesc>
                 <bibl type="book" xml:lang="fr">
@@ -26,6 +29,19 @@
                 </bibl>
             </sourceDesc>
         </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p> This file was created as part of an exercise for the XML course taught in the
+                    second year of the Master's program in Technologies Numériques appliquées à
+                    l'Histoire (TNAH) at the École nationale des chartes.</p>
+            </projectDesc>
+            <samplingDecl>
+                <p> The samples selected for this corpus come from two works discussing the creation
+                    of the Two Trees of Valinor in Tolkien's mythology. Each text was limited to a
+                    maximum of 3000 characters to comply with the exercise's constraints and to
+                    ensure uniform data processing. </p>
+            </samplingDecl>
+        </encodingDesc>
         <profileDesc>
             <particDesc>
                 <!-- ____________________________________________ ORGANISATION_________________________________________________ -->
@@ -172,35 +188,6 @@
                         </note>
                     </place>
 
-                    <place xml:id="Tel_001" type="tree">
-                        <geogName>Telperion <addName>Silpion</addName>
-                            <addName>Ninquelote</addName></geogName>
-                        <link target="https://tolkiengateway.net/wiki/Telperion"/>
-                        <note>
-                            <p>Telperion was the elder of the Two Trees of <geogName ref="Val_002"
-                                    >Valinor</geogName>, called the White Tree, which shed silver
-                                light on the domain of the <persName ref="Val_001">Valar</persName>.
-                                His leaves were of dark green, shining silver beneath, and his
-                                boughs were decked with brilliant flowers that shed a rain of silver
-                                dew, which was collected as a source of water and of light.</p>
-                        </note>
-                    </place>
-
-                    <place xml:id="Lau_001" type="tree">
-                        <geogName>Laurelin <addName>Lindelokse</addName>
-                            <addName>Golden Tree</addName>
-                            <addName>Malinalda</addName>
-                            <addName>Culurien</addName></geogName>
-                        <link target="https://tolkiengateway.net/wiki/Laurelin"/>
-                        <note>
-                            <p>Laurelin was the Golden Tree of <geogName ref="Ama_001"
-                                    >Aman</geogName>, the female mate of <geogName ref="Tel_001"
-                                    >Telperion</geogName>, and the younger of the Two Trees of
-                                Valinor. Laurelin had gold-trimmed leaves and her dew was collected
-                                by Varda in her Wells.</p>
-                        </note>
-                    </place>
-
                     <place xml:id="Ama_001" type="region">
                         <geogName>Aman</geogName>
                         <link target="https://tolkiengateway.net/wiki/Aman"/>
@@ -231,19 +218,56 @@
                         </note>
                     </place>
 
-                </listPlace>
+                    <place xml:id="Tel_001" type="tree">
+                        <geogName>Telperion <addName>Silpion</addName>
+                            <addName>Ninquelote</addName></geogName>
+                        <link target="https://tolkiengateway.net/wiki/Telperion"/>
+                        <note>
+                            <p>Telperion was the elder of the Two Trees of <geogName ref="Val_002"
+                                    >Valinor</geogName>, called the White Tree, which shed silver
+                                light on the domain of the <persName ref="Val_001">Valar</persName>.
+                                His leaves were of dark green, shining silver beneath, and his
+                                boughs were decked with brilliant flowers that shed a rain of silver
+                                dew, which was collected as a source of water and of light.</p>
+                        </note>
+                    </place>
 
+                    <place xml:id="Lau_001" type="tree">
+                        <geogName>Laurelin <addName>Lindelokse</addName>
+                            <addName>Golden Tree</addName>
+                            <addName>Malinalda</addName>
+                            <addName>Culurien</addName></geogName>
+                        <link target="https://tolkiengateway.net/wiki/Laurelin"/>
+                        <note>
+                            <p>Laurelin was the Golden Tree of <geogName ref="Ama_001"
+                                    >Aman</geogName>, the female mate of <geogName ref="Tel_001"
+                                    >Telperion</geogName>, and the younger of the Two Trees of
+                                Valinor. Laurelin had gold-trimmed leaves and her dew was collected
+                                by Varda in her Wells.</p>
+                        </note>
+                    </place>
+
+                </listPlace>
             </settingDesc>
         </profileDesc>
-    </xmlHeader>
+        <revisionDesc>
+            <list>
+                <item>
+                    <date when="2025-01-11">11 janvier 2025</date>File adapted to the TEI
+                    guidelines</item>
+                <item>
+                    <date when="2024-12-12">12 décembre 2024</date>File created</item>
+            </list>
+        </revisionDesc>
+    </teiHeader>
     <text>
         <body>
             <div>
                 <p><persName ref="Yav_001">Yavanna</persName>
-                    <gap quantity="5w" reason="sampling"/> resta longtemps sur l'herbe verte pour
-                    chanter l'air sacré où elle décrivait toutes les choses qui poussent dans la
-                    terre. <persName ref="Nie_001">Nienna</persName> restait silencieuse et pensive,
-                    et ses larmes coulaient sur la mousse. Tous les <orgName ref="Val_001"
+                    <gap scope="1" unit="line" reason="sampling"/> resta longtemps sur l'herbe verte
+                    pour chanter l'air sacré où elle décrivait toutes les choses qui poussent dans
+                    la terre. <persName ref="Nie_001">Nienna</persName> restait silencieuse et
+                    pensive, et ses larmes coulaient sur la mousse. Tous les <orgName ref="Val_001"
                         >Valar</orgName> étaient rassemblés pour écouter le chant de <persName
                         ref="Yav_001">Yavanna</persName>, ils étaient assis sans mot dire sur les
                     trônes du conseil dans le <geogName ref="Cer_001">Mahanaxar</geogName>, le
@@ -302,4 +326,4 @@
             </div>
         </body>
     </text>
-</XML>
+</TEI>

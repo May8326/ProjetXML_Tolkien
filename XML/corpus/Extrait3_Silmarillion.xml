@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XML>
-    <xmlHeader>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
         <fileDesc>
             <titleStmt>
                 <title>The Creation of the Two Trees of Valinor in the Silmarillion</title>
+                <author>Maëlys Gioan</author>
             </titleStmt>
             <publicationStmt>
-                <p type="license">This file contains texts protected by copyright. They are included
-                    solely for the purposes of study and analysis within the framework of an
-                    academic exercise. No redistribution or commercial use of these texts is
-                    permitted without the authorization of the rights holders.</p>
                 <publisher>Maëlys Gioan</publisher>
+                <date>2025</date>
+                <availability>
+                    <licence>This file contains texts protected by copyright. They are included
+                        solely for the purposes of study and analysis within the framework of an
+                        academic exercise. No redistribution or commercial use of these texts is
+                        permitted without the authorization of the rights holders.</licence>
+                </availability>                
             </publicationStmt>
             <sourceDesc>
                 <!-- Tolkien (John Ronald Reuel), Le Silmarillion : histoire des Silmarils, Christopher Tolkien (éd.), Pierre Alien (trad.), Paris, Christian Bourgeois, 1993, pages 30-31. -->
@@ -26,6 +30,19 @@
                 </bibl>
             </sourceDesc>
         </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p> This file was created as part of an exercise for the XML course taught in the
+                    second year of the Master's program in Technologies Numériques appliquées à l'Histoire
+                    (TNAH) at the École nationale des chartes.</p>
+            </projectDesc>
+            <samplingDecl>
+                <p> The samples selected for this corpus come from two works discussing the creation
+                    of the Two Trees of Valinor in Tolkien's mythology. Each text was limited to a
+                    maximum of 3000 characters to comply with the exercise's constraints and to
+                    ensure uniform data processing. </p>
+            </samplingDecl>
+        </encodingDesc>
         <profileDesc>
             <particDesc>
                 <!-- ____________________________________________ ORGANISATION_________________________________________________ -->
@@ -37,7 +54,8 @@
                         <link target="https://tolkiengateway.net/wiki/Valar"/>
                         <note>
                             <p>The Valar (sg. Vala) were the Powers of Arda who shaped and ruled the
-                                world. They lived on the Western continent of <geogName ref="Ama_001">Aman</geogName>.</p>
+                                world. They lived on the Western continent of <geogName
+                                    ref="Ama_001">Aman</geogName>.</p>
                             <p>The Gods is a name wrongly given by Men to the Valar. When the first
                                 Edain newly arrived in Beleriand and disputed whether or not to
                                 remain, they referred to the Valar as gods in the West.They had not
@@ -104,8 +122,8 @@
                         <note>
                             <p>Vána, one of the <orgName ref="Val_001">Valier</orgName>, was the
                                 younger sister of <persName ref="Yav_001">Yavanna</persName> and the
-                                spouse of Oromë. Among the seven <orgName ref="Val_001">Valier</orgName>, Vána was the sixth
-                                named.</p>
+                                spouse of Oromë. Among the seven <orgName ref="Val_001"
+                                    >Valier</orgName>, Vána was the sixth named.</p>
                         </note>
                     </person>
                     
@@ -113,8 +131,9 @@
                         <persName>Irmo <addName>Lorien</addName></persName>
                         <link target="https://tolkiengateway.net/wiki/Irmo"/>
                         <note>
-                            <p>Irmo, commonly called Lórien after his place of dwelling, was a <persName ref="Val_001">Vala</persName>
-                                who was known as "the master of visions and dreams."</p>
+                            <p>Irmo, commonly called Lórien after his place of dwelling, was a
+                                <persName ref="Val_001">Vala</persName> who was known as "the
+                                master of visions and dreams."</p>
                         </note>
                     </person>
                     
@@ -122,13 +141,16 @@
                         <persName>Mandos</persName>
                         <link target="https://tolkiengateway.net/wiki/Mandos"/>
                         <note>
-                            <p>Mandos was the Doomsman of the <persName ref="Val_001">Valar</persName> who pronounced judgement in
-                                matters of fate. He was the keeper of the slain in his Halls in the
-                                west of <geogName ref="Val_002">Valinor</geogName>.</p>
+                            <p>Mandos was the Doomsman of the <persName ref="Val_001"
+                                >Valar</persName> who pronounced judgement in matters of fate.
+                                He was the keeper of the slain in his Halls in the west of <geogName
+                                    ref="Val_002">Valinor</geogName>.</p>
                             <p>His actual, less common name was Namo. He was the "elder brother" of
-                                the Vala <persName ref="Irm_001">Irmo</persName>. He is one of the Aratar. Together, Mandos and <persName ref="Irm_001">Irmo</persName>
+                                the Vala <persName ref="Irm_001">Irmo</persName>. He is one of the
+                                Aratar. Together, Mandos and <persName ref="Irm_001">Irmo</persName>
                                 are called the Fëanturi ("Masters of Spirits).Their sister is
-                                <persName ref="Nie_001">Nienna</persName>. Vairë the Weaver is his wife.</p>
+                                <persName ref="Nie_001">Nienna</persName>. Vairë the Weaver is
+                                his wife.</p>
                         </note>
                     </person>
                     
@@ -145,7 +167,8 @@
                         <link target="https://tolkiengateway.net/wiki/M%C3%A1hanaxar"/>
                         <note>
                             <p>Máhanaxar, also called Rithil-Anamo, was the Ring of Doom, probably a
-                                hall or court where the <persName ref="Val_001">Valar</persName> held their councils.</p>
+                                hall or court where the <persName ref="Val_001">Valar</persName>
+                                held their councils.</p>
                         </note>
                     </place>
                     
@@ -153,40 +176,16 @@
                         <geogName>Valinor</geogName>
                         <link target="https://tolkiengateway.net/wiki/Valinor"/>
                         <note>
-                            <p>Valinor or Valinórë was the realm of the <orgName ref="Val_001">Valar</orgName> in central <geogName ref="Ama_001">Aman</geogName>.
-                                Valinor was the place to which the <orgName ref="Val_001">Valar</orgName> moved after Almaren was
-                                destroyed by Melkor.</p>
+                            <p>Valinor or Valinórë was the realm of the <orgName ref="Val_001"
+                                >Valar</orgName> in central <geogName ref="Ama_001"
+                                    >Aman</geogName>. Valinor was the place to which the <orgName
+                                        ref="Val_001">Valar</orgName> moved after Almaren was destroyed
+                                by Melkor.</p>
                             <p>Valinor properly refers to the inhabited lands of the continent of
-                                <geogName ref="Ama_001">Aman</geogName>, home to the <persName ref="Val_001">Valar</persName> and the three kindreds of Elves: the Vanyar,
-                                some of the Noldor, and some of the Teleri. Valimar is its central
-                                city.</p>
-                        </note>
-                    </place>
-                    
-                    <place xml:id="Tel_001" type="tree">
-                        <geogName>Telperion <addName>Silpion</addName>
-                            <addName>Ninquelote</addName></geogName>
-                        <link target="https://tolkiengateway.net/wiki/Telperion"/>
-                        <note>
-                            <p>Telperion was the elder of the Two Trees of <geogName ref="Val_002">Valinor</geogName>, called the White
-                                Tree, which shed silver light on the domain of the <persName ref="Val_001">Valar</persName>. His leaves
-                                were of dark green, shining silver beneath, and his boughs were
-                                decked with brilliant flowers that shed a rain of silver dew, which
-                                was collected as a source of water and of light.</p>
-                        </note>
-                    </place>
-                    
-                    <place xml:id="Lau_001" type="tree">
-                        <geogName>Laurelin <addName>Lindelokse</addName>
-                            <addName>Golden Tree</addName>
-                            <addName>Malinalda</addName>
-                            <addName>Culurien</addName></geogName>
-                        <link target="https://tolkiengateway.net/wiki/Laurelin"/>
-                        <note>
-                            <p>Laurelin was the Golden Tree of <geogName ref="Ama_001">Aman</geogName>, the female mate of <geogName ref="Tel_001">Telperion</geogName>,
-                                and the younger of the Two Trees of Valinor. Laurelin had
-                                gold-trimmed leaves and her dew was collected by Varda in her
-                                Wells.</p>
+                                <geogName ref="Ama_001">Aman</geogName>, home to the <persName
+                                    ref="Val_001">Valar</persName> and the three kindreds of Elves:
+                                the Vanyar, some of the Noldor, and some of the Teleri. Valimar is
+                                its central city.</p>
                         </note>
                     </place>
                     
@@ -195,9 +194,10 @@
                         <link target="https://tolkiengateway.net/wiki/Aman"/>
                         <note>
                             <p>Aman, the Blessed Realm, was a continent that lay to the west of
-                                Middle-earth, across the great ocean Belegaer. It contained <geogName ref="Val_001">Valinor</geogName>,
-                                the home of the <orgName ref="Val_001">Valar</orgName>, and Eldamar, the kingdom of the
-                                Calaquendi.</p>
+                                Middle-earth, across the great ocean Belegaer. It contained
+                                <geogName ref="Val_001">Valinor</geogName>, the home of the
+                                <orgName ref="Val_001">Valar</orgName>, and Eldamar, the kingdom
+                                of the Calaquendi.</p>
                         </note>
                     </place>
                     
@@ -219,11 +219,47 @@
                         </note>
                     </place>
                     
+                    <place xml:id="Tel_001" type="tree">
+                        <geogName>Telperion <addName>Silpion</addName>
+                            <addName>Ninquelote</addName></geogName>
+                        <link target="https://tolkiengateway.net/wiki/Telperion"/>
+                        <note>
+                            <p>Telperion was the elder of the Two Trees of <geogName ref="Val_002"
+                                >Valinor</geogName>, called the White Tree, which shed silver
+                                light on the domain of the <persName ref="Val_001">Valar</persName>.
+                                His leaves were of dark green, shining silver beneath, and his
+                                boughs were decked with brilliant flowers that shed a rain of silver
+                                dew, which was collected as a source of water and of light.</p>
+                        </note>
+                    </place>
+                    
+                    <place xml:id="Lau_001" type="tree">
+                        <geogName>Laurelin <addName>Lindelokse</addName>
+                            <addName>Golden Tree</addName>
+                            <addName>Malinalda</addName>
+                            <addName>Culurien</addName></geogName>
+                        <link target="https://tolkiengateway.net/wiki/Laurelin"/>
+                        <note>
+                            <p>Laurelin was the Golden Tree of <geogName ref="Ama_001"
+                                >Aman</geogName>, the female mate of <geogName ref="Tel_001"
+                                    >Telperion</geogName>, and the younger of the Two Trees of
+                                Valinor. Laurelin had gold-trimmed leaves and her dew was collected
+                                by Varda in her Wells.</p>
+                        </note>
+                    </place>
+                    
                 </listPlace>
-                
             </settingDesc>
-        </profileDesc>
-    </xmlHeader>
+        </profileDesc>  
+        <revisionDesc>
+            <list>
+                <item>
+                    <date when="2025-01-11">11 janvier 2025</date>File adapted to the TEI guidelines</item>
+                <item>
+                    <date when="2024-12-12">12 décembre 2024</date>File created</item>
+            </list>
+        </revisionDesc>
+    </teiHeader>
     <text>
         <body>
             <div>
@@ -276,7 +312,7 @@
                             ref="Tel_001">Silpion</geogName> vous ferez de même, versant à nouveau
                         la lumière recueillie de la profonde <geogName ref="Sil_001"
                             >Silindrin</geogName> à chaque décroissance de l'<geogName ref="Lau_001"
-                            >arbre d'or</geogName>. La lumière est la sève de ces arbres et leur
+                                >arbre d'or</geogName>. La lumière est la sève de ces arbres et leur
                         sève est lumière ! "</q></p>
 
                 <p>Et avec ces mots elle signifiait que bien que ces arbres dussent être arrosés de
@@ -287,4 +323,4 @@
             </div>
         </body>
     </text>
-</XML>
+</TEI>
