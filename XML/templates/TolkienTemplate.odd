@@ -1,21 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+   <!-- 
+   This ODD is part of a study dedicated to the exploration of J.R.R. Tolkien's universe, with a focus on the names and aliases that populate his fictional world. 
+   The specific focus on the Two Trees of Valinor offers insights into how Tolkien wove linguistics, mythology, and narrative coherence into his work. 
+   This template can serve as a framework for encoding texts related to Tolkien's writings and can be extended to include other areas and names of his mythology. 
+   Possible uses include scholarly research on Tolkien’s languages, analyzing naming conventions and their contextual relevance, and building annotated editions of his texts. 
+-->
+
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title type="short">Tolkien Template</title>
             <title>Tolkien Template</title>
+            <author>Maëlys Gioan</author>
          </titleStmt>
          <publicationStmt>
-            <p>This file was created as part of an exercise for the XML course taught in the
-               second year of the Master's program in Technologies Numériques appliquées à l'Histoire
+            <p>This file was created as part of an exercise for the XML course taught in the second
+               year of the Master's program in Technologies Numériques appliquées à l'Histoire
                (TNAH) at the École nationale des chartes.</p>
          </publicationStmt>
          <sourceDesc>
-            <p>Derived from <ref target="https://www.tei-c.org/Vault/P5/current/xml/tei/odd/p5subset.xml">base odd</ref> after an analysis of 3 files in /home/maelys-gioan/Documents/SCOLAIRE/TNAH/Git/COURS_XML/ProjetXML_Tolkien/XML/corpus/</p>
+            <p>Derived from <ref
+                  target="https://www.tei-c.org/Vault/P5/current/xml/tei/odd/p5subset.xml">base
+                  odd</ref> after an analysis of 3 files in ProjetXML_Tolkien/XML/corpus/</p>
+            <p>This ODD was created as part of a study on Tolkien's universe, focusing on the names
+               and aliases within it. Its purpose is to validate XML-TEI files encoding information
+               about the creation of the Two Trees of Valinor, as they appear in the works of J.R.R.
+               Tolkien.</p>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
+   <!-- 
+   The choices made in this ODD regarding the selection of elements and attributes are designed to highlight the linguistic richness of Tolkien's imaginary world.   
+   Attributes such as `@type` and `@ref` were included to allow for precise categorization, and linking of names to their aliases or other references. 
+   These decisions enable adding more complex linguistic annotations or linking entities to external resources like 'The Tolkien Gateway' in the list of named entities present in the teiHeader. 
+   This modular approach ensures that the ODD can evolve alongside the project, supporting future scholarly or pedagogical needs.
+-->
+
    <text>
       <body>
          <schemaSpec ident="oddbyexample" start="TEI ">
@@ -24,6 +45,7 @@
             <classRef key="att.textCritical"/>
             <classRef key="model.rdgLike"/>
             <classRef key="model.rdgPart"/>
+            <!-- removing unused attributes from the module -->
             <classSpec ident="att.textCritical" type="atts" mode="change">
                <attList>
                   <attDef ident="type" mode="delete"/>
@@ -38,8 +60,9 @@
             <classRef key="att.datable.custom"/>
             <classRef key="model.persNamePart"/>
             <moduleRef key="namesdates"
-                       include="orgName persName addName geogName listOrg listPerson listPlace org person place"/>
+               include="orgName persName addName geogName listOrg listPerson listPlace org person place"/>
             <elementSpec ident="orgName" mode="change">
+               <!-- removing unused attributes from the element orgName-->
                <attList>
                   <attDef ident="calendar" mode="delete"/>
                   <attDef ident="resp" mode="delete"/>
@@ -49,6 +72,7 @@
                </attList>
             </elementSpec>
             <elementSpec ident="persName" mode="change">
+               <!-- removing unused attributes from the element persName -->
                <attList>
                   <attDef ident="calendar" mode="delete"/>
                   <attDef ident="resp" mode="delete"/>
@@ -58,6 +82,7 @@
                </attList>
             </elementSpec>
             <elementSpec ident="addName" mode="change">
+               <!-- removing unused attributes from the element addName-->
                <attList>
                   <attDef ident="resp" mode="delete"/>
                   <attDef ident="ref" mode="delete"/>
@@ -65,6 +90,7 @@
                </attList>
             </elementSpec>
             <elementSpec ident="geogName" mode="change">
+               <!-- removing unused attributes from the element geogName-->
                <attList>
                   <attDef ident="calendar" mode="delete"/>
                   <attDef ident="when" mode="delete"/>
@@ -74,27 +100,32 @@
                </attList>
             </elementSpec>
             <elementSpec ident="listOrg" mode="change">
+               <!-- removing unused attributes from the element listOrg-->
                <attList>
                   <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="listPerson" mode="change">
+               <!-- removing unused attributes from the element listPerson-->
                <attList>
                   <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="listPlace" mode="change">
+               <!-- removing unused attributes from the element listPlace-->
                <attList>
                   <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="org" mode="change">
+               <!-- removing unused attributes from the element org-->
                <attList>
                   <attDef ident="role" mode="delete"/>
                   <attDef ident="resp" mode="delete"/>
+                  <!-- values of an attribute to define the nature of a group of people -->
                   <attDef ident="type" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="race"/>
@@ -103,6 +134,7 @@
                </attList>
             </elementSpec>
             <elementSpec ident="person" mode="change">
+               <!-- removing unused attributes from the element person -->
                <attList>
                   <attDef ident="role" mode="delete"/>
                   <attDef ident="sex" mode="delete"/>
@@ -112,8 +144,10 @@
                </attList>
             </elementSpec>
             <elementSpec ident="place" mode="change">
+               <!-- removing unused attributes from the element place -->
                <attList>
                   <attDef ident="resp" mode="delete"/>
+                  <!-- values of an attribute to define the type of place mentioned -->
                   <attDef ident="type" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="building"/>
@@ -125,6 +159,7 @@
                </attList>
             </elementSpec>
             <classSpec ident="att.datable.custom" type="atts" mode="change">
+               <!-- removing unused attributes from the module-->
                <attList>
                   <attDef ident="notBefore-custom" mode="delete"/>
                   <attDef ident="notAfter-custom" mode="delete"/>
@@ -267,7 +302,8 @@
             </classSpec>
             <!--Checking module core-->
             <moduleRef key="core"
-                       include="p q gap date list item note author editor title publisher biblScope pubPlace bibl"/>
+               include="p q gap date list item note author editor title publisher biblScope pubPlace bibl"/>
+            <!-- removing unused attributes from the core module elements -->
             <elementSpec ident="p" mode="change">
                <attList>
                   <attDef ident="resp" mode="delete"/>
@@ -292,6 +328,7 @@
                   <attDef ident="unit" mode="delete"/>
                   <attDef ident="scope" mode="delete"/>
                   <attDef ident="type" mode="change">
+                     <!-- values to define the type of date mentionned in the text -->
                      <valList mode="add" type="closed">
                         <valItem ident="era"/>
                         <valItem ident="event"/>
@@ -378,7 +415,8 @@
             <!--Checking module figures-->
             <!--Checking module header-->
             <moduleRef key="header"
-                       include="teiHeader fileDesc titleStmt publicationStmt availability licence sourceDesc encodingDesc projectDesc samplingDecl profileDesc revisionDesc"/>
+               include="teiHeader fileDesc titleStmt publicationStmt availability licence sourceDesc encodingDesc projectDesc samplingDecl profileDesc revisionDesc"/>
+            <!-- removing unused attributes from the header elements -->
             <elementSpec ident="teiHeader" mode="change">
                <attList>
                   <attDef ident="resp" mode="delete"/>
