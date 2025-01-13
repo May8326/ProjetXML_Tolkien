@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+  <!-- 
+   This ODD is part of a study dedicated to the exploration of J.R.R. Tolkien's universe, with a focus on the names and aliases that populate his fictional world. 
+   The specific focus on the Two Trees of Valinor offers insights into how Tolkien wove linguistics, mythology, and narrative coherence into his work. 
+   This template can serve as a framework for encoding texts related to Tolkien's writings and can be extended to include other areas and names of his mythology. 
+   Possible uses include scholarly research on Tolkien’s languages, analyzing naming conventions and their contextual relevance, and building annotated editions of his texts. 
+-->
+
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Tolkien Template</title>
+        <author>Maëlys Gioan</author>
+      </titleStmt>
+      <publicationStmt>
+        <authority>Maëlys Gioan</authority>
+        <availability status="free">
+          <licence target="http://creativecommons.org/licenses/by-sa/3.0/"> Distributed under a
+            Creative Commons Attribution-ShareAlike 4.0 </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Derived from <ref
+            target="https://www.tei-c.org/Vault/P5/current/xml/tei/odd/p5subset.xml">base odd</ref>
+          after an analysis of 3 files in ProjetXML_Tolkien/XML/corpus/</p>
+        <p>This ODD was created as part of a study on Tolkien's universe, focusing on the names and
+          aliases within it. Its purpose is to validate XML-TEI files encoding information about the
+          creation of the Two Trees of Valinor, as they appear in the works of J.R.R. Tolkien.</p>
+        <p>It was created as part of an exercise for the XML course taught in the second year of the
+          Master's program in Technologies Numériques appliquées à l'Histoire (TNAH) at the École
+          nationale des chartes.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <!-- 
+   The choices made in this ODD regarding the selection of elements and attributes are designed to highlight the linguistic richness of Tolkien's imaginary world.   
+   Attributes such as `@type` and `@ref` were included to allow for precise categorization, and linking of names to their aliases or other references. 
+   These decisions enable adding more complex linguistic annotations or linking entities to external resources like 'The Tolkien Gateway' in the list of named entities present in the teiHeader. 
+   This modular approach ensures that the ODD can evolve alongside the project, supporting future scholarly or pedagogical needs.
+-->
+
+  <text>
+    <body>
+      <!-- DESCRIPTION  DE LA CUSTOMISATION -->
+      <head>A TEI customization for Tolkien's works</head>
+      <p>This TEI ODD defines the rules of a TEI customization for encoding the works of J.R.R.
+        Tolkien, and more especially extracts from the Silmarillion and the Book of the Lost
+        Tales.</p>
+      <p>It includes the main elements from the header module : <list rend="numbered">
+          <item>
+            <gi>teiHeader</gi> from the header module to store required metadata</item>
+          <item>
+            <gi>fileDesc</gi> from the header module to record information about this file</item>
+          <item>
+            <gi>titleStmt</gi> from the header module to record information about the title</item>
+          <item>
+            <gi>publicationStmt</gi> from the header module to detail how it is published</item>
+          <item>
+            <gi>sourceDesc</gi> from the header module to record where it is from</item>
+        </list>
+        <!-- A MODIFIER !!! --> It also contains the entire "core" module and the entire "tei"
+        module. Finally it also includes most of the elements from the "textstructure" module, but
+        with a modification to exclude the numbered divs 1-7, as we rather want to use simple
+          <gi>div</gi>s with <att>type</att>. We also exclude <gi>back</gi> and <gi>front</gi> as we
+        want our main encoding to be stored in the <gi>body</gi>. </p>
+      <!-- FIN DE LA DESCRIPTION -->
+
+      <!-- DEBUT DE LA CUSTOMISATION -->
+      <schemaSpec ident="Tolkien_tei" start="TEI ">
+        <desc>A simple TEI customization to encode the works of J.R.R. Tolkien.</desc>
+        <!-- CHARGEMENT DES MODULES -->
+        <moduleRef key="tei"/><!-- loads the "tei" module -->
+        <moduleRef key="core"  include="p q gap date list item note author editor title publisher biblScope pubPlace bibl"/><!-- loads the "core" module -->
+        <moduleRef key="header" include="teiHeader fileDesc titleStmt publicationStmt availability licence sourceDesc encodingDesc projectDesc samplingDecl profileDesc revisionDesc"/><!-- loads the "header" module -->
+        <moduleRef key="textstructure" include="TEI text body div"/><!-- loads the "textstrcture" module -->
+        <moduleRef key="namesdate" include="orgName persName addName geogName listOrg listPerson listPlace org person place"/><!-- loads the "namesdate" module -->
+        <moduleRef key="corpus" include="particDesc settingDesc"/><!-- loads the "corpus" module -->
+        <moduleRef key="linking" include="link"/><!-- loads the "linking" module -->
+      
+        <!-- ADDING NEW ELEMENTS -->
+        <!-- Before introducing new elements, consider whether they are really necessary. 
+      Is there really no TEI-conformat way of expressing what you want to express? 
+      If not, go ahead and introduce your new element -->
+      
+      <!-- CHANGEMENT DES ELEMENTS -->
+      </schemaSpec>
+    </body>
+  </text>
+</TEI>

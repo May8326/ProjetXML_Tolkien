@@ -10,14 +10,15 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title type="short">Tolkien Template</title>
             <title>Tolkien Template</title>
             <author>Maëlys Gioan</author>
          </titleStmt>
          <publicationStmt>
-            <p>This file was created as part of an exercise for the XML course taught in the second
-               year of the Master's program in Technologies Numériques appliquées à l'Histoire
-               (TNAH) at the École nationale des chartes.</p>
+            <authority>Maëlys Gioan</authority>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by-sa/3.0/"> Distributed under a
+                  Creative Commons Attribution-ShareAlike 4.0 </licence>
+            </availability>
          </publicationStmt>
          <sourceDesc>
             <p>Derived from <ref
@@ -27,6 +28,9 @@
                and aliases within it. Its purpose is to validate XML-TEI files encoding information
                about the creation of the Two Trees of Valinor, as they appear in the works of J.R.R.
                Tolkien.</p>
+            <p>This file was created as part of an exercise for the XML course taught in the second
+               year of the Master's program in Technologies Numériques appliquées à l'Histoire
+               (TNAH) at the École nationale des chartes.</p>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -39,10 +43,39 @@
 
    <text>
       <body>
-         <schemaSpec ident="oddbyexample" start="TEI ">
+         <!-- DESCRIPTION -->
+         <head>A TEI customization for Tolkien's works</head>
+         <p>This TEI ODD defines the rules of a TEI customization for encoding the works of J.R.R.
+            Tolkien, and more especially extracts from the Silmarillion and the Book of the Lost
+            Tales.</p>
+         <p>It includes the main elements from the header module : <list rend="numbered">
+               <item>
+                  <gi>teiHeader</gi> from the header module to store required metadata</item>
+               <item>
+                  <gi>fileDesc</gi> from the header module to record information about this
+                  file</item>
+               <item>
+                  <gi>titleStmt</gi> from the header module to record information about the
+                  title</item>
+               <item>
+                  <gi>publicationStmt</gi> from the header module to detail how it is
+                  published</item>
+               <item>
+                  <gi>sourceDesc</gi> from the header module to record where it is from</item>
+            </list>
+            <!-- A MODIFIER !!! --> It also contains the entire "core" module and the entire "tei"
+            module. Finally it also includes most of the elements from the "textstructure" module,
+            but with a modification to exclude the numbered divs 1-7, as we rather want to use
+            simple <gi>div</gi>s with <att>type</att>. We also exclude <gi>back</gi> and
+               <gi>front</gi> as we want our main encoding to be stored in the <gi>body</gi>. </p>
+
+         <!-- DEBUT DE LA CUSTOMISATION -->
+         <schemaSpec ident="Tolkien_tei" start="TEI ">
+            <desc>A simple TEI customization to encode the works of J.R.R. Tolkien.</desc>
             <moduleRef key="tei"/>
-            <!--Checking module textcrit-->
+            <!-- loads the "tei" module -->
             <classRef key="att.textCritical"/>
+            <!-- loads the "text.Critical" module -->
             <classRef key="model.rdgLike"/>
             <classRef key="model.rdgPart"/>
             <!-- removing unused attributes from the module -->
