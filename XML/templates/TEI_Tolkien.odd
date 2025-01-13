@@ -78,12 +78,17 @@
         <moduleRef key="corpus" include="particDesc settingDesc"/><!-- loads the "corpus" module -->
         <moduleRef key="linking" include="link"/><!-- loads the "linking" module -->
       
+        <!-- CHANGEMENT DES ELEMENTS -->
+        <!-- module TEI -->
+        
+        
+        
         <!-- ADDING NEW ELEMENTS -->
         <!-- Before introducing new elements, consider whether they are really necessary. 
       Is there really no TEI-conformat way of expressing what you want to express? 
       If not, go ahead and introduce your new element -->
       
-      <!-- CHANGEMENT DES ELEMENTS -->
+
       </schemaSpec>
     </body>
   </text>
