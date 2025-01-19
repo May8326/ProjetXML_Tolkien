@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
    <!-- 
    This ODD is part of a study dedicated to the exploration of J.R.R. Tolkien's universe, with a focus on the names and aliases that populate his fictional world. 
    The specific focus on the Two Trees of Valinor offers insights into how Tolkien wove linguistics, mythology, and narrative coherence into his work. 
@@ -35,9 +35,7 @@
       </fileDesc>
    </teiHeader>
    <!-- 
-   The choices made in this ODD regarding the selection of elements and attributes are designed to highlight the linguistic richness of Tolkien's imaginary world.   
-   Attributes such as `@type` and `@ref` were included to allow for precise categorization, and linking of names to their aliases or other references. 
-   These decisions enable adding more complex linguistic annotations or linking entities to external resources like 'The Tolkien Gateway' in the list of named entities present in the teiHeader. 
+   The choices made in this ODD regarding 
    This modular approach ensures that the ODD can evolve alongside the project, supporting future scholarly or pedagogical needs.
 -->
 
@@ -48,28 +46,31 @@
          <p>This TEI ODD defines the rules of a TEI customization for encoding the works of J.R.R.
             Tolkien, and more especially extracts from the Silmarillion and the Book of the Lost
             Tales.</p>
-         <p>It includes the main elements from the header module : <list rend="numbered">
-               <item>
-                  <gi>teiHeader</gi> from the header module to store required metadata</item>
-               <item>
-                  <gi>fileDesc</gi> from the header module to record information about this
-                  file</item>
-               <item>
-                  <gi>titleStmt</gi> from the header module to record information about the
-                  title</item>
-               <item>
-                  <gi>publicationStmt</gi> from the header module to detail how it is
-                  published</item>
-               <item>
-                  <gi>sourceDesc</gi> from the header module to record where it is from</item>
-            </list>
-            <!-- A MODIFIER !!! --> It also contains the entire "core" module and the entire "tei"
-            module. Finally it also includes most of the elements from the "textstructure" module,
-            but with a modification to exclude the numbered divs 1-7, as we rather want to use
-            simple <gi>div</gi>s with <att>type</att>. We also exclude <gi>back</gi> and
-               <gi>front</gi> as we want our main encoding to be stored in the <gi>body</gi>. </p>
+         <p>It includes the main elements from the header module and the entire "tei" module. Only
+            the elements relevants to the corpus where kept, from the "core", "textstructure",
+            "namesdate", "corpus" and "linking" modules.</p>
+         <p> The selection of elements and attributes are designed to highlight the linguistic
+            richness of Tolkien's imaginary world. Attributes such as <att>type</att> and
+               <att>ref</att> were included to allow for precise categorization, and linking of
+            names to their aliases or other references. These decisions enable adding more complex
+            linguistic annotations or linking entities to external resources like <ref
+               target="https://tolkiengateway.net/wiki/Main_Page">Tolkien Gateway</ref> in the list
+            of named entities present in the teiHeader.</p>
 
-         <!-- DEBUT DE LA CUSTOMISATION -->
+         <!-- RULE CONSTRAINING THE USE OF THE STATUS IN THE AVAILABILITY ELEMENT DEPENDING ON ITS ENVIRONMENT-->
+
+         <constraintSpec ident="availability" scheme="schematron">
+            <desc>Ensure that the <att>status</att> attribute of the <gi>availability</gi> element is set to "restricted" when the <gi>licence</gi> element contains the word "copyright".</desc>
+            <constraint>
+               <sch:rule context="//availability[licence[contains(., 'copyright')]]">
+                  <sch:assert test="@status = 'restricted'">
+                     The @status attribute must be "restricted" when the &lt;licence&gt; element references copyright.
+                  </sch:assert>
+               </sch:rule>
+            </constraint>
+         </constraintSpec>
+
+         <!-- ELEMENTS CUSTOMISATION-->
          <schemaSpec ident="Tolkien_tei" start="TEI ">
             <desc>A simple TEI customization to encode the works of J.R.R. Tolkien.</desc>
             <moduleRef key="tei"/>
@@ -94,7 +95,79 @@
             <classRef key="model.persNamePart"/>
             <moduleRef key="namesdates"
                include="orgName persName addName geogName listOrg listPerson listPlace org person place"/>
+            
+            
+            <!-- RULES CONSTRAINING THE USE OF CERTAIN ELEMENTS OR ATTRIBUTES -->
+            
+            <!-- Rule constraining the sequence of elements in the person element form the teiHeader-->
+            
+            <elementSpec ident="person" mode="change">
+               <desc>Description of a person from Tolkien's universe. Each <gi>person</gi> element must have, in that order : 
+                  <list rend="numbered">
+                     <item>One <gi>persName</gi> element,</item>
+                     <item>One to three<gi>link</gi>elements,</item>
+                     <item>Optionnaly, one <gi>note</gi> element.</item>
+                  </list>
+               </desc>
+               <content>
+                  <sequence>
+                     <elementRef key="persName" minOccurs="1" maxOccurs="1"/>
+                     <elementRef key="link" minOccurs="1" maxOccurs="3"/>
+                     <elementRef key="note" minOccurs="0" maxOccurs="1"/>
+                  </sequence>
+               </content>
+               <!-- removing unused attributes from the element person -->
+               <attList>
+                  <attDef ident="role" mode="delete"/>
+                  <attDef ident="sex" mode="delete"/>
+                  <attDef ident="gender" mode="delete"/>
+                  <attDef ident="age" mode="delete"/>
+                  <attDef ident="resp" mode="delete"/>
+               </attList>
+            </elementSpec>
+            
+            <!-- Rule constraining the use of the attribute @type and its values -->
+            
+            <elementSpec ident="place" mode="change">
+               <desc>Description of a place from Tolkien's universe. The nature of the place are
+                  encodent in the <att>type</att> attribute. At this stage of the project, these can
+                  only be <val>lake</val>, <val>tree</val>, <att>region</att>, <att>building</att> or <att>country</att>.</desc>
+               <!-- removing unused attributes from the element place -->
+               <attList>
+                  <attDef ident="resp" mode="delete"/>
+                  <!-- values of an attribute to define the type of place mentioned -->
+                  <attDef ident="type" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="lake">
+                           <desc>A body of water.</desc>
+                        </valItem>
+                        <valItem ident="tree">
+                           <desc>An individual tree or a forest.</desc>
+                        </valItem>
+                        <valItem ident="region">
+                           <desc>A large geographical area or territory.</desc>
+                        </valItem>
+                        <valItem ident="building">
+                           <desc>A structure such as a house, tower, hall...</desc>
+                        </valItem>
+                        <valItem ident="country">
+                           <desc>A sovereign or defined nation within the fictional universe.</desc>
+                        </valItem>
+                        <!-- Uncomment the following code to add new type of place -->
+                        <!--<valItem ident="newName">
+                           <desc>Description of new type</desc>
+                        </valItem>-->
+                     </valList>
+                  </attDef>
+               </attList>
+            </elementSpec>
+            
+            
+            
+            <!-- Other elements used for the project -->
+            
             <elementSpec ident="orgName" mode="change">
+               <desc>Adds the name of a people, race or country in Tolkien's universe</desc>
                <!-- removing unused attributes from the element orgName-->
                <attList>
                   <attDef ident="calendar" mode="delete"/>
@@ -105,6 +178,7 @@
                </attList>
             </elementSpec>
             <elementSpec ident="persName" mode="change">
+               <desc>Adds the name of a person from Tolkien's universe</desc>
                <!-- removing unused attributes from the element persName -->
                <attList>
                   <attDef ident="calendar" mode="delete"/>
@@ -115,6 +189,7 @@
                </attList>
             </elementSpec>
             <elementSpec ident="addName" mode="change">
+               <desc>Adds an alias of a person from Tolkien's universe</desc>
                <!-- removing unused attributes from the element addName-->
                <attList>
                   <attDef ident="resp" mode="delete"/>
@@ -123,6 +198,7 @@
                </attList>
             </elementSpec>
             <elementSpec ident="geogName" mode="change">
+               <desc>Adds the name of a place in Tolkien's universe</desc>
                <!-- removing unused attributes from the element geogName-->
                <attList>
                   <attDef ident="calendar" mode="delete"/>
@@ -133,6 +209,7 @@
                </attList>
             </elementSpec>
             <elementSpec ident="listOrg" mode="change">
+               <desc>List of a group of people, races or countries mentionned in the corpus</desc>
                <!-- removing unused attributes from the element listOrg-->
                <attList>
                   <attDef ident="resp" mode="delete"/>
@@ -140,6 +217,7 @@
                </attList>
             </elementSpec>
             <elementSpec ident="listPerson" mode="change">
+               <desc>List of people mentionned in the corpus</desc>
                <!-- removing unused attributes from the element listPerson-->
                <attList>
                   <attDef ident="resp" mode="delete"/>
@@ -147,6 +225,7 @@
                </attList>
             </elementSpec>
             <elementSpec ident="listPlace" mode="change">
+               <desc>List of places mentionned in the corpus</desc>
                <!-- removing unused attributes from the element listPlace-->
                <attList>
                   <attDef ident="resp" mode="delete"/>
@@ -154,6 +233,8 @@
                </attList>
             </elementSpec>
             <elementSpec ident="org" mode="change">
+               <desc>Description of a group of people, race or country from Tolkien's
+                  universe</desc>
                <!-- removing unused attributes from the element org-->
                <attList>
                   <attDef ident="role" mode="delete"/>
@@ -166,31 +247,7 @@
                   </attDef>
                </attList>
             </elementSpec>
-            <elementSpec ident="person" mode="change">
-               <!-- removing unused attributes from the element person -->
-               <attList>
-                  <attDef ident="role" mode="delete"/>
-                  <attDef ident="sex" mode="delete"/>
-                  <attDef ident="gender" mode="delete"/>
-                  <attDef ident="age" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-               </attList>
-            </elementSpec>
-            <elementSpec ident="place" mode="change">
-               <!-- removing unused attributes from the element place -->
-               <attList>
-                  <attDef ident="resp" mode="delete"/>
-                  <!-- values of an attribute to define the type of place mentioned -->
-                  <attDef ident="type" mode="change">
-                     <valList mode="add" type="closed">
-                        <valItem ident="building"/>
-                        <valItem ident="lake"/>
-                        <valItem ident="region"/>
-                        <valItem ident="tree"/>
-                     </valList>
-                  </attDef>
-               </attList>
-            </elementSpec>
+            
             <classSpec ident="att.datable.custom" type="atts" mode="change">
                <!-- removing unused attributes from the module-->
                <attList>
@@ -322,7 +379,6 @@
             </classSpec>
             <classSpec ident="att.transcriptional" type="atts" mode="change">
                <attList>
-                  <attDef ident="status" mode="delete"/>
                   <attDef ident="cause" mode="delete"/>
                   <attDef ident="seq" mode="delete"/>
                </attList>
@@ -338,23 +394,27 @@
                include="p q gap date list item note author editor title publisher biblScope pubPlace bibl"/>
             <!-- removing unused attributes from the core module elements -->
             <elementSpec ident="p" mode="change">
+               <desc>Adds a paragraph</desc>
                <attList>
                   <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="q" mode="change">
+               <desc>Adds a quote</desc>
                <attList>
                   <attDef ident="type" mode="delete"/>
                   <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="gap" mode="change">
+               <desc>Mentions a gap in the text of the corpus.</desc>
                <attList>
                   <attDef ident="agent" mode="delete"/>
                   <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="date" mode="change">
+               <desc>Adds a date with its description as an attrivuet when</desc>
                <attList>
                   <attDef ident="resp" mode="delete"/>
                   <attDef ident="ref" mode="delete"/>
@@ -371,6 +431,7 @@
                </attList>
             </elementSpec>
             <elementSpec ident="list" mode="change">
+               <desc>Adds a list</desc>
                <attList>
                   <attDef ident="type" mode="delete"/>
                   <attDef ident="resp" mode="delete"/>
@@ -383,6 +444,7 @@
                </attList>
             </elementSpec>
             <elementSpec ident="note" mode="change">
+               <desc>Adds a note</desc>
                <attList>
                   <attDef ident="resp" mode="delete"/>
                   <attDef ident="target" mode="delete"/>
@@ -390,6 +452,7 @@
                </attList>
             </elementSpec>
             <elementSpec ident="author" mode="change">
+               <desc>Adds the author of a book.</desc>
                <attList>
                   <attDef ident="calendar" mode="delete"/>
                   <attDef ident="resp" mode="delete"/>
@@ -399,6 +462,7 @@
                </attList>
             </elementSpec>
             <elementSpec ident="editor" mode="change">
+               <desc>Adds the editor.</desc>
                <attList>
                   <attDef ident="calendar" mode="delete"/>
                   <attDef ident="ref" mode="delete"/>
@@ -407,6 +471,7 @@
                </attList>
             </elementSpec>
             <elementSpec ident="title" mode="change">
+               <desc>Adds the title of a book.</desc>
                <attList>
                   <attDef ident="calendar" mode="delete"/>
                   <attDef ident="level" mode="delete"/>
@@ -419,23 +484,27 @@
                </attList>
             </elementSpec>
             <elementSpec ident="publisher" mode="change">
+               <desc>Adds the publisher of a book.</desc>
                <attList>
                   <attDef ident="resp" mode="delete"/>
                   <attDef ident="ref" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="biblScope" mode="change">
+               <desc>Adds the pages from wich the extract was chosen.</desc>
                <attList>
                   <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="pubPlace" mode="change">
+               <desc>Adds the place of publication.</desc>
                <attList>
                   <attDef ident="resp" mode="delete"/>
                   <attDef ident="ref" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="bibl" mode="change">
+               <desc>Adds a bibliography.</desc>
                <attList>
                   <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="change">
@@ -472,7 +541,6 @@
             </elementSpec>
             <elementSpec ident="availability" mode="change">
                <attList>
-                  <attDef ident="status" mode="delete"/>
                   <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
@@ -530,6 +598,7 @@
             <!--Checking module linking-->
             <moduleRef key="linking" include="link"/>
             <elementSpec ident="link" mode="change">
+               <desc>Links a name to its page on the Tolkien Gateway</desc>
                <attList>
                   <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
@@ -584,7 +653,7 @@
                   <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
-         </schemaSpec>
+         </schemaSpec>         
       </body>
    </text>
 </TEI>
