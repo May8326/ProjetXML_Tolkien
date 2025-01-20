@@ -2,7 +2,7 @@
 
 ## ✒️ Presentation of the Corpus
 
-The aim of this project is to present to French-speaking readers the richness of the literary work of [J.R.R. Tolkien](https://en.wikipedia.org/wiki/J._R._R._Tolkien). 
+The aim of this project is to present to French-speaking readers the richness of the literary work of [J.R.R. Tolkien](https://en.wikipedia.org/wiki/J._R._R._Tolkien).
 
 Unlike _The Lord of the Rings_ and _The Hobbit_, completed novels that made him famous, much of Tolkien's work remained in draft form. His son Christopher reconstructed part of it in the _Silmarillion_ (1977) and the _Book of Lost Tales_ (1983-1984): these two works testify to several stages of Tolkien's progress in constructing his universe.
 
@@ -16,9 +16,9 @@ Unlike _The Lord of the Rings_ and _The Hobbit_, completed novels that made him 
 
 Encoding these texts in XML allows them to be presented in a structured manner, thus comparing the two narratives side by side.
 
-By organizing the more conceptual elements of these excerpts, it is possible to link the names of characters, races, or places to specific identifiers and highlight the author's research and naming choices. 
+By organizing the more conceptual elements of these excerpts, it is possible to link the names of characters, races, or places to specific identifiers and highlight the author's research and naming choices. Each name or concept created by Tolkien was linked in the documents to its relevant page on the [Tolkien Gateway](https://tolkiengateway.net/wiki/Main_Page) website.
 
-The [model](XML/template.dtd) chosen to structure these documents is largely inspired by the guidelines of the [TEI](https://www.tei-c.org).
+The [model](XML/templates/TolkienTemplate.dtd) chosen to structure these documents is largely inspired by the guidelines of the [TEI](https://www.tei-c.org).
 
 
 
@@ -41,9 +41,9 @@ Contrairement au _Seigneur des Anneaux_ et au _Hobbit_, romans achevés qui ont 
 
 L'encodage de ces textes en XML permet de les présenter de manière structurée, et de mettre ainsi en regard les deux récits.
 
-En organisant les éléments plus conceptuels de ces extraits, il est ainsi possible de rattacher les noms de personnages, de races ou de lieux à un identifiant spécifique et de mettre en valeur le travail de recherche et de choix de nom de l'auteur.
+En organisant les éléments plus conceptuels de ces extraits, il est ainsi possible de rattacher les noms de personnages, de races ou de lieux à un identifiant spécifique et de mettre en valeur le travail de recherche et de choix de nom de l'auteur. Chaque nom ou concept créé par Tolkien a été lié à sa page correspondante sur le site du [Tolkien Gateway](https://tolkiengateway.net/wiki/Main_Page).
 
-Le [modèle](XML/template.dtd) choisi pour structurer ces documents est très largement inspiré des guidelines de la [TEI](https://www.tei-c.org).
+Le [modèle](XML/templates/TolkienTemplate.dtd) choisi pour structurer ces documents est très largement inspiré des guidelines de la [TEI](https://www.tei-c.org).
 
 ---
 
