@@ -93,7 +93,7 @@
                   "copyright".</desc>
                <constraint>
                      <sch:rule context="availability">
-                        <sch:assert test="not(@status='restricted') and /licence[contains(., 'copyright')]"> The @status attribute must be
+                        <sch:assert test="@status='restricted' and /licence[contains(., 'copyright')]"> The @status attribute must be
                            "restricted" when the licence element references copyright. </sch:assert>
                      </sch:rule>
                </constraint>
