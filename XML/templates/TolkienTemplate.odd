@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
+   xmlns:sch="http://purl.oclc.org/dsdl/schematron">
    <!-- 
    This ODD is part of a study dedicated to the exploration of J.R.R. Tolkien's universe, with a focus on the names and aliases that populate his fictional world. 
    The specific focus on the Two Trees of Valinor offers insights into how Tolkien wove linguistics, mythology, and narrative coherence into his work. 
@@ -82,29 +83,31 @@
             <classRef key="model.persNamePart"/>
             <moduleRef key="namesdates"
                include="orgName persName addName geogName listOrg listPerson listPlace org person place"/>
-            
-            
+
+
             <!-- RULE CONSTRAINING THE USE OF THE STATUS IN THE AVAILABILITY ELEMENT DEPENDING ON ITS ENVIRONMENT-->
-            
+
             <constraintSpec ident="availability" scheme="schematron">
-               <desc>Ensure that the <att>status</att> attribute of the <gi>availability</gi> element is set to "restricted" when the <gi>licence</gi> element contains the word "copyright".</desc>
+               <desc>Ensure that the <att>status</att> attribute of the <gi>availability</gi>
+                  element is set to "restricted" when the <gi>licence</gi> element contains the word
+                  "copyright".</desc>
                <constraint>
-                  <sch:rule context="//availability[licence[contains(., 'copyright')]]">
-                     <sch:assert test="@status = 'restricted'">
-                        The @status attribute must be "restricted" when the licence element references copyright.
-                     </sch:assert>
-                  </sch:rule>
+                     <sch:rule context="availability">
+                        <sch:assert test="not(@status='restricted') and /licence[contains(., 'copyright')]"> The @status attribute must be
+                           "restricted" when the licence element references copyright. </sch:assert>
+                     </sch:rule>
                </constraint>
             </constraintSpec>
             
-            
+
+
             <!-- RULES CONSTRAINING THE USE OF CERTAIN ELEMENTS OR ATTRIBUTES -->
-            
+
             <!-- Rule constraining the sequence of elements in the person element from the teiHeader-->
-            
+
             <elementSpec ident="person" mode="change">
-               <desc>Description of a person from Tolkien's universe. Each <gi>person</gi> element must have, in that order : 
-                  <list rend="numbered">
+               <desc>Description of a person from Tolkien's universe. Each <gi>person</gi> element
+                  must have, in that order : <list rend="numbered">
                      <item>One <gi>persName</gi> element,</item>
                      <item>Optionnaly, one <gi>note</gi> element.</item>
                   </list>
@@ -123,21 +126,35 @@
                   <attDef ident="age" mode="delete"/>
                   <attDef ident="resp" mode="delete"/>
                </attList>
+               <!-- exemple of use -->
                <exemplum>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <person>
-                        <PersName></PersName>
+                        <person xml:id="Yav_001">
+                           <persName>Yavanna<addName>Palurien</addName>
+                              <addName>Kémi</addName>
+                              <addName>Dame de la Terre</addName></persName>
+                           <note source="https://tolkiengateway.net/wiki/Yavanna">
+                              <p>Yavanna Kementári was a <orgName ref="Val_001">Valië</orgName>, the
+                                 Queen of Earth. Also known as Giver of Fruits, she was responsible
+                                 for all growing things.</p>
+                              <p>Yavanna's surname was Palúrien ("bosom of earth"), a Qenya name, at
+                                 an earlier stage of writing of The Silmarillion. Kementári first
+                                 appeared as Kémi from root KEME (Gnomish Címir).</p>
+                           </note>
+                        </person>
                      </person>
                   </egXML>
                </exemplum>
             </elementSpec>
-            
+
             <!-- Rule constraining the use of the attribute @type and its values -->
-            
+
             <elementSpec ident="place" mode="change">
                <desc>Description of a place from Tolkien's universe. The nature of the place are
                   encodent in the <att>type</att> attribute. At this stage of the project, these can
-                  only be <val>lake</val>, <val>tree</val>, <att>region</att>, <att>building</att> or <att>country</att>.</desc>
+                  only be <val>lake</val>, <val>tree</val>, <att>region</att>, <att>building</att>
+                  or <att>country</att>.</desc>
                <!-- removing unused attributes from the element place -->
                <attList>
                   <attDef ident="resp" mode="delete"/>
@@ -166,12 +183,31 @@
                      </valList>
                   </attDef>
                </attList>
+               <exemplum>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <place xml:id="Cer_001" type="building">
+                        <geogName>Cercle du Destin <addName>Máhanaxar</addName></geogName>
+                        <note source="https://tolkiengateway.net/wiki/M%C3%A1hanaxar">
+                           <p>Máhanaxar, also called Rithil-Anamo, was the Ring of Doom, probably a
+                              hall or court where the <persName ref="Val_001">Valar</persName> held
+                              their councils.</p>
+                        </note>
+                     </place>
+                     <place xml:id="Kul_001" type="lake">
+                        <geogName>Kulullin</geogName>
+                        <note source="https://tolkiengateway.net/wiki/Kulullin_and_Silindrin">
+                           <p>Kulullin and Silindrin were two cauldrons according to the early
+                              version of the legendarium in The Book of Lost Tales.</p>
+                        </note>
+                     </place>
+                  </egXML>
+               </exemplum>
             </elementSpec>
-            
-            
-            
+
+
+
             <!-- Other elements used for the project -->
-            
+
             <elementSpec ident="orgName" mode="change">
                <desc>Adds the name of a people, race or country in Tolkien's universe</desc>
                <!-- removing unused attributes from the element orgName-->
@@ -253,7 +289,7 @@
                   </attDef>
                </attList>
             </elementSpec>
-            
+
             <classSpec ident="att.datable.custom" type="atts" mode="change">
                <!-- removing unused attributes from the module-->
                <attList>
@@ -659,7 +695,7 @@
                   <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
-         </schemaSpec>         
+         </schemaSpec>
       </body>
    </text>
 </TEI>
