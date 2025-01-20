@@ -57,19 +57,6 @@
                target="https://tolkiengateway.net/wiki/Main_Page">Tolkien Gateway</ref> in the list
             of named entities present in the teiHeader.</p>
 
-         <!-- RULE CONSTRAINING THE USE OF THE STATUS IN THE AVAILABILITY ELEMENT DEPENDING ON ITS ENVIRONMENT-->
-
-         <constraintSpec ident="availability" scheme="schematron">
-            <desc>Ensure that the <att>status</att> attribute of the <gi>availability</gi> element is set to "restricted" when the <gi>licence</gi> element contains the word "copyright".</desc>
-            <constraint>
-               <sch:rule context="//availability[licence[contains(., 'copyright')]]">
-                  <sch:assert test="@status = 'restricted'">
-                     The @status attribute must be "restricted" when the &lt;licence&gt; element references copyright.
-                  </sch:assert>
-               </sch:rule>
-            </constraint>
-         </constraintSpec>
-
          <!-- ELEMENTS CUSTOMISATION-->
          <schemaSpec ident="Tolkien_tei" start="TEI ">
             <desc>A simple TEI customization to encode the works of J.R.R. Tolkien.</desc>
@@ -95,6 +82,20 @@
             <classRef key="model.persNamePart"/>
             <moduleRef key="namesdates"
                include="orgName persName addName geogName listOrg listPerson listPlace org person place"/>
+            
+            
+            <!-- RULE CONSTRAINING THE USE OF THE STATUS IN THE AVAILABILITY ELEMENT DEPENDING ON ITS ENVIRONMENT-->
+            
+            <constraintSpec ident="availability" scheme="schematron">
+               <desc>Ensure that the <att>status</att> attribute of the <gi>availability</gi> element is set to "restricted" when the <gi>licence</gi> element contains the word "copyright".</desc>
+               <constraint>
+                  <sch:rule context="//availability[licence[contains(., 'copyright')]]">
+                     <sch:assert test="@status = 'restricted'">
+                        The @status attribute must be "restricted" when the licence element references copyright.
+                     </sch:assert>
+                  </sch:rule>
+               </constraint>
+            </constraintSpec>
             
             
             <!-- RULES CONSTRAINING THE USE OF CERTAIN ELEMENTS OR ATTRIBUTES -->
