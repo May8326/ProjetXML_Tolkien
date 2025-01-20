@@ -99,20 +99,18 @@
             
             <!-- RULES CONSTRAINING THE USE OF CERTAIN ELEMENTS OR ATTRIBUTES -->
             
-            <!-- Rule constraining the sequence of elements in the person element form the teiHeader-->
+            <!-- Rule constraining the sequence of elements in the person element from the teiHeader-->
             
             <elementSpec ident="person" mode="change">
                <desc>Description of a person from Tolkien's universe. Each <gi>person</gi> element must have, in that order : 
                   <list rend="numbered">
                      <item>One <gi>persName</gi> element,</item>
-                     <item>One to three<gi>link</gi>elements,</item>
                      <item>Optionnaly, one <gi>note</gi> element.</item>
                   </list>
                </desc>
                <content>
                   <sequence>
                      <elementRef key="persName" minOccurs="1" maxOccurs="1"/>
-                     <elementRef key="link" minOccurs="1" maxOccurs="3"/>
                      <elementRef key="note" minOccurs="0" maxOccurs="1"/>
                   </sequence>
                </content>
@@ -124,6 +122,13 @@
                   <attDef ident="age" mode="delete"/>
                   <attDef ident="resp" mode="delete"/>
                </attList>
+               <exemplum>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <person>
+                        <PersName></PersName>
+                     </person>
+                  </egXML>
+               </exemplum>
             </elementSpec>
             
             <!-- Rule constraining the use of the attribute @type and its values -->
