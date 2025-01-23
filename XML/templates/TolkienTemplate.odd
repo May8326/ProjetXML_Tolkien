@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
    <!-- 
@@ -86,19 +90,32 @@
 
 
             <!-- RULE CONSTRAINING THE USE OF THE STATUS IN THE AVAILABILITY ELEMENT DEPENDING ON ITS ENVIRONMENT-->
-
-            <constraintSpec ident="availability" scheme="schematron">
-               <desc>Ensure that the <att>status</att> attribute of the <gi>availability</gi>
+            
+            <!-- I tried to make this rule work, but it seems that there is an error in my sch:assert that I am unable to correct. Whenever I try and validate
+            my xml files with it, it sees an error whether the correct value of the attribute is set or not. -->
+            
+            <!--<constraintSpec ident="availability" mode="change" scheme="isoschematron">
+               <desc>The <att>status</att> attribute of the <gi>availability</gi>
                   element is set to "restricted" when the <gi>licence</gi> element contains the word
                   "copyright".</desc>
                <constraint>
-                     <sch:rule context="availability">
-                        <sch:assert test="@status='restricted' and /licence[contains(., 'copyright')]"> The @status attribute must be
+                     <sch:rule context="tei:availability">
+                        <sch:assert test=".[@status='restricted'] and /licence[contains(., 'copyright')]" role="error"> The @status attribute must be
                            "restricted" when the licence element references copyright. </sch:assert>
                      </sch:rule>
                </constraint>
             </constraintSpec>
-            
+            -->
+
+            <!-- RULE CONSTRAINING THE USE OF THE REF ATTRIBUTE FOR PERSNAME, GEOGNAME and ORGNAME IN THE BODY -->
+            <constraintSpec ident="persName_ref" mode="change" scheme="isoschematron">
+               <desc>The <gi>persName</gi> must have a <att>ref</att> attribute.</desc>
+               <constraint>
+                  <sch:rule context="tei:persName | tei:geogName | tei:orgName">
+                     <sch:assert test="@ref" role="error">A @ref attribute linking the id is mandatory.</sch:assert>
+                  </sch:rule>
+               </constraint>
+            </constraintSpec>
 
 
             <!-- RULES CONSTRAINING THE USE OF CERTAIN ELEMENTS OR ATTRIBUTES -->
@@ -106,7 +123,7 @@
             <!-- Rule constraining the sequence of elements in the person element from the teiHeader-->
 
             <elementSpec ident="person" mode="change">
-               <desc>Description of a person from Tolkien's universe. Each <gi>person</gi> element
+               <desc><gloss>person</gloss> describes a person from Tolkien's universe. Each <gi>person</gi> element
                   must have, in that order : <list rend="numbered">
                      <item>One <gi>persName</gi> element,</item>
                      <item>Optionnaly, one <gi>note</gi> element.</item>
@@ -151,7 +168,7 @@
             <!-- Rule constraining the use of the attribute @type and its values -->
 
             <elementSpec ident="place" mode="change">
-               <desc>Description of a place from Tolkien's universe. The nature of the place are
+               <desc><gloss>place</gloss> describes a place from Tolkien's universe. The nature of the place are
                   encodent in the <att>type</att> attribute. At this stage of the project, these can
                   only be <val>lake</val>, <val>tree</val>, <att>region</att>, <att>building</att>
                   or <att>country</att>.</desc>
