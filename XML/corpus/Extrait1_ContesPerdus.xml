@@ -45,6 +45,7 @@
                     ensure uniform data processing. </p>
             </samplingDecl>
         </encodingDesc>
+       
         <profileDesc>
             <particDesc>
                 <!-- ____________________________________________ ORGANISATION_________________________________________________ -->
@@ -52,7 +53,7 @@
                 
                 <listOrg>
                     <org type="race" xml:id="Val_001">
-                        <orgName>Valar<addName>Gods</addName></orgName>
+                        <orgName ref="Val_001">Valar<addName>Gods</addName></orgName>
                         <note source="https://tolkiengateway.net/wiki/Valar">
                             <p>The Valar (sg. Vala) were the Powers of Arda who shaped and ruled the
                                 world. They lived on the Western continent of <geogName
@@ -65,7 +66,7 @@
                     </org>
                     
                     <org type="race" xml:id="Ent_001">
-                        <orgName>Ent <addName>Shepherds of the Trees</addName></orgName>
+                        <orgName ref="Ent_001">Ent <addName>Shepherds of the Trees</addName></orgName>
                         <note source="https://tolkiengateway.net/wiki/Ents">
                             <p>The Ents were sentient, humanoid beings created at the request of
                                 <persName ref="Yav_001">Yavanna</persName> to protect the trees
@@ -80,7 +81,7 @@
                 <listPerson>
                     
                     <person xml:id="Yav_001">
-                        <persName>Yavanna<addName>Palurien</addName>
+                        <persName ref="001">Yavanna<addName>Palurien</addName>
                             <addName>Kémi</addName>
                             <addName>Dame de la Terre</addName></persName>
                         <note source="https://tolkiengateway.net/wiki/Yavanna">
@@ -90,11 +91,11 @@
                             <p>Yavanna's surname was Palúrien ("bosom of earth"), a Qenya name, at
                                 an earlier stage of writing of The Silmarillion. Kementári first
                                 appeared as Kémi from root KEME (Gnomish Címir).</p>
-                        </note>
+                        </note>                        
                     </person>
                     
                     <person xml:id="Nie_001">
-                        <persName>Nienna</persName>
+                        <persName ref="Nie_001">Nienna</persName>
                         <note source="https://tolkiengateway.net/wiki/Nienna">
                             <p>Nienna was a Queen of the <orgName ref="Val_001">Valar</orgName>, the
                                 sister of <persName ref="Man_001">Mandos</persName> and <persName
@@ -104,7 +105,7 @@
                     </person>
                     
                     <person xml:id="Aul_001">
-                        <persName>Aulë</persName>
+                        <persName ref="Aul_001">Aulë</persName>
                         <note source="https://tolkiengateway.net/wiki/Aul%C3%AB">
                             <p>Aulë was a <orgName ref="Val_001">Vala</orgName> and one of the
                                 Aratar, also known as the Smith and Smith of the <orgName
@@ -114,7 +115,7 @@
                     </person>
                     
                     <person xml:id="Van_001">
-                        <persName>Vana</persName>
+                        <persName ref="Van_001">Vana</persName>
                         <note source="https://tolkiengateway.net/wiki/V%C3%A1na">
                             <p>Vána, one of the <orgName ref="Val_001">Valier</orgName>, was the
                                 younger sister of <persName ref="Yav_001">Yavanna</persName> and the
@@ -124,7 +125,7 @@
                     </person>
                     
                     <person xml:id="Irm_001">
-                        <persName>Irmo <addName>Lorien</addName></persName>
+                        <persName ref="Irm_001">Irmo <addName>Lorien</addName></persName>
                         <note source="https://tolkiengateway.net/wiki/Irmo">
                             <p>Irmo, commonly called Lórien after his place of dwelling, was a
                                 <persName ref="Val_001">Vala</persName> who was known as "the
@@ -133,7 +134,7 @@
                     </person>
                     
                     <person xml:id="Man_001">
-                        <persName>Mandos</persName>
+                        <persName ref="Man_001">Mandos</persName>
                         <note source="https://tolkiengateway.net/wiki/Mandos">
                             <p>Mandos was the Doomsman of the <persName ref="Val_001"
                                 >Valar</persName> who pronounced judgement in matters of fate.
@@ -157,7 +158,7 @@
                 
                 <listPlace>
                     <place xml:id="Cer_001" type="building">
-                        <geogName>Cercle du Destin <addName>Máhanaxar</addName></geogName>
+                        <geogName ref="Cer_001">Cercle du Destin <addName>Máhanaxar</addName></geogName>
                         <note source="https://tolkiengateway.net/wiki/M%C3%A1hanaxar">
                             <p>Máhanaxar, also called Rithil-Anamo, was the Ring of Doom, probably a
                                 hall or court where the <persName ref="Val_001">Valar</persName>
@@ -166,7 +167,7 @@
                     </place>
                     
                     <place xml:id="Val_002" type="region">
-                        <geogName>Valinor</geogName>
+                        <geogName ref="Val_00é">Valinor</geogName>
                         <note source="https://tolkiengateway.net/wiki/Valinor">
                             <p>Valinor or Valinórë was the realm of the <orgName ref="Val_001"
                                 >Valar</orgName> in central <geogName ref="Ama_001"
@@ -182,7 +183,7 @@
                     </place>
                     
                     <place xml:id="Ama_001" type="region">
-                        <geogName>Aman</geogName>
+                        <geogName ref="Ama_001">Aman</geogName>
                         <note source="https://tolkiengateway.net/wiki/Aman">
                             <p>Aman, the Blessed Realm, was a continent that lay to the west of
                                 Middle-earth, across the great ocean Belegaer. It contained
@@ -193,7 +194,7 @@
                     </place>
                     
                     <place xml:id="Kul_001" type="lake">
-                        <geogName>Kulullin</geogName>
+                        <geogName ref="Kul_001">Kulullin</geogName>
                         <note source="https://tolkiengateway.net/wiki/Kulullin_and_Silindrin">
                             <p>Kulullin and Silindrin were two cauldrons according to the early
                                 version of the legendarium in The Book of Lost Tales.</p>
@@ -201,7 +202,7 @@
                     </place>
                     
                     <place xml:id="Sil_001" type="lake">
-                        <geogName>Silindrin</geogName>
+                        <geogName ref="Sil_001">Silindrin</geogName>
                         <note source="https://tolkiengateway.net/wiki/Kulullin_and_Silindrin">
                             <p>Kulullin and Silindrin were two cauldrons according to the early
                                 version of the legendarium in The Book of Lost Tales.</p>
@@ -209,7 +210,7 @@
                     </place>
                     
                     <place xml:id="Tel_001" type="tree">
-                        <geogName>Telperion <addName>Silpion</addName>
+                        <geogName ref="Tel_001">Telperion <addName>Silpion</addName>
                             <addName>Ninquelote</addName></geogName>
                         <note source="https://tolkiengateway.net/wiki/Telperion">
                             <p>Telperion was the elder of the Two Trees of <geogName ref="Val_002"
@@ -222,7 +223,7 @@
                     </place>
                     
                     <place xml:id="Lau_001" type="tree">
-                        <geogName>Laurelin <addName>Lindelokse</addName>
+                        <geogName ref="Lau_001">Laurelin <addName>Lindelokse</addName>
                             <addName>Golden Tree</addName>
                             <addName>Malinalda</addName>
                             <addName>Culurien</addName></geogName>
@@ -234,10 +235,10 @@
                                 by Varda in her Wells.</p>
                         </note>
                     </place>
-                    
                 </listPlace>
             </settingDesc>
         </profileDesc>  
+        
         <revisionDesc>
             <list>
                 <item>
@@ -260,7 +261,7 @@
                         ref="Yav_001">Yavanna</persName>, ils étaient assis sans mot dire sur les
                     trônes du conseil dans le <geogName ref="Cer_001">Mahanaxar</geogName>, le
                         <geogName ref="Cer_001">Cercle du Destin</geogName>, près des portes d'or de
-                    la cité. <persName>Yavanna Kementari</persName> chantait devant eux et ils la
+                    la cité. <persName ref="Yav_001">Yavanna Kementari</persName> chantait devant eux et ils la
                     regardaient.</p>
                 <p>A ce moment deux pousses fragiles apparurent sur la colline et un silence
                     s'abattit sur le monde, nul autre bruit que le chant de <persName ref="Yav_001"
