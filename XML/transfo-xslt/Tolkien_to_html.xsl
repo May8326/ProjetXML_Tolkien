@@ -46,8 +46,7 @@
                 <xsl:for-each select="//body/div">
                     <xsl:variable name="numero-div" select="@n"/>
                     <li>
-                        <a href="extrait{$numero-div}.html">Extrait n°<xsl:value-of
-                                select="$numero-div"/> : <xsl:value-of
+                        <a href="extrait{$numero-div}.html"><xsl:value-of
                                 select="key('biblio', @source)/title"/>
                         </a>
                     </li>
@@ -77,20 +76,21 @@
                     <xsl:copy-of select="$navbar"/>
                     <h1>Les Légendes de la Terre du Milieu : construction d'un récit</h1>
                     <div>
+                        <h2>Introduction</h2>
                         <details>
                             <summary>
-                                <h2>Présentation du corpus </h2>
+                                <h3>Présentation du corpus </h3>
                             </summary>
 
                             <p>Le but de ce projet est de présenter aux lecteurs francophones la
                                 richesse de l'oeuvre littéraire de J.R.R. Tolkien.</p>
 
-                            <p>Contrairement au <emph>Seigneur des Anneauxdes Anneaux</emph> et au
-                                    <emph>Hobbit</emph>, romans achevés qui ont fait sa notoriété,
+                            <p>Contrairement au <cite>Seigneur des Anneaux</cite> et au
+                                    <cite>Hobbit</cite>, romans achevés qui ont fait sa notoriété,
                                 une grande partie de l'oeuvre de Tolkien est restée à l'état
                                 d'ébauche. Son fils Christopher en a reconstitué une partie dans le
-                                    <emph>Silmarillion</emph> (1977) et les <emph>Livre des Contes
-                                    Perdus</emph> (1983-1984) : ces deux ouvrages témoignent de
+                                    <cite>Silmarillion</cite> (1977) et les <cite>Livre des Contes
+                                    Perdus</cite> (1983-1984) : ces deux ouvrages témoignent de
                                 plusieurs états de l'avancée de Tolkien dans la construction de son
                                 univers.</p>
 
@@ -99,7 +99,7 @@
                                 Silpion, deux arbres qui à la création de la Terre du Milieu
                                 éclairent le pays de Valinor comme le Soleil et la Lune.</p>
 
-                            <p>Le premier extrait, tiré du <emph>Livre des Contes Perdus</emph>, est
+                            <p>Le premier extrait, tiré du <cite>Livre des Contes Perdus</cite>, est
                                 constitué des premières notes de Tolkien sur ce récit sur la
                                 naissance des Deux Arbres du Valinor.</p>
                             <p>Le second extrait, tiré du Silmarillion, relate la naissance du
@@ -110,7 +110,7 @@
 
                         <details>
                             <summary>
-                                <h2>Pourquoi le XML ?</h2>
+                                <h3>Pourquoi le XML ?</h3>
                             </summary>
                             <p>L'encodage de ces textes en XML permet de les présenter de manière
                                 structurée, et de mettre ainsi en regard les deux récits..</p>
@@ -127,6 +127,23 @@
                         </details>
 
                     </div>
+                    <div>
+                        <h2>Bibliographie</h2>
+                        <section id="bibliographie">
+                            <xsl:for-each select="//sourceDesc/bibl">
+                                <article>
+                                    <xsl:value-of select="./author"/>, <em><xsl:value-of
+                                            select="./title"/></em>, <xsl:value-of
+                                        select="./editor[@resp='editor']"/> (éd.), <xsl:value-of
+                                        select="./editor[@resp='translator']"/> (trad.), <xsl:value-of
+                                        select="./pubPlace"/>, <xsl:value-of select="./publisher"/>,
+                                        <xsl:value-of select="./date"/>, <em>pages <xsl:value-of
+                                            select="./biblScope/@from"/> à <xsl:value-of
+                                            select="./biblScope/@to"/></em>
+                                </article>
+                            </xsl:for-each>
+                        </section>
+                    </div>
                 </body>
                 <xsl:copy-of select="$footer"/>
             </html>
@@ -142,9 +159,22 @@
                     <body>
                         <xsl:copy-of select="$navbar"/>
                         <h1>TITRE DE L'EXTRAIT</h1>
-                        <xsl:for-each select="/p">
+                        <xsl:for-each select="./p">
                             <p>
-                                <xsl:value-of select="."/>
+                                <xsl:for-each select="descendant::node()">
+                                    <xsl:choose>
+                                        <!-- Si l'élément est un <name>, je le transforme en lien -->
+                                        <xsl:when test="matches(name(), 'Name$')">
+                                            <a href="{concat('toc.html#', @key)}" target="blank" id="name"><xsl:apply-templates/></a>
+                                        </xsl:when>
+                                        <!-- Sinon on copie tel quel le texte du paragraphe -->
+                                        <xsl:otherwise>
+                                            <xsl:apply-templates/>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:for-each>                             
+                                
+                                
                             </p>
                         </xsl:for-each>
                     </body>
