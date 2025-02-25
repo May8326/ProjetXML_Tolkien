@@ -3,14 +3,18 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
+    background-color: beige;
 }
 
 /* Barre de navigation */
 #navbar {
-    background-color: #333;
-    padding: 10px 0;
+    padding: 40px 0;
     text-align: center;
+    background-image: url('../img/bg_blue.jpeg'); /* Chemin relatif corrigé */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position:center;
+    opacity: 0.8;
 }
 
 #navbar ul {
@@ -50,10 +54,16 @@ body {
 /* Pied de page */
 footer {
     text-align: center;
+    position:relative;
+    width: 100%;
     padding: 10px;
-    background-color: #333;
     color: white;
     bottom: 0;
+    background-image: url('../img/bg_blue.jpeg'); /* Chemin relatif corrigé */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position:center;
+    opacity: 0.8;
 }
 
 details {
