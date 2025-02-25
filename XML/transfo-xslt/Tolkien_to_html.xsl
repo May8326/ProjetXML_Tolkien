@@ -36,7 +36,7 @@
 
     <!-- VARIABLE DE LA NAVBAR -->
     <xsl:variable name="navbar">
-        <div id="navbar">
+        <div id="navbar">li
             <ul>
                 <li>
                     <a href="index.html">Accueil</a>
@@ -127,7 +127,22 @@
                         </details>
 
                     </div>
-                    <div>
+                    
+                    <div class="view-panel">
+                        <h3>Vue des chapitres</h3>
+                        <ul>
+                            <xsl:for-each select="//div">
+                                <xsl:variable name="chapitre" select="@n"/>
+                                <li><a href="extrait{$chapitre}.html">Extrait n°<xsl:value-of select="$chapitre"/></a></li>
+                            </xsl:for-each>
+                        </ul>
+                    </div>
+                    
+                    <div class="view-panel">
+                        <h3>Index des noms</h3>
+                    </div>
+                    
+                    <div class="biblio">
                         <h2>Bibliographie</h2>
                         <section id="bibliographie">
                             <xsl:for-each select="//sourceDesc/bibl">
