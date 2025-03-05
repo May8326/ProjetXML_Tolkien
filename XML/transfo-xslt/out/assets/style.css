@@ -1,20 +1,40 @@
 /* Style général */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Garamond', serif;
     margin: 0;
     padding: 0;
-    background-color: beige;
+    background-color: #f4f1ea; /* Light beige */
+    color: #333; /* Dark text for readability */
+    background-image: url('../img/valinor-trees.png'); /* Add your image path here */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; /* Fix the background image */
+    font-size: 1rem; /* Use rem for font size */
+}
+
+/* Liens */
+a {
+    color: #8f875c; /* Dark goldenrod */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #d4af37; /* Gold */
+    text-decoration: underline;
 }
 
 /* Barre de navigation */
 #navbar {
-    padding: 40px 0;
+    padding: 2rem 0;
     text-align: center;
-    background-image: url('../img/bg_blue.jpeg'); /* Chemin relatif corrigé */
+    background-color: #d4e6f1; /* Pastel blue */
     background-size: cover;
     background-attachment: fixed;
-    background-position:center;
-    opacity: 0.8;
+    background-position: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
 }
 
 #navbar ul {
@@ -24,56 +44,219 @@ body {
 }
 
 #navbar ul li {
-    display: inline;
-    margin: 0 15px;
+    display: inline-block;
+    position: relative;
+    margin: 0 1rem;
 }
 
 #navbar ul li a {
-    color: white;
+    color: #2c3e50; /* Dark blue */
     text-decoration: none;
-    font-size: 18px;
-    padding: 8px 12px;
-    transition: background 0.3s;
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    transition: background 0.3s, color 0.3s;
 }
 
 #navbar ul li a:hover {
-    background-color: #555;
+    background-color: #a9cce3; /* Lighter pastel blue */
     border-radius: 5px;
+    color: #fff; /* White text on hover */
+}
+
+/* Menu déroulant */
+#navbar ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #d4e6f1; /* Pastel blue */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
+    z-index: 1000;
+}
+
+#navbar ul li:hover ul {
+    display: block;
+}
+
+#navbar ul li ul li {
+    display: block;
+    margin: 0;
+}
+
+#navbar ul li ul li a {
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
 }
 
 /* Contenu principal */
 .container {
-    width: 80%;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: #fff; /* White background */
+    padding: 1rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #f4f1ea; /* Light beige */
+    color: #b8860b; /* Dark goldenrod */
 }
 
 /* Pied de page */
 footer {
     text-align: center;
-    position:relative;
+    position: relative;
     width: 100%;
-    padding: 10px;
-    color: white;
-    bottom: 0;
-    background-image: url('../img/bg_blue.jpeg'); /* Chemin relatif corrigé */
+    padding: 1rem;
+    color: #2c3e50; /* Dark blue */
+    background-color: #d4e6f1; /* Pastel blue */
     background-size: cover;
     background-attachment: fixed;
-    background-position:center;
-    opacity: 0.8;
+    background-position: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
 }
 
-details {
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #f8f9fa;
+footer img {
+    width: 50%;
+    height: auto;
+    align-self: left;
+    border-radius: 0;
+    margin: 0;
 }
-summary {
+
+/* Style pour les tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background-color: #f9f9f9;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+table th {
+    background-color: #d4af37; /* Gold */
+    color: #333; /* Darker text for contrast */
+}
+
+table tr:nth-child(even) {
+    background-color: #e6e6e6; /* Light silver */
+}
+
+table tr:hover {
+    background-color: #cccccc; /* Slightly darker silver */
+}
+
+/* Style pour le nuage de mots */
+.word-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.word {
     font-weight: bold;
-    cursor: pointer;
+    color: #333;
+    padding: 0.25rem;
+    text-decoration: none; /* Remove underline */
+    font-family: 'Elvish Ring NFI'; /* Tolkien-esque font */
+}
+
+.word a {
+    text-decoration: none; /* Ensure links inside word class are not underlined */
+}
+
+.word-1 { font-size: 0.625rem; color: #b8860b; } /* Dark goldenrod */
+.word-2 { font-size: 1rem; color: #d4af37; } /* Gold */
+.word-3 { font-size: 1.375rem; color: #c0c0c0; } /* Silver */
+.word-4 { font-size: 1.75rem; color: #ffd700; } /* Light gold */
+.word-5 { font-size: 2.125rem; color: #e5e4e2; } /* Platinum */
+.word-6 { font-size: 2.5rem; color: #a9a9a9; } /* Dark gray */
+.word-7 { font-size: 2.625rem; color: #808080; } /* Gray */
+
+/* Style pour les view-panels */
+.view-panel {
+    background-color: rgba(255, 255, 255, 0.7); /* White with more transparency */
+    padding: 1rem;
+    margin: 2rem 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #f4f1ea; /* Light beige */
+    color: #b8860b; /* Dark goldenrod */
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+    }
+
+    #navbar ul li {
+        margin: 0 0.5rem;
+    }
+
+    #navbar ul li a {
+        font-size: 0.875rem;
+        padding: 0.5rem;
+    }
+
+    .view-panel {
+        padding: 0.75rem;
+        margin: 1.5rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    #navbar ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .container {
+        width: 95%;
+        padding: 0.5rem;
+    }
+
+    table th, table td {
+        padding: 0.25rem;
+    }
+
+    .word-cloud {
+        gap: 0.25rem;
+    }
+
+    .view-panel {
+        padding: 0.5rem;
+        margin: 1rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 0.875rem;
+    }
+
+    #navbar ul li a {
+        font-size: 0.75rem;
+        padding: 0.25rem;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0.25rem;
+    }
+
+    .view-panel {
+        padding: 0.25rem;
+        margin: 0.5rem 0;
+    }
+
+    table th, table td {
+        padding: 0.125rem;
+    }
 }
