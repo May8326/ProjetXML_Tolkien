@@ -8,7 +8,11 @@
 
     <!-- CLES DU FICHIER -->
     <xsl:key name="biblio" match="//bibl" use="@xml:id"/>
-
+    <xsl:key name="paragraphes" match="body//p" use="generate-id()"/>
+    <xsl:key name="noms-propres" match="body//*[contains(@ref, '')]" use="."/>
+    <xsl:key name="refKey" match="*[@ref]" use="@ref" />
+    
+    
     <!-- VARIABLE DU HEAD DU DOCUMENT HTML -->
     <xsl:variable name="head">
         <head>
@@ -36,13 +40,11 @@
 
     <!-- VARIABLE DE LA NAVBAR -->
     <xsl:variable name="navbar">
-        <div id="navbar">li
+        <div id="navbar">
             <ul>
                 <li>
                     <a href="index.html">Accueil</a>
                 </li>
-                <!--<li><a href="extrait1.html">Les contes perdus</a></li>
-               <li><a href="extrait2.html">Le Silmarillion</a></li>-->
                 <xsl:for-each select="//body/div">
                     <xsl:variable name="numero-div" select="@n"/>
                     <li>
@@ -139,10 +141,39 @@
                     </div>
                     
                     <div class="view-panel">
-                        <h3>Index des noms</h3>
-                    </div>
+                        <h3>Index des noms propres</h3>
+                        <div class="word-cloud">
+                        <!-- Sélectionner tous les éléments ayant un attribut @ref -->
+                        <xsl:for-each select="//*[@ref]">
+                            <!-- Créer une variable contenant la valeur de l'attribut @ref -->
+                            <xsl:variable name="refValue" select="@ref" />
+                            
+                            <!-- Compter le nombre d'occurrences de chaque @ref distinct dans tout le document -->
+                            <xsl:variable name="nb_occurences">
+                                <xsl:value-of select="count(//*[@ref = $refValue])" />
+                            </xsl:variable>
+                            
+                            <!-- Calculer la classe de taille en fonction du nombre d'occurrences -->
+                            <xsl:variable name="class_size" select="concat('word-', 
+                                if ($nb_occurences &gt; 10) then 7
+                                else if ($nb_occurences &gt; 8) then 6
+                                else if ($nb_occurences &gt; 6) then 5
+                                else if ($nb_occurences &gt; 4) then 4
+                                else if ($nb_occurences &gt; 2) then 3
+                                else if ($nb_occurences &gt; 1) then 2
+                                else 1)" />
+                            
+                            <!-- Afficher chaque @ref une seule fois avec la taille en fonction du nombre d'occurrences -->
+                            <xsl:if test="generate-id() = generate-id(key('refKey', $refValue)[1])">
+                                <span class="word">
+                                    <a href="toc.html#{@ref}" class="{$class_size}"><xsl:value-of select="text()" /></a>
+                                </span>
+                            </xsl:if>
+                        </xsl:for-each>
+                    </div></div>
+                  
                     
-                    <div class="biblio">
+                    <div class="view-panel">
                         <h2>Bibliographie</h2>
                         <section id="bibliographie">
                             <xsl:for-each select="//sourceDesc/bibl">
@@ -173,31 +204,47 @@
                     <xsl:copy-of select="$head"/>
                     <body>
                         <xsl:copy-of select="$navbar"/>
-                        <h1>TITRE DE L'EXTRAIT</h1>
-                        <xsl:for-each select="./p">
-                            <p>
-                                <xsl:for-each select="descendant::node()">
-                                    <xsl:choose>
-                                        <!-- Si l'élément est un <name>, je le transforme en lien -->
-                                        <xsl:when test="matches(name(), 'Name$')">
-                                            <a href="{concat('toc.html#', @key)}" target="blank" id="name"><xsl:apply-templates/></a>
-                                        </xsl:when>
-                                        <!-- Sinon on copie tel quel le texte du paragraphe -->
-                                        <xsl:otherwise>
-                                            <xsl:apply-templates/>
-                                        </xsl:otherwise>
-                                    </xsl:choose>
-                                </xsl:for-each>                             
-                                
-                                
-                            </p>
-                        </xsl:for-each>
+                        <!-- pour mettre en H1 le titre du livre -->
+                        <xsl:variable name="titre" select="key('biblio', @source)"/>
+                        <h1><xsl:value-of select="$titre/title"/></h1>
+                        
+                        <!-- Pour copier le texte de chaque paragraphe en extrait, et inclure un lien pour les noms propres -->
+                        <div class="view-panel"><xsl:for-each select="./p">
+                         <xsl:apply-templates select="."/>
+                        </xsl:for-each></div>
                     </body>
                     <xsl:copy-of select="$footer"/>
                 </html>
             </xsl:result-document>
         </xsl:for-each>
     </xsl:template>
+    
+    <xsl:template match="p">
+        <p>
+            <xsl:apply-templates select="node()"/>
+        </p>
+    </xsl:template>
+    
+    <!-- Template unique pour transformer les balises avec @ref en <a> -->
+    <xsl:template match="*">
+        <xsl:choose>
+            <!-- Si l'élément a un attribut 'ref', on le transforme en balise <a> -->
+            <xsl:when test="@ref">
+                <a href="toc.html#{@ref}">
+                    <xsl:apply-templates select="node()"/>
+                </a>
+            </xsl:when>
+            
+            <!-- Sinon, on copie l'élément tel quel -->
+            <xsl:otherwise>
+                <xsl:copy>
+                    <xsl:apply-templates select="node()"/>
+                </xsl:copy>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <!-- TEMPLATE DE L'INDEX DES NOMS -->
 
     <xsl:template name="toc">
         <xsl:result-document href="out/toc.html" indent="yes">
@@ -205,15 +252,124 @@
                 <xsl:copy-of select="$head"/>
                 <body>
                     <xsl:copy-of select="$navbar"/>
-                    <h1>TITRE DE L'INDEX</h1>
-                    <div>
-                        <p>Description du site</p>
+                    <h1>Index des noms</h1>
+                    <div class="index">
+                        <h2>Noms de personnes</h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>Autres noms</th>
+                                        <th>Note</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- LISTE DES NOMS DU TEXTE, GENEREE A PARTIR DU PROFILE DESC XML ET TRIEE PAR ORDRE ALPHABETIQUE -->
+                                <xsl:for-each select="//profileDesc//person">
+                                    <xsl:sort select="persName" order="ascending" />
+                                    <xsl:variable select="note/@source" name="lien"/>
+                                    <tr id="{@xml:id}">
+                                        <td>
+                                        <a href="{$lien}"><xsl:value-of select="persName/text()"/></a>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                        <xsl:for-each select="persName/addName">
+                                            <li><xsl:value-of select="text()"/></li>                                        
+                                        </xsl:for-each>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <xsl:copy-of select="note"></xsl:copy-of>
+                                    </td>
+                                    </tr>
+                                </xsl:for-each>
+                                            
+                                </tbody>
+                            </table>
+                        
+                       
+                    </div>
+                    
+                    <div class="index">
+                        <h2>Noms de Peuples</h2>
+                        
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Autres noms</th>
+                                    <th>Note</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <xsl:for-each select="//profileDesc//org">
+                                    <xsl:sort select="orgName" order="ascending" />
+                                    <xsl:variable select="note/@source" name="lien"/>
+                                    <tr id="{@xml:id}">
+                                        <td>
+                                            <a href="{$lien}"><xsl:value-of select="orgName/text()"/></a>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <xsl:for-each select="orgName/addName">
+                                                    <li><xsl:value-of select="text()"/></li>                                        
+                                                </xsl:for-each>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <xsl:copy-of select="note"></xsl:copy-of>
+                                        </td>
+                                    </tr>
+                                </xsl:for-each>
+                                
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                    
+                    <div class="index">
+                        <h2>Noms de Lieux</h2>
+                        
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Autres noms</th>
+                                    <th>Note</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <xsl:for-each select="//profileDesc//place">
+                                    <xsl:sort select="geogName" order="ascending" />
+                                    <xsl:variable select="note/@source" name="lien"/>
+                                    <tr id="{@xml:id}">
+                                        <td>
+                                            <a href="{$lien}"><xsl:value-of select="geogName/text()"/></a>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <xsl:for-each select="geogName/addName">
+                                                    <li><xsl:value-of select="text()"/></li>                                        
+                                                </xsl:for-each>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <xsl:copy-of select="note"></xsl:copy-of>
+                                        </td>
+                                    </tr>
+                                </xsl:for-each>
+                                
+                            </tbody>
+                        </table>
+                        
                     </div>
                 </body>
                 <xsl:copy-of select="$footer"/>
             </html>
         </xsl:result-document>
     </xsl:template>
+    
 
 
 
