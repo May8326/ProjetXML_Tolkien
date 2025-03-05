@@ -92,7 +92,7 @@
             <listPerson>
 
                <person xml:id="Yav_001">
-                  <persName ref="001">Yavanna<addName>Palurien</addName>
+                  <persName ref="Yav_001">Yavanna<addName>Palurien</addName>
                      <addName>Kémi</addName>
                      <addName>Dame de la Terre</addName></persName>
                   <note source="https://tolkiengateway.net/wiki/Yavanna">
@@ -137,8 +137,8 @@
                <person xml:id="Irm_001">
                   <persName ref="Irm_001">Irmo <addName>Lorien</addName></persName>
                   <note source="https://tolkiengateway.net/wiki/Irmo">
-                     <p>Irmo, commonly called Lórien after his place of dwelling, was a <persName
-                           ref="Val_001">Vala</persName> who was known as "the master of visions and
+                     <p>Irmo, commonly called Lórien after his place of dwelling, was a <orgName
+                           ref="Val_001">Vala</orgName> who was known as "the master of visions and
                         dreams."</p>
                   </note>
                </person>
@@ -146,7 +146,7 @@
                <person xml:id="Man_001">
                   <persName ref="Man_001">Mandos</persName>
                   <note source="https://tolkiengateway.net/wiki/Mandos">
-                     <p>Mandos was the Doomsman of the <persName ref="Val_001">Valar</persName> who
+                     <p>Mandos was the Doomsman of the <orgName ref="Val_001">Valar</orgName> who
                         pronounced judgement in matters of fate. He was the keeper of the slain in
                         his Halls in the west of <geogName ref="Val_002">Valinor</geogName>.</p>
                      <p>His actual, less common name was Namo. He was the "elder brother" of the
@@ -169,21 +169,21 @@
                   <geogName ref="Cer_001">Cercle du Destin <addName>Máhanaxar</addName></geogName>
                   <note source="https://tolkiengateway.net/wiki/M%C3%A1hanaxar">
                      <p>Máhanaxar, also called Rithil-Anamo, was the Ring of Doom, probably a hall
-                        or court where the <persName ref="Val_001">Valar</persName> held their
+                        or court where the <orgName ref="Val_001">Valar</orgName> held their
                         councils.</p>
                   </note>
                </place>
 
                <place xml:id="Val_002" type="region">
-                  <geogName ref="Val_00é">Valinor</geogName>
+                  <geogName ref="Val_002">Valinor</geogName>
                   <note source="https://tolkiengateway.net/wiki/Valinor">
                      <p>Valinor or Valinórë was the realm of the <orgName ref="Val_001"
                            >Valar</orgName> in central <geogName ref="Ama_001">Aman</geogName>.
                         Valinor was the place to which the <orgName ref="Val_001">Valar</orgName>
                         moved after Almaren was destroyed by Melkor.</p>
                      <p>Valinor properly refers to the inhabited lands of the continent of <geogName
-                           ref="Ama_001">Aman</geogName>, home to the <persName ref="Val_001"
-                           >Valar</persName> and the three kindreds of Elves: the Vanyar, some of
+                           ref="Ama_001">Aman</geogName>, home to the <orgName ref="Val_001"
+                           >Valar</orgName> and the three kindreds of Elves: the Vanyar, some of
                         the Noldor, and some of the Teleri. Valimar is its central city.</p>
                   </note>
                </place>
@@ -220,7 +220,7 @@
                   <note source="https://tolkiengateway.net/wiki/Telperion">
                      <p>Telperion was the elder of the Two Trees of <geogName ref="Val_002"
                            >Valinor</geogName>, called the White Tree, which shed silver light on
-                        the domain of the <persName ref="Val_001">Valar</persName>. His leaves were
+                        the domain of the <orgName ref="Val_001">Valar</orgName>. His leaves were
                         of dark green, shining silver beneath, and his boughs were decked with
                         brilliant flowers that shed a rain of silver dew, which was collected as a
                         source of water and of light.</p>
@@ -348,11 +348,11 @@
                le sol avec un doux bruit.</p>
             <p>Alors les <orgName ref="Val_001">Dieux</orgName> firent-ils la louange de <persName
                   ref="Van_001">Vana</persName> et <persName ref="Yav_001">Palurien</persName> et se
-               réjouirent dans la lumière, leur disant : <q who="Val_001" toWhom="Yav_001">"Voici en
-                  vérité un très bel arbre, et il doit posséder un nom qui lui soit propre"</q> et
+               réjouirent dans la lumière, leur disant : <q who="Val_001" toWhom="Yav_001">Voici en
+                  vérité un très bel arbre, et il doit posséder un nom qui lui soit propre</q> et
                   <persName ref="Yav_001">Kémi</persName> dit : <q who="Yav_001" toWhom="Val_001"
-                  >"Qu'il soit nommé <geogName ref="Lau_001">Laurelin</geogName>, pour l'éclat de sa
-                  floraison et la musique de sa rosée"</q>, mais <persName ref="Van_001"
+                  >Qu'il soit nommé <geogName ref="Lau_001">Laurelin</geogName>, pour l'éclat de sa
+                  floraison et la musique de sa rosée</q>, mais <persName ref="Van_001"
                   >Vana</persName> l'aurait nommé <geogName ref="Lau_001">Lindeloksë</geogName>, et
                les deux noms demeurent.</p>
             <p>Maintenant cela faisait douze heures depuis que <geogName ref="Lau_001"
@@ -372,7 +372,7 @@
 
             <p>Alors les <orgName ref="Val_001">Valar</orgName> écarquillèrent les yeux, stupéfaits,
                mais <persName ref="Yav_001">Palurien</persName> dit :<q who="Yav_001"
-                  toWhom="Val_001">"cet arbre n'a encore cessé de pousser"</q>, et voici qu'au
+                  toWhom="Val_001">cet arbre n'a encore cessé de pousser</q>, et voici qu'au
                moment où elle dit ces mots l'arbre fleurit, et ses fleurs ne pendaient pas en
                grappes mais étaient comme des fleurs séparées qui poussaient sur des fines tiges qui
                se balançaient l'une vers l'autre, et qui étaient pareilles à de l'argent et des
@@ -386,11 +386,11 @@
                les mares de son éclat, très nettes et noires ; à ce moment <persName ref="Irm_001"
                   >Lorien</persName> ne put contenir sa joie, et même <persName ref="Man_001"
                   >Mandos</persName> sourit. Mais <persName ref="Irm_001">Lorien</persName> dit : <q
-                  who="Irm_001" toWhom="Val_001">"Voici ! Je vais donner un nom à cet arbre et le
-                  nommer <geogName ref="Tel_001">Silpion</geogName>"</q>, et cela a toujours été son
+                  who="Irm_001" toWhom="Val_001">Voici ! Je vais donner un nom à cet arbre et le
+                  nommer <geogName ref="Tel_001">Silpion</geogName></q>, et cela a toujours été son
                nom depuis. Alors <persName ref="Yav_001">Palurien</persName> se leva et dit aux
                   <orgName ref="Val_001">Dieux</orgName> : <q who="Yav_001" toWhom="Val_001"
-                  >"Recueillez maintenant toute la lumière qui goutte en forme liquide de ce bel
+                  >Recueillez maintenant toute la lumière qui goutte en forme liquide de ce bel
                   arbre et entreposez-la dans <geogName ref="Sil_001">Silindrin</geogName>, et ne
                   lui permettez de la quitter qu'avec frugalité. Voici, cet arbre, lorsque les douze
                   heures de sa pleine lumière sont passées, décroîtra à nouveau, et à ce moment la
@@ -401,7 +401,7 @@
                      >Silpion</geogName> vous ferez de même, versant à nouveau la lumière recueillie
                   de la profonde <geogName ref="Sil_001">Silindrin</geogName> à chaque décroissance
                   de l'<geogName ref="Lau_001">arbre d'or</geogName>. La lumière est la sève de ces
-                  arbres et leur sève est lumière ! "</q></p>
+                  arbres et leur sève est lumière !</q></p>
 
             <p>Et avec ces mots elle signifiait que bien que ces arbres dussent être arrosés de
                lumière pour avoir de la sève et vivre, pourtant de par leur croissance et leur être
