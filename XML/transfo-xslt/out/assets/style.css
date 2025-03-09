@@ -25,7 +25,9 @@ a:hover {
 }
 
 /* Titres */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: #4b2e2e;
     font-family: "Cormorant Garamond", serif;
     font-size: 2rem;
@@ -60,14 +62,16 @@ h1, h2, h3 {
     display: inline-block;
     margin: 0 1rem;
 }
-#navbar ul li a, footer a {
+#navbar ul li a,
+footer a {
     color: #2c3e50;
     font-size: 1rem;
     padding: 0.5rem 0.75rem;
     transition: background 0.3s, color 0.3s;
-    
+
 }
-#navbar ul li a:hover, footer a:hover {
+#navbar ul li a:hover,
+footer a:hover {
     background-color: #a9cce3;
     border-radius: 5px;
     color: #fff;
@@ -101,7 +105,9 @@ footer {
     justify-content: space-between;
     margin: 1% auto;
 }
-.footer-logo, .footer-nav, .footer-bottom {
+.footer-logo,
+.footer-nav,
+.footer-bottom {
     flex: 1;
     display: flex;
     align-items: center;
@@ -183,59 +189,95 @@ table tr:hover {
 }
 /* Police variable selon le nombre d'occurences du mot dans le text */
 
-.word a { 
+.word a {
     text-decoration: none;
     font-weight: bold;
-    padding: 0.25rem; 
-    font-family: 'EB Garamond';}
-    
-    .word-1 { font-size: 0.71875rem; color: #8f875c; }
-    .word-2 { font-size: 1.15rem; color: #d4af37; }
-    .word-3 { font-size: 1.58125rem; color: #c0c0c0; }
-    .word-4 { font-size: 2.0125rem; color: #ffd700; }
-    .word-5 { font-size: 2.44375rem; color: #e5e4e2; }
-    .word-6 { font-size: 2.875rem; color: #a9a9a9; }
-    .word-7 { font-size: 3.01875rem; color: #808080; }
-    
-    /* VIEW PANEL ET DETAILS déroulants de la page d'accueil */
-    .view-panel,
-    details {
-        background-color: rgba(255, 255, 255, 0.9);
-        padding: 1rem;
-        margin: 2rem 10%;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        color: #4b2e2e;
-        line-height: 1.5;
-        font-family: Arial, sans-serif;
+    padding: 0.25rem;
+    font-family: 'EB Garamond';
+}
+
+.word-1 {
+    font-size: 0.71875rem;
+    color: #8f875c;
+}
+.word-2 {
+    font-size: 1.15rem;
+    color: #d4af37;
+}
+.word-3 {
+    font-size: 1.58125rem;
+    color: #c0c0c0;
+}
+.word-4 {
+    font-size: 2.0125rem;
+    color: #ffd700;
+}
+.word-5 {
+    font-size: 2.44375rem;
+    color: #e5e4e2;
+}
+.word-6 {
+    font-size: 2.875rem;
+    color: #a9a9a9;
+}
+.word-7 {
+    font-size: 3.01875rem;
+    color: #808080;
+}
+
+/* VIEW PANEL ET DETAILS déroulants de la page d'accueil */
+.view-panel,
+details {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    margin: 2rem 10%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    color: #4b2e2e;
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
+}
+details summary {
+    font-weight: bold;
+}
+
+
+
+/* AJUSTEMENT AUX PETITS ECRANS */
+@media (max-width : 768px) {
+    #navbar ul li {
+        display: block;
+        margin: 0.5rem 0;
     }
-    details summary { font-weight: bold; }
-    
-    
-    
-    /* AJUSTEMENT AUX PETITS ECRANS */
-    @media (max-width: 768px) {
-        #navbar ul li {
-            display: block;
-            margin: 0.5rem 0;
-        }
-        .container { width: 95%; padding: 0.5rem; }
-        table th, table td { padding: 0.25rem; }
-        .word-cloud { gap: 0.25rem; }
-        .view-panel { padding: 0.5rem; margin: 1rem 0; }
-        .footer-container {
-            flex-direction: column;
-            align-items: center;
-        }
-        .footer-logo, .footer-nav, .footer-bottom {
-            width: 100%;
-            justify-content: center;
-            text-align: center;
-            margin: 0.5rem 0;
-        }
-        .footer-nav ul {
-            flex-direction: column;
-            align-items: center;
-        }
+    .container {
+        width: 95%;
+        padding: 0.5rem;
     }
-    
+    table th,
+    table td {
+        padding: 0.25rem;
+    }
+    .word-cloud {
+        gap: 0.25rem;
+    }
+    .view-panel {
+        padding: 0.5rem;
+        margin: 1rem 0;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-logo,
+    .footer-nav,
+    .footer-bottom {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+    .footer-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}

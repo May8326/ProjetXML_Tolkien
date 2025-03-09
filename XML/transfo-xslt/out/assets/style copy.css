@@ -28,9 +28,11 @@ a:hover {
 }
 
 /* Titres */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: #4b2e2e; /* Dark brown */
-    font-family: "Cormorant Garamond", serif;/* Manuscript-like font */
+    font-family: "Cormorant Garamond", serif; /* Manuscript-like font */
     font-size: 2rem;
 }
 
@@ -93,8 +95,8 @@ h1, h2, h3 {
 
 /* Pied de page */
 footer {
-    background-color: #d4e6f1;  /* Pastel blue */
-    color: #2c3e50;  /* Dark blue */
+    background-color: #d4e6f1; /* Pastel blue */
+    color: #2c3e50; /* Dark blue */
     padding: 15px;
     text-align: center;
     font-size: small;
@@ -107,7 +109,9 @@ footer {
     margin: 1% auto;
 }
 
-.footer-logo, .footer-nav, .footer-bottom {
+.footer-logo,
+.footer-nav,
+.footer-bottom {
     flex: 1;
     display: flex;
     align-items: center;
@@ -205,16 +209,38 @@ table tr:hover {
     text-decoration: none;
 }
 
-.word-1 { font-size: 0.71875rem; color: #8f875c; } /* Dark goldenrod */
-.word-2 { font-size: 1.15rem; color: #d4af37; } /* Gold */
-.word-3 { font-size: 1.58125rem; color: #c0c0c0; } /* Silver */
-.word-4 { font-size: 2.0125rem; color: #ffd700; } /* Light gold */
-.word-5 { font-size: 2.44375rem; color: #e5e4e2; } /* Platinum */
-.word-6 { font-size: 2.875rem; color: #a9a9a9; } /* Dark gray */
-.word-7 { font-size: 3.01875rem; color: #808080; } /* Gray */
+.word-1 {
+    font-size: 0.71875rem;
+    color: #8f875c;
+} /* Dark goldenrod */
+.word-2 {
+    font-size: 1.15rem;
+    color: #d4af37;
+} /* Gold */
+.word-3 {
+    font-size: 1.58125rem;
+    color: #c0c0c0;
+} /* Silver */
+.word-4 {
+    font-size: 2.0125rem;
+    color: #ffd700;
+} /* Light gold */
+.word-5 {
+    font-size: 2.44375rem;
+    color: #e5e4e2;
+} /* Platinum */
+.word-6 {
+    font-size: 2.875rem;
+    color: #a9a9a9;
+} /* Dark gray */
+.word-7 {
+    font-size: 3.01875rem;
+    color: #808080;
+} /* Gray */
 
 /* Style pour les view-panels */
-.view-panel, details {
+.view-panel,
+details {
     background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque for better readability */
     padding: 1rem;
     margin: 2rem 10%;
@@ -231,7 +257,7 @@ details summary {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+@media (max-width : 768px) {
     #navbar ul li {
         display: block;
         margin: 0.5rem 0;
@@ -261,7 +287,9 @@ details summary {
         align-items: center;
     }
 
-    .footer-logo, .footer-nav, .footer-bottom {
+    .footer-logo,
+    .footer-nav,
+    .footer-bottom {
         width: 100%;
         justify-content: center;
         text-align: center;
@@ -276,7 +304,7 @@ details summary {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width : 480px) {
     body {
         font-size: 0.875rem;
     }
