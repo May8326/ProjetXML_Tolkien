@@ -3,17 +3,20 @@
 
     <xsl:output method="html"/>
 
-    <!-- VARIABLE CONTENANT LES URL -->
-    <xsl:variable name="tolkienGateway">https://tolkiengateway.net/wiki/Main_Page</xsl:variable>
-
+    <!-- ............... -->
     <!-- CLES DU FICHIER -->
+    <!-- ............... -->
+    <!-- clé pour rattacher chaque div à sa source en biblio -->
     <xsl:key name="biblio" match="//bibl" use="@xml:id"/>
+    <!-- clé pour générer un id unique à chaque paragraphe et éviter les répétitions quand je crée des liens pour les noms propres -->
     <xsl:key name="paragraphes" match="body//p" use="generate-id()"/>
+    <!-- clés pour sélectionner les noms propres du texte -->
     <xsl:key name="noms-propres" match="body//*[contains(@ref, '')]" use="."/>
     <xsl:key name="refKey" match="*[@ref]" use="@ref"/>
 
-
+    <!-- ................................. -->
     <!-- VARIABLE DU HEAD DU DOCUMENT HTML -->
+    <!-- ................................. -->
     <xsl:variable name="head">
         <head>
             <meta charset="UTF-8"/>
@@ -23,120 +26,167 @@
         </head>
     </xsl:variable>
 
+    <!-- .................. -->
     <!-- VARIABLE DU FOOTER -->
+    <!-- .................. -->
     <xsl:variable name="footer">
         <footer>
             <div class="footer-container">
-                <!-- Logo -->
+                <!-- Logo du footer -->
                 <div class="footer-logo">
-                    <a href="https://www.chartes.psl.eu">
-                        <img src="./img/logo_chartes.png" id="footer"/>
-                    </a>
+                    <a href="https://www.chartes.psl.eu"><img src="./img/logo_chartes.png" id="footer"/></a>
                 </div>
-                <!-- Index du site -->
-               <div class="footer-nav">
-                <ul>
-                    <li>
-                        <a href="index.html"><img src="./img/valinor-treesNB.png"/></a>
-                    </li>
-                    <li>
-                        <a href="index.html">Accueil</a>
-                    </li>
-                    <xsl:for-each select="//body/div">
-                        <xsl:variable name="numero-div" select="@n"/>
-                        <li>
-                            <a href="extrait{$numero-div}.html">
-                                <xsl:value-of select="key('biblio', @source)/title"/>
-                            </a>
-                        </li>
-                    </xsl:for-each>
-                    <li>
-                        <a href="toc.html">Index des noms</a>
-                    </li>
-                </ul></div>
+                <!-- Navigation du site -->
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="index.html"><img src="./img/valinor-treesNB.png"/></a></li>
+                        <li><a href="index.html">Accueil</a></li>
+                        <!-- Index généré pour les pages de chapitre -->
+                        <xsl:for-each select="//body/div">
+                            <xsl:variable name="numero-div" select="@n"/>
+                            <li><a href="extrait{$numero-div}.html"><xsl:value-of select="key('biblio', @source)/title"/></a></li>
+                        </xsl:for-each>
+                        <li><a href="toc.html">Index des noms</a></li>
+                    </ul>
+                </div>
                 <!-- Mentions légales et crédits -->
                 <div class="footer-bottom">
                     <p>&#169; 2025 Gioan Maëlys. Tous droits réservés.</p>
-                    <p>Site réalisé dans le cadre du cours de XSLT du Master TNAH de l'École nationale
-                        des chartes.</p>
+                    <p>Site réalisé dans le cadre du cours de XSLT du Master TNAH de l'École nationale des chartes.</p>
                     <p>Ce site contient des textes protégés par droit d'auteur. Ceux-ci sont inclus uniquement à des fins d’étude et d’analyse dans le cadre d'un exercice académique. Aucune redistribution ou utilisation commerciale n'est autorisée pour ces textes sans l'autorisation des détenteurs des droits.</p>
                 </div>
             </div>
         </footer>
     </xsl:variable>
-        
-       
 
+    <!-- ..................... -->
     <!-- VARIABLE DE LA NAVBAR -->
+    <!-- ..................... -->
     <xsl:variable name="navbar">
         <div id="navbar">
+            <!-- logo du site -->
             <a href="index.html"><img src="./img/valinor-treesNB.png"/></a>
+            <!-- Navigation -->
             <ul>
-                <li>
-                    <a href="index.html">Accueil</a>
-                </li>
+                <li><a href="index.html">Accueil</a></li>
+                <!-- Index généré pour les pages de chapitre -->
                 <xsl:for-each select="//body/div">
                     <xsl:variable name="numero-div" select="@n"/>
-                    <li>
-                        <a href="extrait{$numero-div}.html">
-                            <xsl:value-of select="key('biblio', @source)/title"/>
-                        </a>
-                    </li>
+                    <li><a href="extrait{$numero-div}.html"><xsl:value-of select="key('biblio', @source)/title"/></a></li>
                 </xsl:for-each>
-                <li>
-                    <a href="toc.html">Index des noms</a>
-                </li>
+                <li><a href="toc.html">Index des noms</a></li>
             </ul>
         </div>
     </xsl:variable>
-   
-    
+
+    <!-- ......................... -->
     <!-- TEMPLATE DU NUAGE DE MOTS -->
+    <!-- ......................... -->
     <xsl:template name="nuage-de-mot">
         <div class="word-cloud">
-            <!-- Sélectionner uniquement les éléments ayant @ref dans la div courante -->
+            <!-- Pour Sélectionner uniquement les éléments qui ont l'attribut @ref dans la div sélectionnée, grâce à la clé en début de fichier -->
             <xsl:for-each-group select=".//*[@ref]" group-by="@ref">
-                <xsl:variable name="refValue" select="current-grouping-key()" />
-                <xsl:variable name="nb_occurences" select="count(current-group())" />
-                
-                <!-- Déterminer la classe de taille -->
-                <xsl:variable name="class_size" select="concat('word-', 
-                    if ($nb_occurences &gt; 10) then 7
-                    else if ($nb_occurences &gt; 8) then 6
-                    else if ($nb_occurences &gt; 6) then 5
-                    else if ($nb_occurences &gt; 4) then 4
-                    else if ($nb_occurences &gt; 2) then 3
-                    else if ($nb_occurences &gt; 1) then 2
-                    else 1)" />
-                
+                <!-- Pour chaque groupe du même nom propre avec le même attribut @ref, création d'une variable pour stocker @ref  -->
+                <xsl:variable name="refValue" select="current-grouping-key()"/>
+                <!-- Variable pour stocker le nombre d'éléments dans le groupe actuel qui ont la même valeur que @ref -->
+                <xsl:variable name="nb_occurences" select="count(current-group())"/>
+
+                <!-- Déterminer la classe css du mot selon son nombre d'occurences -->
+                <xsl:variable name="class_size" select="concat('word-',
+                        if ($nb_occurences &gt; 10) then 7 else
+                        if ($nb_occurences &gt; 8) then 6 else
+                        if ($nb_occurences &gt; 6) then 5 else
+                        if ($nb_occurences &gt; 4) then 4 else
+                        if ($nb_occurences &gt; 2) then 3 else
+                        if ($nb_occurences &gt; 1) then 2 else 1)"/>
+                       
+                <!-- Affichage du nuage de mots -->
                 <span class="word">
+                <!-- Le mot avec un lien vers la page d'index et sa classe css pour gérer taille et couleur -->
                     <a href="toc.html#{$refValue}" class="{$class_size}">
-                        <xsl:value-of select="current-group()[1]/text()" />
-                        (<xsl:value-of select="$nb_occurences" />)
+                    <!-- Pour mettre le nombre d'occurrences entre parenthèses après le mot -->
+                        <xsl:value-of select="current-group()[1]/text()"/> (<xsl:value-of select="$nb_occurences"/>) 
                     </a>
                 </span>
             </xsl:for-each-group>
         </div>
-        <!-- Ajouter une légende -->
-       
     </xsl:template>
 
-    <!-- TEMPLATE QUI MATCHE LA RACINE ET APPELLE LES TEMPLATES -->
+    <!-- ........................................................... -->
+    <!-- TEMPLATE QUI MATCHE LA RACINE ET APPELLE LES TEMPLATES HTML -->
+    <!-- ........................................................... -->
     <xsl:template match="/">
         <xsl:call-template name="index"/>
         <xsl:call-template name="extraits"/>
         <xsl:call-template name="toc"/>
-        <!-- À COMPLÉTER EN AJOUTANT LES <XSL:CALL-TEMPLATE/> POUR LES CHAPITRES ET L'INDEX -->
     </xsl:template>
 
 
-    <!-- TEMPLATE DE LA PAGE D'ACCUEIL -->
+    <!-- ....................................................................... -->
+    <!-- AVANT DE COMMENCER : ...................................................-->
+    <!-- DEUX TEMPLATES POUR CONVERTIR LE CONTENU DES PARAGRAPHES EN HTML VALIDE -->
+    <!-- ....................................................................... -->
+
+    <!-- pour sélectionner les balises enfants des paragraphes -->
+    <xsl:template match="p">
+        <p>
+            <xsl:apply-templates select="node()"/>
+        </p>
+    </xsl:template>
+
+    <!-- pour transformer les balises TEI de l'intérieur des paragraphes en HTML valide -->
+    <xsl:template match="*">
+        <xsl:choose>
+            <!-- POUR L'INTRODUCTION : si la balise est un <emph>, la remplace en <cite> -->
+            <xsl:when test="self::emph">
+                <cite>
+                    <xsl:apply-templates select="node()"/>
+                </cite>
+            </xsl:when>
+            <!-- si la balise est un <ref target="xyz">, la remplace en <a href="xyz" -->
+            <xsl:when test="self::ref">
+                <a href="{@target}" target="_blank">
+                    <xsl:apply-templates select="node()"/>
+                </a>
+            </xsl:when>
+            <!-- POUR LES EXTRAITS : Si l'élément a un attribut 'ref', je le transforme en balise <a> -->
+            <xsl:when test="@ref">
+                <a href="toc.html#{@ref}" target="_blank">
+                    <xsl:apply-templates select="node()"/>
+                </a>
+            </xsl:when>
+            <!-- Si c'est un élément <date>, je l'ignore -->
+            <xsl:when test="self::date">
+                <time>
+                    <xsl:apply-templates select="node()"/>
+                </time>
+            </xsl:when>
+            <!-- si c'est un élément <gap>, je le remplace par [...] -->
+            <xsl:when test="self::gap">
+                [...]
+            </xsl:when>
+            <!-- Sinon, je copie l'élément tel quel -->
+            <xsl:otherwise>
+                <xsl:copy>
+                    <xsl:apply-templates select="node()"/>
+                </xsl:copy>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <!-- ......................... -->
+    <!-- GENERER LA PAGE D'ACCUEIL -->
+    <!-- ......................... -->
     <xsl:template name="index">
+        <!-- creation de la page html  -->
         <xsl:result-document href="out/index.html" indent="yes">
             <html>
+                <!-- intégration de la variable head -->
                 <xsl:copy-of select="$head"/>
                 <body>
+                    <!-- intégration de la variable navbar -->
                     <xsl:copy-of select="$navbar"/>
+                    <!-- Introduction du projet dans des boîtes interactives (texte du github) -->
                     <h1>Les Légendes de la Terre du Milieu : construction d'un récit</h1>
                     <div>
                         <h2>Introduction</h2>
@@ -144,84 +194,57 @@
                             <summary>
                                 <head>Présentation du corpus</head>
                             </summary>
-                            <p>Le but de ce projet est de présenter aux lecteurs francophones la
-                                richesse de l'oeuvre littéraire de J.R.R. Tolkien.</p>
-                            <p>Contrairement au <cite>Seigneur des Anneaux</cite> et au
-                                    <cite>Hobbit</cite>, romans achevés qui ont fait sa notoriété,
-                                une grande partie de l'oeuvre de Tolkien est restée à l'état
-                                d'ébauche. Son fils Christopher en a reconstitué une partie dans le
-                                    <cite>Silmarillion</cite> (1977) et les <cite>Livre des Contes
-                                    Perdus</cite> (1983-1984) : ces deux ouvrages témoignent de
-                                plusieurs états de l'avancée de Tolkien dans la construction de son
-                                univers.</p>
-
-                            <p>Trois extraits tirés de ces deux ouvrages ont été retenus pour
-                                témoigner de ce travail : ils relatent la création de Laurelin et
-                                Silpion, deux arbres qui à la création de la Terre du Milieu
-                                éclairent le pays de Valinor comme le Soleil et la Lune.</p>
-
-                            <p>Le premier extrait, tiré du <cite>Livre des Contes Perdus</cite>, est
-                                constitué des premières notes de Tolkien sur ce récit sur la
-                                naissance des Deux Arbres du Valinor.</p>
-                            <p>Le second extrait, tiré du Silmarillion, relate la naissance du
-                                premier arbre. Le dernier extrait lui fait suite et raconte la
-                                naissance du second arbre. Les deux textes du Silmarillion
-                                témoignent d'un état plus achevé du récit..</p>
+                            <!-- copie des premiers paragraphes du projectDesc du document tei -->
+                            <xsl:for-each select="//projectDesc/p[position() &gt;= 2 and position() &lt;= 6]">
+                                <!-- appelle la template créée pour les paragraphes -->
+                                <xsl:apply-templates select="."/>
+                            </xsl:for-each>
                         </details>
-
                         <details>
                             <summary>
                                 <head>Pourquoi le XML ?</head>
-                                
                             </summary>
-                            <p>L'encodage de ces textes en XML permet de les présenter de manière
-                                structurée, et de mettre ainsi en regard les deux récits.</p>
-                            <p>En relevant les noms propres de ces extraits, il est
-                                ainsi possible de rattacher les noms de personnages, de races ou de
-                                lieux à un identifiant spécifique et de mettre en valeur le travail
-                                de recherche et de choix des noms qu'a fait l'auteur. Chaque nom ou concept
-                                créé par Tolkien a été lié à sa page correspondante sur le site du
-                                    <a href="{$tolkienGateway}" target="_blank">Tolkien Gateway</a>..</p>
-
-                            <p>Le modèle choisi pour structurer ces documents est très largement
-                                inspiré des guidelines de la TEI.</p>
-                        </details>
-
+                            <!-- copie des derniers paragraphes du projectDesc du document tei -->
+                            <xsl:for-each select="//projectDesc/p[position() &gt; 6]">
+                                <!-- appelle la template créée pour les paragraphes -->
+                                <xsl:apply-templates select="."/>
+                            </xsl:for-each>
+                            </details>
                     </div>
+                    <!-- lien vers les deux extraits -->
                     <h2>Vue des chapitres</h2>
                     <div class="view-panel">
-                        
                         <ul>
                             <xsl:for-each select="//div">
                                 <xsl:variable name="chapitre" select="@n"/>
-                                <li>
-                                    <a href="extrait{$chapitre}.html">Extrait n°<xsl:value-of
-                                            select="$chapitre"/></a>
-                                </li>
+                                <li><a href="extrait{$chapitre}.html">Extrait n°<xsl:value-of select="$chapitre"/></a></li>
                             </xsl:for-each>
                         </ul>
                     </div>
+                    <!-- Intégration du nuage de mot comptant les noms propres de tout les extraits -->
                     <h3>Occurences des noms</h3>
                     <div class="view-panel">
                         <xsl:call-template name="nuage-de-mot"/>
                     </div>
-                    
+                    <!-- Bibliographie générée à partir de l'entête TEI -->
                     <h2>Bibliographie</h2>
-
                     <div class="view-panel">
                         <section id="bibliographie">
+                        <ul>
                             <xsl:for-each select="//sourceDesc/bibl">
-                                <article>
-                                    <xsl:value-of select="./author"/>, <em><xsl:value-of
-                                            select="./title"/></em>, <xsl:value-of
-                                        select="./editor[@resp = 'editor']"/> (éd.), <xsl:value-of
-                                        select="./editor[@resp = 'translator']"/> (trad.),
-                                        <xsl:value-of select="./pubPlace"/>, <xsl:value-of
-                                        select="./publisher"/>, <xsl:value-of select="./date"/>,
-                                        <em>pages <xsl:value-of select="./biblScope/@from"/> à
-                                            <xsl:value-of select="./biblScope/@to"/></em>
-                                </article>
+                                <li>
+                                    <xsl:value-of select="./author"/>, 
+                                    <em><xsl:value-of select="./title"/></em>,
+                                    <xsl:value-of select="./editor[@resp = 'editor']"/> (éd.), 
+                                    <xsl:value-of select="./editor[@resp = 'translator']"/> (trad.),
+                                    <xsl:value-of select="./pubPlace"/>, 
+                                    <xsl:value-of select="./publisher"/>, 
+                                    <xsl:value-of select="./date"/>,
+                                    <em>pages <xsl:value-of select="./biblScope/@from"/> à
+                                    <xsl:value-of select="./biblScope/@to"/></em>
+                                </li>
                             </xsl:for-each>
+                        </ul>
                         </section>
                     </div>
                 </body>
@@ -230,26 +253,29 @@
         </xsl:result-document>
     </xsl:template>
 
+    <!-- ............................. -->
     <!-- TEMPLATE DES PAGES D'EXTRAITS -->
+    <!-- ............................. -->
     <xsl:template name="extraits">
         <xsl:for-each select="//body/div">
+            <!-- document de sortie -->
             <xsl:result-document href="{concat('out/', 'extrait', @n, '.html')}" indent="yes">
                 <html>
                     <xsl:copy-of select="$head"/>
                     <body>
                         <xsl:copy-of select="$navbar"/>
-                        <!-- pour mettre en H1 le titre du livre -->
+                        <!-- Met en H1 le titre du livre, qu'il va cherche en rattachant la div à sa source en biblio grâce à l'attribut @source -->
                         <xsl:variable name="titre" select="key('biblio', @source)"/>
-                        <h1>
-                            <xsl:value-of select="$titre/title"/>
-                        </h1>
+                        <h1><xsl:value-of select="$titre/title"/></h1>
 
-                        <!-- Pour copier le texte de chaque paragraphe en extrait, et inclure un lien pour les noms propres -->
+                        <!-- Copie le texte de chaque paragraphe en convertissant chaque balise tei en html valide -->
                         <div class="view-panel">
                             <xsl:for-each select="./p">
+                                <!-- appelle la template créée plus bas pour les paragraphes -->
                                 <xsl:apply-templates select="."/>
                             </xsl:for-each>
                         </div>
+                        <!-- Intègre un nuage de mots qui compte les noms propres de cette div -->
                         <h2>Nombre d'occurences des noms propres</h2>
                         <div class="view-panel">
                             <xsl:call-template name="nuage-de-mot"/>
@@ -261,168 +287,91 @@
         </xsl:for-each>
     </xsl:template>
 
-    <xsl:template match="p">
-        <p>
-            <xsl:apply-templates select="node()"/>
-        </p>
+
+    <!-- ................................................. -->
+    <!-- TEMPLATE DE TABLEAU POUR LA PAGE D'INDEX DES NOMS -->
+    <!-- ................................................. -->
+    <xsl:template name="table-index">
+        <xsl:param name="element"/>
+        <xsl:param name="name"/>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Autres noms</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- liste des noms du texte, générée à partir du profiledesc tei et triee par ordre alphabetique -->
+                <!-- utilisation de name() pour que la string des paramètres soit considérée comme un nom d'élément par le XPath -->
+                <xsl:for-each select="//profileDesc//*[name() = $element]">
+                    <xsl:sort select="*[name() = $name]" order="ascending"/>
+                    <!--  crée une variable pour stocker le lien vers le TolkienGateway associé au nom dans le profiledesc -->
+                    <xsl:variable name="lien" select="note/@source"/>
+                    <tr id="{@xml:id}">
+                        <!-- crée une colonne pour les noms avec le lien vers le TolkienGateway -->
+                        <td>
+                            <a href="{$lien}" target="_blank">
+                                <xsl:value-of select="*[name() = $name]/text()"/>
+                            </a>
+                        </td>
+                        <!-- crée une colonne pour les alias -->
+                        <td>
+                            <ul>
+                                <xsl:for-each select="*[name() = $name]/addName">
+                                    <li>
+                                        <xsl:value-of select="text()"/>
+                                    </li>
+                                </xsl:for-each>
+                            </ul>
+                        </td>
+                        <!-- crée une colonne pour les commentaires -->
+                        <td>
+                            <xsl:copy-of select="note"/>
+                        </td>
+                    </tr>
+                </xsl:for-each>
+            </tbody>
+        </table>
     </xsl:template>
 
-    <!-- Template unique pour transformer les balises avec @ref en <a> -->
-    <xsl:template match="*">
-        <xsl:choose>
-            <!-- Si l'élément a un attribut 'ref', on le transforme en balise <a> -->
-            <xsl:when test="@ref">
-                <a href="toc.html#{@ref}" target="_blank">
-                    <xsl:apply-templates select="node()"/>
-                </a>
-            </xsl:when>
-
-            <!-- Sinon, on copie l'élément tel quel -->
-            <xsl:otherwise>
-                <xsl:copy>
-                    <xsl:apply-templates select="node()"/>
-                </xsl:copy>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-
-    <!-- TEMPLATE DE L'INDEX DES NOMS -->
-
+    <!-- ................................ -->
+    <!-- GENERER LA PAGE D'INDEX DES NOMS -->
+    <!-- ................................ -->
     <xsl:template name="toc">
+        <!-- document de sortie -->
         <xsl:result-document href="out/toc.html" indent="yes">
             <html>
                 <xsl:copy-of select="$head"/>
                 <body>
                     <xsl:copy-of select="$navbar"/>
+                    <!-- Génère trois tableaux pour les noms, les lieux et les peuples en précisant en paramètre les éléments à partir desquels sont faits les tableaux -->
                     <h1>Index des noms</h1>
                     <div class="index">
                         <h2>Noms de personnes</h2>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Nom</th>
-                                    <th>Autres noms</th>
-                                    <th>Note</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- LISTE DES NOMS DU TEXTE, GENEREE A PARTIR DU PROFILE DESC XML ET TRIEE PAR ORDRE ALPHABETIQUE -->
-                                <xsl:for-each select="//profileDesc//person">
-                                    <xsl:sort select="persName" order="ascending"/>
-                                    <xsl:variable select="note/@source" name="lien"/>
-                                    <tr id="{@xml:id}">
-                                        <td>
-                                            <a href="{$lien}" target="_blank">
-                                                <xsl:value-of select="persName/text()"/>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <ul>
-                                                <xsl:for-each select="persName/addName">
-                                                  <li>
-                                                  <xsl:value-of select="text()"/>
-                                                  </li>
-                                                </xsl:for-each>
-                                            </ul>
-                                        </td>
-                                        <td>
-                                            <xsl:copy-of select="note"/>
-                                        </td>
-                                    </tr>
-                                </xsl:for-each>
-
-                            </tbody>
-                        </table>
-
-
+                        <xsl:call-template name="table-index">
+                            <xsl:with-param name="element" select="'person'"/>
+                            <xsl:with-param name="name" select="'persName'"/>
+                        </xsl:call-template>
                     </div>
-
                     <div class="index">
                         <h2>Noms de Peuples</h2>
-
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Nom</th>
-                                    <th>Autres noms</th>
-                                    <th>Note</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <xsl:for-each select="//profileDesc//org">
-                                    <xsl:sort select="orgName" order="ascending"/>
-                                    <xsl:variable select="note/@source" name="lien"/>
-                                    <tr id="{@xml:id}">
-                                        <td>
-                                            <a href="{$lien}" target="_blank">
-                                                <xsl:value-of select="orgName/text()"/>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <ul>
-                                                <xsl:for-each select="orgName/addName">
-                                                  <li>
-                                                  <xsl:value-of select="text()"/>
-                                                  </li>
-                                                </xsl:for-each>
-                                            </ul>
-                                        </td>
-                                        <td>
-                                            <xsl:copy-of select="note"/>
-                                        </td>
-                                    </tr>
-                                </xsl:for-each>
-
-                            </tbody>
-                        </table>
-
+                        <xsl:call-template name="table-index">
+                            <xsl:with-param name="element" select="'org'"/>
+                            <xsl:with-param name="name" select="'orgName'"/>
+                        </xsl:call-template>
                     </div>
-
                     <div class="index">
                         <h2>Noms de Lieux</h2>
-
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Nom</th>
-                                    <th>Autres noms</th>
-                                    <th>Note</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <xsl:for-each select="//profileDesc//place">
-                                    <xsl:sort select="geogName" order="ascending"/>
-                                    <xsl:variable select="note/@source" name="lien"/>
-                                    <tr id="{@xml:id}">
-                                        <td>
-                                            <a href="{$lien}" target="_blank">
-                                                <xsl:value-of select="geogName/text()"/>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <ul>
-                                                <xsl:for-each select="geogName/addName">
-                                                  <li>
-                                                  <xsl:value-of select="text()"/>
-                                                  </li>
-                                                </xsl:for-each>
-                                            </ul>
-                                        </td>
-                                        <td>
-                                            <xsl:copy-of select="note"/>
-                                        </td>
-                                    </tr>
-                                </xsl:for-each>
-
-                            </tbody>
-                        </table>
-
+                        <xsl:call-template name="table-index">
+                            <xsl:with-param name="element" select="'place'"/>
+                            <xsl:with-param name="name" select="'geogName'"/>
+                        </xsl:call-template>
                     </div>
-                                      
                 </body>
                 <xsl:copy-of select="$footer"/>
             </html>
         </xsl:result-document>
     </xsl:template>
-
 </xsl:stylesheet>
