@@ -23,7 +23,7 @@
          <sourceDesc>
             <bibl type="book" xml:lang="fr" xml:id="Contes">
                <title>Le livre des contes perdus. Première partie</title>
-               <author>John Ronald Reul Tolkien</author>
+               <author>John Ronald Reuel Tolkien</author>
                <editor resp="editor">Christopher Tolkien</editor>
                <editor resp="translator">Adam Tolkien</editor>
                <publisher>Christian Bourgeois</publisher>
@@ -33,7 +33,7 @@
             </bibl>
             <bibl type="book" xml:lang="fr" xml:id="Silmarillion">
                <title>Le Silmarillion : histoire des Silmarils</title>
-               <author>John Ronald Reul Tolkien</author>
+               <author>John Ronald Reuel Tolkien</author>
                <editor resp="editor">Christopher Tolkien</editor>
                <editor resp="translator">Pierre Alien</editor>
                <publisher>Christan Bourgeois</publisher>
@@ -48,6 +48,14 @@
             <p> This file was created as part of an exercise for the XML course taught in the second
                year of the Master's program in Technologies Numériques appliquées à l'Histoire
                (TNAH) at the École nationale des chartes.</p>
+                <p>Le but de ce projet est de présenter aux lecteurs francophones la richesse de l'oeuvre littéraire de J.R.R. Tolkien.</p>
+                            <p>Contrairement au <emph>Seigneur des Anneaux</emph> et au <emph>Hobbit</emph>, romans achevés qui ont fait sa notoriété, une grande partie de l'oeuvre de Tolkien est restée à l'état d'ébauche. Son fils Christopher en a reconstitué une partie dans le <emph>Silmarillion</emph> (1977) et les <emph>Livre des Contes Perdus</emph> (1983-1984) : ces deux ouvrages témoignent de plusieurs états de l'avancée de Tolkien dans la construction de son univers.</p>
+                            <p>Trois extraits tirés de ces deux ouvrages ont été retenus pour témoigner de ce travail : ils relatent la création de Laurelin et Silpion, deux arbres qui à la création de la Terre du Milieu éclairent le pays de Valinor comme le Soleil et la Lune.</p>
+                            <p>Le premier extrait, tiré du <emph>Livre des Contes Perdus</emph>, est constitué des premières notes de Tolkien sur ce récit sur la naissance des Deux Arbres du Valinor.</p>
+                            <p>Le second extrait, tiré du Silmarillion, relate la naissance du premier arbre. Le dernier extrait lui fait suite et raconte la naissance du second arbre. Les deux textes du Silmarillion témoignent d'un état plus achevé du récit.</p>
+                            <p>L'encodage de ces textes en XML permet de les présenter de manière structurée, et de mettre ainsi en regard les deux récits.</p>
+                            <p>En relevant les noms propres de ces extraits, il est ainsi possible de rattacher les noms de personnages, de races ou de lieux à un identifiant spécifique et de mettre en valeur le travail de recherche et de choix des noms qu'a fait l'auteur. Chaque nom ou concept créé par Tolkien a été lié à sa page correspondante sur le site du <ref target="https://tolkiengateway.net/wiki/Main_Page">Tolkien Gateway</ref>.</p>
+                            <p>Ces documents ont été encodés selon les guidelines de la TEI.</p>               
          </projectDesc>
          <samplingDecl>
             <p> The samples selected for this corpus come from two works discussing the creation of
