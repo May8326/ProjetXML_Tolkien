@@ -160,13 +160,17 @@ table {
     color: #4b2e2e;
     line-height: 1.5;
     overflow: hidden;
+    table-layout: auto;
 }
 table th,
 table td {
     border: 1px solid #ddd;
     padding: 0.5rem;
     text-align: left;
+    width: max-content;
+    padding-inline: 1.5rem;
 }
+
 table th {
     background-color: #8f875c;
     color: #fff;
