@@ -11,11 +11,20 @@ Les fichiers complémentaires appelés par la feuille de transformation xslt y s
 ## Arborescence du dossier `out/`
 
 out/
+
 ├── assets
+
 │   └── [style.css](out/assets/style.css)
+
 ├── img
+
 │   ├── [logo_chartes.png](out/img/logo_chartes.png)
+
 │   ├── [valinor-trees.png](out/img/valinor-trees.png)
+
 │   └── [valinor-treesNB.png](out/img/valinor-treesNB.png)
+
 ├── ... fichiers générés par xslt
+
+
 
