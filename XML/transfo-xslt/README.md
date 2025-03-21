@@ -9,10 +9,10 @@ La conversion du fichier [Corpus_Tolkien_all.xml](https://github.com/May8326/Pro
 
 Les fichiers complémentaires y sont déjà placés (images, css).
 
-## Arborescence du dossier out/
+## Arborescence du dossier `out/`
 
-- [assets](out/assets)
-  - [style.css](out/assets/style.css)
+| - [assets](out/assets)
+|  - [style.css](out/assets/style.css)
 - [img](out/img)
   - [logo_chartes.png](out/img/logo_chartes.png)
   - [valinor-trees.png](out/img/valinor-trees.png)
