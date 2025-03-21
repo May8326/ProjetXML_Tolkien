@@ -10,9 +10,6 @@
     <xsl:key name="biblio" match="//bibl" use="@xml:id"/>
     <!-- clé pour générer un id unique à chaque paragraphe et éviter les répétitions quand je crée des liens pour les noms propres -->
     <xsl:key name="paragraphes" match="body//p" use="generate-id()"/>
-    <!-- clés pour sélectionner les noms propres du texte -->
-    <xsl:key name="noms-propres" match="body//*[contains(@ref, '')]" use="."/>
-    <xsl:key name="refKey" match="*[@ref]" use="@ref"/>
 
     <!-- ................................. -->
     <!-- VARIABLE DU HEAD DU DOCUMENT HTML -->
@@ -81,6 +78,24 @@
             </nav>
         </header>
     </xsl:variable>
+    
+    <!-- ........................ -->
+    <!-- NAVIGATION DES CHAPITRES -->
+    <!-- ........................ -->
+   
+    <xsl:variable name="nav-chap">
+        <h2>Naviguer entre les chapitres</h2>
+        <div class="view-panel">
+            <ul>
+                <xsl:for-each select="//div">
+                    <xsl:variable name="chapitre" select="@n"/>
+                    <li><a href="extrait{$chapitre}.html">Extrait n°<xsl:value-of select="$chapitre"/></a> : 
+                        <xsl:value-of select="key('biblio', @source)/title"/>, 
+                        pages <xsl:value-of select="key('biblio', @source)/biblScope/@from"/> à <xsl:value-of select="key('biblio', @source)/biblScope/@to"/></li>
+                </xsl:for-each>
+            </ul>
+        </div>
+    </xsl:variable>
 
     <!-- ......................... -->
     <!-- TEMPLATE DU NUAGE DE MOTS -->
@@ -90,25 +105,25 @@
             <!-- Pour Sélectionner uniquement les éléments qui ont l'attribut @ref dans la div sélectionnée, grâce à la clé en début de fichier -->
             <xsl:for-each-group select=".//*[@ref]" group-by="@ref">
                 <!-- Pour chaque groupe du même nom propre avec le même attribut @ref, création d'une variable pour stocker @ref  -->
-                <xsl:variable name="refValue" select="current-grouping-key()"/>
+                <xsl:variable name="ref-value" select="current-grouping-key()"/>
                 <!-- Variable pour stocker le nombre d'éléments dans le groupe actuel qui ont la même valeur que @ref -->
-                <xsl:variable name="nb_occurences" select="count(current-group())"/>
+                <xsl:variable name="nb-occurences" select="count(current-group())"/>
 
                 <!-- Déterminer la classe css du mot selon son nombre d'occurences -->
-                <xsl:variable name="class_size" select="concat('word-',
-                        if ($nb_occurences &gt; 10) then 7 else
-                        if ($nb_occurences &gt; 8) then 6 else
-                        if ($nb_occurences &gt; 6) then 5 else
-                        if ($nb_occurences &gt; 4) then 4 else
-                        if ($nb_occurences &gt; 2) then 3 else
-                        if ($nb_occurences &gt; 1) then 2 else 1)"/>
+                <xsl:variable name="class-size" select="concat('word-',
+                        if ($nb-occurences &gt; 10) then 7 else
+                        if ($nb-occurences &gt; 8) then 6 else
+                        if ($nb-occurences &gt; 6) then 5 else
+                        if ($nb-occurences &gt; 4) then 4 else
+                        if ($nb-occurences &gt; 2) then 3 else
+                        if ($nb-occurences &gt; 1) then 2 else 1)"/>
                        
                 <!-- Affichage du nuage de mots -->
                 <span class="word">
                 <!-- Le mot avec un lien vers la page d'index et sa classe css pour gérer taille et couleur -->
-                    <a href="toc.html#{$refValue}" class="{$class_size}">
+                    <a href="toc.html#{$ref-value}" class="{$class-size}">
                     <!-- Pour mettre le nombre d'occurrences entre parenthèses après le mot -->
-                        <xsl:value-of select="current-group()[1]/text()"/> (<xsl:value-of select="$nb_occurences"/>) 
+                        <xsl:value-of select="current-group()[1]/text()"/> (<xsl:value-of select="$nb-occurences"/>) 
                     </a>
                 </span>
             </xsl:for-each-group>
@@ -219,16 +234,9 @@
                             </xsl:for-each>
                             </details>
                     </div>
-                    <!-- lien vers les deux extraits -->
-                    <h2>Vue des chapitres</h2>
-                    <div class="view-panel">
-                        <ul>
-                            <xsl:for-each select="//div">
-                                <xsl:variable name="chapitre" select="@n"/>
-                                <li><a href="extrait{$chapitre}.html">Extrait n°<xsl:value-of select="$chapitre"/></a></li>
-                            </xsl:for-each>
-                        </ul>
-                    </div>
+                    <!-- LIEN VERS LES CHAPITRES-->
+                        <xsl:copy-of select="$nav-chap"/>
+                        
                     <!-- Intégration du nuage de mot comptant les noms propres de tout les extraits -->
                     <h3>Occurences des noms</h3>
                     <div class="view-panel">
@@ -294,6 +302,8 @@
                             <div class="view-panel">
                                 <xsl:call-template name="nuage-de-mot"/>
                             </div>
+                            <!-- Pour naviguer entre les chapitres -->
+                            <xsl:copy-of select="$nav-chap"/>
                         </main>
                         <xsl:copy-of select="$footer"/>
                     </body>
@@ -315,6 +325,7 @@
                     <th>Nom</th>
                     <th>Autres noms</th>
                     <th>Note</th>
+                    <th>Occurences</th>
                 </tr>
             </thead>
             <tbody>
@@ -346,6 +357,34 @@
                             <xsl:for-each select="./note/p">
                                 <!-- appelle la template créée plus bas pour les paragraphes -->
                                 <xsl:apply-templates select="."/>
+                            </xsl:for-each>
+                        </td>
+                        <!-- crée une colonne avec les occurences des noms -->
+                            
+                        <td>
+                            <!-- variables pour récupérer l'id de la ligne en cours, sélectionner la bonne div et compter les occurences des noms propres -->
+                            <xsl:variable name="id-name" select="@xml:id"/>
+                            <xsl:for-each select="//body/div">
+                                <xsl:variable name="div-num" select="@n"/>
+                                <xsl:variable name="nb-occurences" select="count(.//*[@ref = $id-name])"/>
+                                
+                                <!-- Récupérer toutes les valeurs de texte distinctes pour le nom propre, dans cette div -->
+                                <xsl:variable name="names-distinct">
+                                    <xsl:for-each-group select=".//*[@ref = $id-name]" group-by="normalize-space(.)">
+                                        <xsl:value-of select="current-grouping-key()"/>
+                                        <!-- pour avoir une virgule entre les différents groupes -->
+                                        <xsl:if test="position() != last()">, </xsl:if>
+                                    </xsl:for-each-group>
+                                </xsl:variable>
+                                
+                                <!-- affiche le texte avec un lien vers la page d'extrait -->
+                                <xsl:if test="$nb-occurences &gt; 0">
+                                    <a href="{concat('extrait', $div-num, '.html')}">
+                                        <xsl:value-of select="concat('Ext. ', $div-num)"/>
+                                    </a>
+                                    <xsl:value-of select="concat(' : ', $nb-occurences, ' ')"/><em><xsl:value-of select="concat('(', $names-distinct, ')')"/></em>
+                                    <br/>
+                                </xsl:if>
                             </xsl:for-each>
                         </td>
                     </tr>
