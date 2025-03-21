@@ -11,8 +11,10 @@ Les fichiers complémentaires y sont déjà placés (images, css).
 
 ## Arborescence du dossier out/
 
-- [dossier1](out/dossier1)
-  - [fichier1.html](out/dossier1/fichier1.html)
-  - [fichier2.html](out/dossier1/fichier2.html)
-- [dossier2](out/dossier2)
-  - [fichier3.html](out/dossier2/fichier3.html)
+- [assets](out/assets)
+  - [style.css](out/assets/style.css)
+- [img](out/img)
+  - [logo_chartes.png](out/img/logo_chartes.png)
+  - [valinor-trees.png](out/img/valinor-trees.png)
+  - [valinor-treesNB.png](out/img/valinor-trees.png)
+- ... fichiers générés par xslt 
