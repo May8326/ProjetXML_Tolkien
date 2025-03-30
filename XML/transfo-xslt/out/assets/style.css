@@ -19,6 +19,7 @@ a {
     text-decoration: none;
     transition: color 0.3s;
 }
+
 a:hover {
     color: #d4af37;
     text-decoration: underline;
@@ -191,7 +192,8 @@ table tr:hover {
     justify-content: center;
     gap: 0.5rem;
 }
-/* Police variable selon le nombre d'occurences du mot dans le text */
+
+/* Police variable selon le nombre d'occurences du mot dans le texte */
 
 .word a {
     text-decoration: none;
